@@ -1,6 +1,8 @@
 import React from "react";
 import SlideContainer from "@/components/presentation/SlideContainer";
 import Placeholder from "@/components/presentation/Placeholder";
+import basicVideoExample from "@/assets/basic-video-example.mov";
+import advancedVideoExample from "@/assets/advanced-video-example.mov";
 
 const Slide07Phase3: React.FC = () => {
   return (
@@ -67,25 +69,38 @@ const Slide07Phase3: React.FC = () => {
           </ul>
         </div>
 
-        {/* Task Design */}
+        {/* Example Videos */}
         <div>
-          <h3 className="mb-3 text-xl font-semibold text-foreground">Task Design</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>
-              • <strong>Basic Video:</strong> Single clip + music + one text element
-            </li>
-            <li>
-              • <strong>Advanced Video:</strong> Three clips synced to music + three text elements synced to video
-            </li>
-          </ul>
+          <h3 className="mb-4 text-xl font-semibold text-foreground">Task Design</h3>
+          <div className="grid gap-4 md:grid-cols-2">
+            <div className="rounded-2xl bg-muted/60 p-4">
+              <p className="mb-3 text-sm font-medium text-foreground">
+                <strong>Basic Video:</strong> Single clip + music + one text element
+              </p>
+              <div className="rounded-xl overflow-hidden bg-background">
+                <video 
+                  src={basicVideoExample}
+                  controls
+                  className="w-full h-auto"
+                  preload="metadata"
+                />
+              </div>
+            </div>
+            <div className="rounded-2xl bg-muted/60 p-4">
+              <p className="mb-3 text-sm font-medium text-foreground">
+                <strong>Advanced Video:</strong> Three clips synced to music + three text elements synced to video
+              </p>
+              <div className="rounded-xl overflow-hidden bg-background">
+                <video 
+                  src={advancedVideoExample}
+                  controls
+                  className="w-full h-auto"
+                  preload="metadata"
+                />
+              </div>
+            </div>
+          </div>
         </div>
-
-        {/* Video Placeholder */}
-        <Placeholder
-          type="video"
-          description="Videos of the two example videos (basic and advanced) participants had to recreate"
-          aspectRatio="video"
-        />
 
         {/* Data Analysis */}
         <div>
