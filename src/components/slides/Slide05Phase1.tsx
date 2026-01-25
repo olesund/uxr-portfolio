@@ -59,7 +59,7 @@ const Slide05Phase1: React.FC = () => {
           </ul>
         </div>
 
-        {/* What I Did with the Data */}
+        {/* Data Analysis */}
         <div>
           <h3 className="mb-3 text-xl font-semibold text-foreground">Data Analysis</h3>
           <p className="text-muted-foreground">
@@ -70,21 +70,12 @@ const Slide05Phase1: React.FC = () => {
         {/* Key Finding */}
         <div className="rounded-2xl bg-accent/50 p-6">
           <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">Key Finding</p>
-          <p className="text-lg text-foreground">
+          <p className="mb-4 text-lg text-foreground">
             Most creators actively avoided Instagram's native editor for actual video creation. Instead, they used third-party apps (like CapCut), then uploaded finished videos to Instagram.
           </p>
-        </div>
-
-        {/* Why section */}
-        <div>
-          <h3 className="mb-3 text-xl font-semibold text-foreground">Why?</h3>
-          <ul className="space-y-3 text-muted-foreground">
-            <li>
-              • Creators preferred "stacked timeline" editors where video, audio, and text layers are all visible at once on a single screen. Instagram's step-by-step flow forced them to edit video on one screen, then switch to separate screens for audio, text, and effects—constantly jumping back and forth to line things up.
-            </li>
-            <li>
-              • Making any video was easy on Instagram. But making a good video was hard. Creators felt they needed to reach a quality bar before posting—unlike TikTok where the culture was more relaxed.
-            </li>
+          <ul className="space-y-2 text-foreground">
+            <li>• Creators preferred "stacked timeline" editors where video, audio, and text layers are all visible at once</li>
+            <li>• Making any video was easy on Instagram. But making a good video was hard</li>
           </ul>
         </div>
 
@@ -104,22 +95,21 @@ const Slide05Phase1: React.FC = () => {
         </div>
 
         {/* Outcome */}
-        <div className="rounded-2xl bg-destructive/10 p-6">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-destructive">Outcome: Initial Rejection</p>
+        <div className="rounded-2xl bg-muted/60 p-6">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">Outcome: Initial Rejection</p>
           <p className="mb-4 text-foreground">
             Leadership pushed back hard. They wanted Instagram to 'feel simple' and worried that a stacked timeline was 'too complex.'
           </p>
-          <p className="mb-2 font-medium text-foreground">Their Concerns:</p>
           <ul className="space-y-1 text-muted-foreground">
-            <li>• The Reels editor was based on Instagram Stories (hugely successful) and TikTok's approach. Why change what works?</li>
-            <li>• Quality is subjective. How do we know what more advanced videos are better for viewers?</li>
-            <li>• A complete redesign would require massive engineering resources. How can we be sure this new design is better?</li>
+            <li>• The Reels editor was based on Instagram Stories and TikTok. Why change what works?</li>
+            <li>• Quality is subjective. How do we know advanced videos are better for viewers?</li>
+            <li>• A complete redesign would require massive resources. How can we be sure?</li>
           </ul>
         </div>
 
         {/* The Pivot */}
-        <div className="rounded-2xl bg-success/10 p-6">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-success">The Pivot</p>
+        <div className="rounded-2xl bg-accent/50 p-6">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">The Pivot</p>
           <p className="mb-4 text-foreground">
             We didn't give up. We believed a redesign was key to increasing video production. To make our case, we launched two more studies to answer:
           </p>

@@ -7,8 +7,8 @@ const Slide09Impact: React.FC = () => {
     <SlideContainer slideNumber={8} header="Impact">
       <div className="space-y-10">
         {/* Leadership Decision */}
-        <div className="rounded-2xl bg-success/10 p-6">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-success">Leadership Decision</p>
+        <div className="rounded-2xl bg-accent/50 p-6">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">Leadership Decision</p>
           <p className="text-xl font-semibold text-foreground">
             Leadership approved the redesign—a decision they had initially rejected.
           </p>
