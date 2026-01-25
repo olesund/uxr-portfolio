@@ -107,6 +107,7 @@ const Slide07Phase3: React.FC = () => {
             </li>
             <li>
               • Statistical tests to detect significant differences
+            </li>
           </ul>
         </div>
 
