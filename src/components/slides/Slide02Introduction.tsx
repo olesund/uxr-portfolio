@@ -1,6 +1,6 @@
 import React from 'react';
 import SlideContainer from '@/components/presentation/SlideContainer';
-import Placeholder from '@/components/presentation/Placeholder';
+import erikHeadshot from '@/assets/erik-headshot.png';
 
 const Slide02Introduction: React.FC = () => {
   return (
@@ -19,13 +19,12 @@ const Slide02Introduction: React.FC = () => {
           </p>
         </div>
 
-        {/* Photo placeholder - 40% on desktop, first on mobile */}
+        {/* Photo - 40% on desktop, first on mobile */}
         <div className="md:col-span-2 md:order-2">
-          <Placeholder
-            type="image"
-            description="Professional headshot of Erik"
-            aspectRatio="square"
-            className="mx-auto max-w-xs md:max-w-none"
+          <img
+            src={erikHeadshot}
+            alt="Professional headshot of Erik"
+            className="mx-auto max-w-xs md:max-w-none rounded-lg"
           />
         </div>
       </div>
