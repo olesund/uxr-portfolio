@@ -31,25 +31,16 @@ const Slide07Phase3: React.FC = () => {
               </div>
               <div>
                 <p className="text-sm text-muted-foreground">Sample:</p>
-                <p className="font-medium text-foreground">400 Non-Professional Creators</p>
+                <p className="font-medium text-foreground">
+                  400 Non-Professional Creators. US, Canada, UK, India (18-35)
+                </p>
               </div>
               <div>
-                <p className="text-sm text-muted-foreground">Markets:</p>
-                <p className="font-medium text-foreground">US, Canada, UK, India (18-35)</p>
+                <p className="text-sm text-muted-foreground">Duration:</p>
+                <p className="font-medium text-foreground">Six weeks)</p>
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Data Collection */}
-        <div>
-          <h3 className="mb-3 text-xl font-semibold text-foreground">Data Collection</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>• Participants randomly assigned a reference video and app</li>
-            <li>• Task: Recreate reference video as closely as possible</li>
-            <li>• Screen recording captured during task</li>
-            <li>• Post-task usability ratings collected</li>
-          </ul>
         </div>
 
         {/* Study Design */}
@@ -78,12 +69,7 @@ const Slide07Phase3: React.FC = () => {
                 <strong>Basic Video:</strong> Single clip + music + one text element
               </p>
               <div className="rounded-xl overflow-hidden bg-background">
-                <video 
-                  src={basicVideoExample}
-                  controls
-                  className="w-full h-auto"
-                  preload="metadata"
-                />
+                <video src={basicVideoExample} controls className="w-full h-auto" preload="metadata" />
               </div>
             </div>
             <div className="rounded-2xl bg-muted/60 p-4">
@@ -91,15 +77,21 @@ const Slide07Phase3: React.FC = () => {
                 <strong>Advanced Video:</strong> Three clips synced to music + three text elements synced to video
               </p>
               <div className="rounded-xl overflow-hidden bg-background">
-                <video 
-                  src={advancedVideoExample}
-                  controls
-                  className="w-full h-auto"
-                  preload="metadata"
-                />
+                <video src={advancedVideoExample} controls className="w-full h-auto" preload="metadata" />
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Data Collection */}
+        <div>
+          <h3 className="mb-3 text-xl font-semibold text-foreground">Data Collection</h3>
+          <ul className="space-y-2 text-muted-foreground">
+            <li>• Participants randomly assigned a reference video and app</li>
+            <li>• Task: Recreate reference video as closely as possible</li>
+            <li>• Screen recording captured during task</li>
+            <li>• Post-task usability ratings collected</li>
+          </ul>
         </div>
 
         {/* Data Analysis */}
