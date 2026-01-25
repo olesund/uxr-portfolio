@@ -1,6 +1,7 @@
 import React from 'react';
 import SlideContainer from '@/components/presentation/SlideContainer';
 import Placeholder from '@/components/presentation/Placeholder';
+import reelsEditorScreenshot from '@/assets/reels-editor-screenshot.webp';
 
 const Slide09Impact: React.FC = () => {
   return (
@@ -24,6 +25,32 @@ const Slide09Impact: React.FC = () => {
               <p className="mt-1 text-muted-foreground">
                 A/B testing confirmed our findings: significantly more video production overall, especially high-quality videos (measured by views and likes)
               </p>
+            </div>
+            
+            {/* Quote and Screenshot */}
+            <div className="grid gap-4 md:grid-cols-2 items-center">
+              <blockquote className="rounded-2xl border-l-4 border-primary bg-muted/40 p-5">
+                <p className="text-muted-foreground italic">
+                  "We're making it easier for you to edit your reels on Instagram by bringing together video clips, audio, stickers, and text on a unified editing screen. This makes it easier to align and time elements of your reel to the right moments in a more visual way."
+                </p>
+                <footer className="mt-3">
+                  <a 
+                    href="https://about.fb.com/news/2023/04/instagram-reels-trending-audio-and-gifts-updates/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-sm text-primary hover:underline"
+                  >
+                    — Instagram Press Release
+                  </a>
+                </footer>
+              </blockquote>
+              <div className="rounded-2xl overflow-hidden">
+                <img 
+                  src={reelsEditorScreenshot} 
+                  alt="Instagram Reels stacked timeline editor interface" 
+                  className="w-full h-auto"
+                />
+              </div>
             </div>
             
             <div className="rounded-2xl bg-muted/60 p-5">
