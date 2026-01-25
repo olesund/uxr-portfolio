@@ -25,25 +25,23 @@ const phases = [
 const Slide04ResearchApproach: React.FC = () => {
   return (
     <SlideContainer slideNumber={3} header="Research Approach">
-      <div className="space-y-8">
-        <div className="space-y-4">
-          <h2 className="text-2xl font-semibold text-foreground md:text-3xl">
-            A Three-Phase Research Strategy
-          </h2>
-          <p className="text-lg text-muted-foreground">
+      <div className="space-y-10">
+        <div>
+          <h3 className="mb-3 text-xl font-semibold text-foreground">A Three-Phase Research Strategy</h3>
+          <p className="text-muted-foreground">
             This started as a small study with 20 creators but grew to include two larger projects. Each phase built on the previous, moving from exploration to experimentation.
           </p>
         </div>
 
         {/* Phase List */}
-        <div className="space-y-6">
+        <div className="space-y-4">
           {phases.map((phase) => (
-            <div key={phase.number} className="border-l-4 border-primary pl-6">
-              <div className="flex items-baseline gap-3">
+            <div key={phase.number} className="rounded-2xl bg-muted/60 p-5">
+              <div className="mb-2 flex items-baseline gap-3">
                 <span className="text-sm font-medium text-primary">Phase {phase.number}</span>
-                <span className="text-xs text-muted-foreground">({phase.type})</span>
+                <span className="text-sm text-muted-foreground">({phase.type})</span>
               </div>
-              <h3 className="text-lg font-semibold text-foreground">{phase.title}</h3>
+              <h4 className="font-semibold text-foreground">{phase.title}</h4>
               <p className="mt-1 text-muted-foreground">{phase.description}</p>
             </div>
           ))}

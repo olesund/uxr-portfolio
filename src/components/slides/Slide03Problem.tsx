@@ -4,28 +4,26 @@ import SlideContainer from '@/components/presentation/SlideContainer';
 const Slide03Problem: React.FC = () => {
   return (
     <SlideContainer slideNumber={2} header="Problem + Key Constraints">
-      <div className="space-y-8">
+      <div className="space-y-10">
         {/* Business Context */}
-        <div className="space-y-4">
-          <h2 className="text-2xl font-semibold text-foreground md:text-3xl">
-            Business Context
-          </h2>
-          <p className="text-lg leading-relaxed text-foreground">
+        <div>
+          <h3 className="mb-3 text-xl font-semibold text-foreground">Business Context</h3>
+          <p className="text-muted-foreground leading-relaxed">
             Instagram Reels had recently launched as the company's top priority. But we faced a critical problem: people were watching Reels. A lot of them! But we didn't have enough creators making them. Demand outpaced supply. If viewers couldn't find enough entertaining videos, they'd stop using the feature.
           </p>
         </div>
 
         {/* Key Questions */}
-        <div className="space-y-6">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-wider text-primary">Business Goal</p>
-            <p className="text-xl font-semibold text-foreground">
+        <div className="space-y-4">
+          <div className="rounded-2xl bg-accent/50 p-5">
+            <p className="mb-1 text-sm text-muted-foreground">Business Goal</p>
+            <p className="text-lg font-semibold text-foreground">
               Increase the production of short-form videos.
             </p>
           </div>
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-wider text-primary">Core Question</p>
-            <p className="text-xl font-semibold text-foreground">
+          <div className="rounded-2xl bg-accent/50 p-5">
+            <p className="mb-1 text-sm text-muted-foreground">Core Question</p>
+            <p className="text-lg font-semibold text-foreground">
               How do we make it easier for users to make short-form videos on Instagram?
             </p>
           </div>
@@ -37,22 +35,22 @@ const Slide03Problem: React.FC = () => {
         </p>
 
         {/* Team Info */}
-        <div className="rounded-lg bg-muted/50 p-6">
+        <div className="rounded-2xl bg-muted/60 p-5">
           <div className="grid gap-6 sm:grid-cols-3">
             <div>
               <p className="text-sm text-muted-foreground">My Role</p>
               <p className="font-medium text-foreground">Lead UX Researcher</p>
-              <p className="text-sm text-muted-foreground">Designed, ran, and presented all research</p>
+              <p className="mt-1 text-sm text-muted-foreground">Designed, ran, and presented all research</p>
             </div>
             <div>
               <p className="text-sm text-muted-foreground">Team</p>
               <p className="font-medium text-foreground">Cross-functional</p>
-              <p className="text-sm text-muted-foreground">Product Manager, Product Designer, Data Scientist, iOS Engineer</p>
+              <p className="mt-1 text-sm text-muted-foreground">Product Manager, Product Designer, Data Scientist, iOS Engineer</p>
             </div>
             <div>
               <p className="text-sm text-muted-foreground">Stakeholders</p>
               <p className="font-medium text-foreground">Senior Leadership</p>
-              <p className="text-sm text-muted-foreground">Including the Head of Instagram</p>
+              <p className="mt-1 text-sm text-muted-foreground">Including the Head of Instagram</p>
             </div>
           </div>
         </div>

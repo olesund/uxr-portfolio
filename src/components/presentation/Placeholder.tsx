@@ -36,16 +36,16 @@ const Placeholder: React.FC<PlaceholderProps> = ({
   return (
     <div
       className={cn(
-        'flex flex-col items-center justify-center rounded-lg border-2 border-dashed border-border bg-muted/50 p-6 text-center',
+        'flex flex-col items-center justify-center rounded-2xl bg-muted/60 p-6 text-center',
         aspectRatioClasses[aspectRatio],
         className
       )}
     >
-      <Icon className="mb-3 h-10 w-10 text-muted-foreground/60" />
-      <p className="text-sm font-medium text-muted-foreground">
+      <Icon className="mb-3 h-8 w-8 text-muted-foreground/50" />
+      <p className="text-sm text-muted-foreground">
         [VISUAL PLACEHOLDER]
       </p>
-      <p className="mt-1 text-xs text-muted-foreground/80">{description}</p>
+      <p className="mt-1 text-xs text-muted-foreground/70">{description}</p>
     </div>
   );
 };
