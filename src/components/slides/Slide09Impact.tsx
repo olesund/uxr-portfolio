@@ -135,28 +135,6 @@ const Slide09Impact: React.FC = () => {
             </div>
           </div>
         </div>
-
-        {/* Visual Placeholders */}
-        <div className="grid gap-4 md:grid-cols-2">
-          <Placeholder
-            type="image"
-            description="Screenshot of the new stacked timeline editor in Instagram Reels"
-            aspectRatio="video"
-          />
-          <Placeholder
-            type="image"
-            description="Screenshot of Instagram Edits app announcement/press release"
-            aspectRatio="video"
-          />
-        </div>
-
-        {/* A/B Test Results Placeholder */}
-        <Placeholder
-          type="chart"
-          description="Chart showing A/B test results (production increase, quality metrics)"
-          aspectRatio="video"
-        />
-      </div>
     </SlideContainer>
   );
 };
