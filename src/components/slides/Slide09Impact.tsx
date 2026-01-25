@@ -2,6 +2,7 @@ import React from "react";
 import SlideContainer from "@/components/presentation/SlideContainer";
 import Placeholder from "@/components/presentation/Placeholder";
 import reelsEditorScreenshot from "@/assets/reels-editor-screenshot.webp";
+import editsAppScreenshot from "@/assets/edits-app-screenshot.webp";
 
 const Slide09Impact: React.FC = () => {
   return (
@@ -64,6 +65,34 @@ const Slide09Impact: React.FC = () => {
                 timeline design. This represented a major shift toward positioning Instagram as a serious creative
                 platform.
               </p>
+            </div>
+
+            {/* Edits App Quote and Screenshot */}
+            <div className="grid gap-4 md:grid-cols-2 items-center">
+              <blockquote className="rounded-2xl border-l-4 border-primary bg-muted/40 p-5">
+                <p className="text-muted-foreground italic">
+                  "Today, we're launching Edits, a new video creation app that helps you make great videos directly on
+                  your phone. If you're passionate about making videos, Edits has the tools you need to support your
+                  creation process, all in one place."
+                </p>
+                <footer className="mt-3">
+                  <a
+                    href="https://about.fb.com/news/2025/04/introducing-edits-streamlined-video-creation-app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-primary hover:underline"
+                  >
+                    — Instagram Press Release
+                  </a>
+                </footer>
+              </blockquote>
+              <div className="rounded-2xl overflow-hidden">
+                <img
+                  src={editsAppScreenshot}
+                  alt="Instagram Edits app interface showing video editing features"
+                  className="w-full h-auto"
+                />
+              </div>
             </div>
           </div>
         </div>
