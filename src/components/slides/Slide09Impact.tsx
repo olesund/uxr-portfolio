@@ -3,6 +3,8 @@ import SlideContainer from "@/components/presentation/SlideContainer";
 import Placeholder from "@/components/presentation/Placeholder";
 import reelsEditorScreenshot from "@/assets/reels-editor-screenshot.webp";
 import editsAppScreenshot from "@/assets/edits-app-screenshot.webp";
+import reelsEditorBefore from "@/assets/reels-editor-before.png";
+import reelsEditorAfter from "@/assets/reels-editor-after.png";
 
 const Slide09Impact: React.FC = () => {
   return (
@@ -27,6 +29,36 @@ const Slide09Impact: React.FC = () => {
                 A/B testing confirmed our findings: significantly more video production overall, especially high-quality
                 videos (measured by views and likes).
               </p>
+            </div>
+
+            {/* Before/After Comparison */}
+            <div className="grid gap-4 md:grid-cols-2">
+              <div className="space-y-2">
+                <div className="rounded-2xl overflow-hidden bg-background">
+                  <img
+                    src={reelsEditorBefore}
+                    alt="Instagram Reels editor before - linear timeline"
+                    className="w-full h-auto"
+                  />
+                </div>
+                <p className="text-sm font-medium text-foreground">Before</p>
+                <p className="text-sm text-muted-foreground">
+                  Only video clips can be edited on this screen. Text and audio is edited elsewhere.
+                </p>
+              </div>
+              <div className="space-y-2">
+                <div className="rounded-2xl overflow-hidden bg-background">
+                  <img
+                    src={reelsEditorAfter}
+                    alt="Instagram Reels editor after - stacked timeline"
+                    className="w-full h-auto"
+                  />
+                </div>
+                <p className="text-sm font-medium text-foreground">After</p>
+                <p className="text-sm text-muted-foreground">
+                  Clips, audio, text and other effects are all edited from one surface.
+                </p>
+              </div>
             </div>
 
             <div className="rounded-2xl bg-muted/60 p-5">
