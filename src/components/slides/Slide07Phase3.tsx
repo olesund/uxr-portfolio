@@ -62,7 +62,7 @@ const Slide07Phase3: React.FC = () => {
           </ul>
         </div>
 
-        {/* Example Videos */}
+        {/* Reference Videos (that users recreated) */}
         <div>
           <h3 className="mb-4 text-xl font-semibold text-foreground">Task Design</h3>
           <div className="grid gap-4 md:grid-cols-2">
