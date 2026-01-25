@@ -25,7 +25,15 @@ const Slide09Impact: React.FC = () => {
               <p className="font-medium text-foreground">Shipped the New Editor</p>
               <p className="mt-1 text-muted-foreground">
                 A/B testing confirmed our findings: significantly more video production overall, especially high-quality
-                videos (measured by views and likes). When the feature finally rolled out to all users there was major
+                videos (measured by views and likes).
+              </p>
+            </div>
+
+            <div className="space-y-4">
+            <div className="rounded-2xl bg-muted/60 p-5">
+              <p className="font-medium text-foreground">PR campaign</p>
+              <p className="mt-1 text-muted-foreground">
+                When the feature finally rolled out to all users there was major
                 press release and PR campaign (a rare instance for product features)
               </p>
             </div>
