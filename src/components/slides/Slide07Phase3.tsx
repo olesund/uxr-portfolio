@@ -1,6 +1,6 @@
-import React from 'react';
-import SlideContainer from '@/components/presentation/SlideContainer';
-import Placeholder from '@/components/presentation/Placeholder';
+import React from "react";
+import SlideContainer from "@/components/presentation/SlideContainer";
+import Placeholder from "@/components/presentation/Placeholder";
 
 const Slide07Phase3: React.FC = () => {
   return (
@@ -54,9 +54,16 @@ const Slide07Phase3: React.FC = () => {
         <div>
           <h3 className="mb-3 text-xl font-semibold text-foreground">Study Design</h3>
           <ul className="space-y-2 text-muted-foreground">
-            <li>• <strong>Independent Variables:</strong> Video complexity (basic vs. advanced), Editor type (linear vs. stacked)</li>
-            <li>• <strong>Dependent Variables:</strong> Task completion success, Ease of use ratings</li>
-            <li>• <strong>Apps Tested:</strong> Instagram Reels, TikTok (linear) vs. CapCut, InShot (stacked)</li>
+            <li>
+              • <strong>Independent Variables:</strong> Video complexity (basic vs. advanced), Editor type (linear vs.
+              stacked)
+            </li>
+            <li>
+              • <strong>Dependent Variables:</strong> Task completion success, Ease of use ratings
+            </li>
+            <li>
+              • <strong>Apps Tested:</strong> Instagram Reels, TikTok (linear) vs. CapCut, InShot (stacked)
+            </li>
           </ul>
         </div>
 
@@ -64,8 +71,12 @@ const Slide07Phase3: React.FC = () => {
         <div>
           <h3 className="mb-3 text-xl font-semibold text-foreground">Task Design</h3>
           <ul className="space-y-2 text-muted-foreground">
-            <li>• <strong>Basic Video:</strong> Single clip + music + one text element</li>
-            <li>• <strong>Advanced Video:</strong> Three clips synced to music + three text elements synced to video</li>
+            <li>
+              • <strong>Basic Video:</strong> Single clip + music + one text element
+            </li>
+            <li>
+              • <strong>Advanced Video:</strong> Three clips synced to music + three text elements synced to video
+            </li>
           </ul>
         </div>
 
@@ -89,11 +100,17 @@ const Slide07Phase3: React.FC = () => {
         <div className="rounded-2xl bg-accent/50 p-6">
           <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">Key Finding</p>
           <p className="mb-4 text-lg text-foreground">
-            Editor type must match video complexity. No single "best" editor—different editors worked better for different video types:
+            If we want more high-quality content, we need a more powerful editor. Different editors worked better for
+            different video types:
           </p>
           <ul className="space-y-2 text-foreground">
-            <li><strong>Simple Videos:</strong> Step-by-step editors performed better and rated easier to use</li>
-            <li><strong>Complex Videos:</strong> Stacked timeline editors performed better, with much faster completion times</li>
+            <li>
+              <strong>Simple Videos:</strong> Step-by-step editors performed better and rated easier to use
+            </li>
+            <li>
+              <strong>Complex Videos:</strong> Stacked timeline editors performed better, with much faster completion
+              times and better usability rating
+            </li>
           </ul>
         </div>
 
