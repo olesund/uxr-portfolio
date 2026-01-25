@@ -1,6 +1,6 @@
 import React from 'react';
 import SlideContainer from '@/components/presentation/SlideContainer';
-import Placeholder from '@/components/presentation/Placeholder';
+import flywheelDiagram from '@/assets/flywheel-diagram.png';
 
 const Slide08Recommendation: React.FC = () => {
   return (
@@ -51,12 +51,14 @@ const Slide08Recommendation: React.FC = () => {
           </p>
         </div>
 
-        {/* Flywheel Placeholder */}
-        <Placeholder
-          type="chart"
-          description="Visual flywheel diagram showing the virtuous cycle"
-          aspectRatio="video"
-        />
+        {/* Flywheel Diagram */}
+        <div className="rounded-2xl overflow-hidden bg-background">
+          <img
+            src={flywheelDiagram}
+            alt="The Good Video Flywheel Effect - More good videos leads to more viewers, more creator reach, more production, and back to more good videos"
+            className="w-full h-auto"
+          />
+        </div>
       </div>
     </SlideContainer>
   );
