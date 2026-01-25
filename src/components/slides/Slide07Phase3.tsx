@@ -101,7 +101,10 @@ const Slide07Phase3: React.FC = () => {
           <h3 className="mb-3 text-xl font-semibold text-foreground">Data Analysis</h3>
           <ul className="space-y-2 text-muted-foreground">
             <li>• Watched screen recordings to see where people struggled</li>
-            <li>• Compared ease-of-use ratings across video types and editor types</li>
+            <li>
+              • Compared ease-of-use ratings, task completion rates, and time on task across video types and editor
+              types
+            </li>
           </ul>
         </div>
 
