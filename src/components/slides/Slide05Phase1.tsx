@@ -1,6 +1,6 @@
-import React from 'react';
-import SlideContainer from '@/components/presentation/SlideContainer';
-import editorComparison from '@/assets/editor-comparison.png';
+import React from "react";
+import SlideContainer from "@/components/presentation/SlideContainer";
+import editorComparison from "@/assets/editor-comparison.png";
 
 const Slide05Phase1: React.FC = () => {
   return (
@@ -10,7 +10,8 @@ const Slide05Phase1: React.FC = () => {
         <div>
           <h3 className="mb-3 text-xl font-semibold text-foreground">Objective</h3>
           <p className="text-muted-foreground">
-            Understand how successful creators make videos and test new editing features to see which tools creators find most useful.
+            Understand how successful creators make videos and test new editing features to see which tools creators
+            find most useful.
           </p>
         </div>
 
@@ -53,9 +54,10 @@ const Slide05Phase1: React.FC = () => {
         <div>
           <h3 className="mb-3 text-xl font-semibold text-foreground">Research Activities</h3>
           <ul className="space-y-2 text-muted-foreground">
-            <li>• Testing prototypes of new features</li>
-            <li>• Rating entertainment value of example videos</li>
-            <li>• Sharing creative process in interviews</li>
+            <li>• Testing prototypes of new features and giving feedback the same day</li>
+            <li>• Rating entertainment value of example videos created by our new features</li>
+            <li>• Sharing creative process in 1-on-1 interviews with me</li>
+            <li>• Discussing with one another and sharing tips and tricks for video creation</li>
           </ul>
         </div>
 
@@ -63,7 +65,7 @@ const Slide05Phase1: React.FC = () => {
         <div>
           <h3 className="mb-3 text-xl font-semibold text-foreground">Data Analysis</h3>
           <p className="text-muted-foreground">
-            Watched videos creators shared, read their discussions, and analyzed interview notes to find patterns.
+            Watched videos creators shared, read their discussions, and analyzed interview transcripts.
           </p>
         </div>
 
@@ -71,18 +73,22 @@ const Slide05Phase1: React.FC = () => {
         <div className="rounded-2xl bg-accent/50 p-6">
           <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">Key Finding</p>
           <p className="mb-4 text-lg text-foreground">
-            Most creators actively avoided Instagram's native editor for actual video creation. Instead, they used third-party apps (like CapCut), then uploaded finished videos to Instagram.
+            Most creators actively avoided Instagram's native editor for actual video creation. Instead, they used
+            third-party apps (like CapCut), then uploaded finished videos to Instagram.
           </p>
           <ul className="space-y-2 text-foreground">
-            <li>• Creators preferred "stacked timeline" editors where video, audio, and text layers are all visible at once</li>
+            <li>
+              • Creators preferred "stacked timeline" editors where video, audio, and text layers are all visible at
+              once
+            </li>
             <li>• Making any video was easy on Instagram. But making a good video was hard</li>
           </ul>
         </div>
 
         {/* Editor Comparison */}
         <div className="rounded-2xl overflow-hidden bg-background">
-          <img 
-            src={editorComparison} 
+          <img
+            src={editorComparison}
             alt="Side-by-side comparison: Step-by-step editor (Instagram Stories style) vs. Stacked timeline editor (CapCut style)"
             className="w-full h-auto object-contain"
           />
@@ -90,9 +96,13 @@ const Slide05Phase1: React.FC = () => {
 
         {/* Recommendation */}
         <div className="rounded-2xl bg-accent/50 p-6">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">Recommendation to Leadership</p>
+          <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">
+            Recommendation to Leadership
+          </p>
           <p className="text-foreground">
-            It's not enough to make it easy to create any video—users want to create good videos. We should redesign the editor from a step-by-step flow to a stacked timeline where video, audio, and text are all on one screen in different layers.
+            It's not enough to make it easy to create any video—users want to create good videos. We should redesign the
+            editor from a step-by-step flow to a stacked timeline where video, audio, and text are all on one screen in
+            different layers.
           </p>
         </div>
 
@@ -100,7 +110,8 @@ const Slide05Phase1: React.FC = () => {
         <div className="rounded-2xl bg-muted/60 p-6">
           <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">Outcome: Initial Rejection</p>
           <p className="mb-4 text-foreground">
-            Leadership pushed back hard. They wanted Instagram to 'feel simple' and worried that a stacked timeline was 'too complex.'
+            Leadership pushed back hard. They wanted Instagram to 'feel simple' and worried that a stacked timeline was
+            'too complex.'
           </p>
           <ul className="space-y-1 text-muted-foreground">
             <li>• The Reels editor was based on Instagram Stories and TikTok. Why change what works?</li>
@@ -113,11 +124,16 @@ const Slide05Phase1: React.FC = () => {
         <div className="rounded-2xl bg-accent/50 p-6">
           <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">The Pivot</p>
           <p className="mb-4 text-foreground">
-            We didn't give up. We believed a redesign was key to increasing video production. To make our case, we launched two more studies to answer:
+            We didn't give up. We believed a redesign was key to increasing video production. To make our case, we
+            launched two more studies to answer:
           </p>
           <ul className="space-y-1 text-foreground">
-            <li><strong>A.</strong> What makes a video high-quality?</li>
-            <li><strong>B.</strong> Which video editor design makes it easier to create high-quality videos?</li>
+            <li>
+              <strong>A.</strong> What makes a video high-quality?
+            </li>
+            <li>
+              <strong>B.</strong> Which video editor design makes it easier to create high-quality videos?
+            </li>
           </ul>
         </div>
       </div>
