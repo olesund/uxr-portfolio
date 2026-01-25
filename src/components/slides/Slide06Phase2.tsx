@@ -2,11 +2,7 @@ import React from "react";
 import SlideContainer from "@/components/presentation/SlideContainer";
 import videoAttributesChart from "@/assets/video-attributes-chart.png";
 import regressionChart from "@/assets/regression-chart.png";
-import {
-  Dialog,
-  DialogContent,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
 const Slide06Phase2: React.FC = () => {
   return (
@@ -28,6 +24,10 @@ const Slide06Phase2: React.FC = () => {
               <div>
                 <p className="text-sm text-muted-foreground">Method:</p>
                 <p className="font-medium text-foreground">Content Analysis</p>
+              </div>
+              <div>
+                <p className="text-sm text-muted-foreground">Duration:</p>
+                <p className="font-medium text-foreground">Three weeks</p>
               </div>
               <div>
                 <p className="text-sm text-muted-foreground">Sample:</p>
@@ -83,16 +83,16 @@ const Slide06Phase2: React.FC = () => {
             <Dialog>
               <DialogTrigger asChild>
                 <div className="rounded-2xl overflow-hidden bg-background cursor-pointer hover:opacity-90 transition-opacity">
-                  <img 
-                    src={videoAttributesChart} 
+                  <img
+                    src={videoAttributesChart}
                     alt="Bar chart comparing % of high-quality vs. low-quality videos with each attribute"
                     className="w-full h-auto object-contain"
                   />
                 </div>
               </DialogTrigger>
               <DialogContent className="max-w-4xl p-2">
-                <img 
-                  src={videoAttributesChart} 
+                <img
+                  src={videoAttributesChart}
                   alt="Bar chart comparing % of high-quality vs. low-quality videos with each attribute"
                   className="w-full h-auto object-contain"
                 />
@@ -101,16 +101,16 @@ const Slide06Phase2: React.FC = () => {
             <Dialog>
               <DialogTrigger asChild>
                 <div className="rounded-2xl overflow-hidden bg-background cursor-pointer hover:opacity-90 transition-opacity">
-                  <img 
-                    src={regressionChart} 
+                  <img
+                    src={regressionChart}
                     alt="Regression results showing which attributes predict video success"
                     className="w-full h-auto object-contain"
                   />
                 </div>
               </DialogTrigger>
               <DialogContent className="max-w-4xl p-2">
-                <img 
-                  src={regressionChart} 
+                <img
+                  src={regressionChart}
                   alt="Regression results showing which attributes predict video success"
                   className="w-full h-auto object-contain"
                 />
