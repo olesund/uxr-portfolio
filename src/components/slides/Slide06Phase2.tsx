@@ -1,6 +1,6 @@
-import React from 'react';
-import SlideContainer from '@/components/presentation/SlideContainer';
-import Placeholder from '@/components/presentation/Placeholder';
+import React from "react";
+import SlideContainer from "@/components/presentation/SlideContainer";
+import Placeholder from "@/components/presentation/Placeholder";
 
 const Slide06Phase2: React.FC = () => {
   return (
@@ -51,12 +51,13 @@ const Slide06Phase2: React.FC = () => {
 
         {/* Attributes Coded */}
         <div>
-          <h3 className="mb-3 text-xl font-semibold text-foreground">Attributes Coded</h3>
+          <h3 className="mb-3 text-xl font-semibold text-foreground">Examples of Attributes Coded</h3>
           <ul className="space-y-2 text-muted-foreground">
             <li>• Presence of humor, humans, animals</li>
             <li>• Genre (sports, fashion, travel, dance)</li>
             <li>• Music usage, number of clips, text on screen</li>
             <li>• Cuts-to-music synchronization</li>
+            <li>• Etc.</li>
           </ul>
         </div>
 
@@ -87,13 +88,17 @@ const Slide06Phase2: React.FC = () => {
         {/* Key Finding */}
         <div className="rounded-2xl bg-accent/50 p-6">
           <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">Key Finding</p>
-          <p className="mb-4 text-lg text-foreground">
-            Three attributes strongly predicted video success:
-          </p>
+          <p className="mb-4 text-lg text-foreground">Three attributes strongly predicted video success:</p>
           <ul className="space-y-2 text-foreground">
-            <li><strong>1. Multiple Clips</strong> — Videos used more than one clip (vs. single-shot)</li>
-            <li><strong>2. Music Sync</strong> — Clips synced to beat/rhythm of music</li>
-            <li><strong>3. Text Sync</strong> — Text elements precisely timed to match video and music</li>
+            <li>
+              <strong>1. Multiple Clips</strong> — Videos used more than one clip (vs. single-shot)
+            </li>
+            <li>
+              <strong>2. Music Sync</strong> — Clips synced to beat/rhythm of music
+            </li>
+            <li>
+              <strong>3. Text Sync</strong> — Text elements precisely timed to match video and music
+            </li>
           </ul>
         </div>
 
@@ -101,7 +106,8 @@ const Slide06Phase2: React.FC = () => {
         <div className="rounded-2xl bg-accent/50 p-6">
           <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">Outcome</p>
           <p className="text-foreground">
-            We had an objective definition of what makes videos high-quality. Next, we tested which editor design makes it easier to create these kinds of videos.
+            We had an objective definition of what makes videos high-quality. Next, we tested which editor design makes
+            it easier to create these kinds of videos.
           </p>
         </div>
       </div>
