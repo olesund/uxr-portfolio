@@ -54,7 +54,7 @@ const Slide07Phase3: React.FC = () => {
               stacked)
             </li>
             <li>
-              • <strong>Dependent Variables:</strong> Task completion success, Ease of use ratings
+              • <strong>Dependent Variables:</strong> Task completion success, Ease of use ratings, Time on task
             </li>
             <li>
               • <strong>Apps Tested:</strong> Instagram Reels, TikTok (linear) vs. CapCut, InShot (stacked)
@@ -64,7 +64,7 @@ const Slide07Phase3: React.FC = () => {
 
         {/* Reference Videos (that users recreated) */}
         <div>
-          <h3 className="mb-4 text-xl font-semibold text-foreground">Task Design</h3>
+          <h3 className="mb-4 text-xl font-semibold text-foreground">Reference videos (that users recreated)</h3>
           <div className="grid gap-4 md:grid-cols-2">
             <div className="rounded-2xl bg-muted/60 p-4">
               <p className="mb-3 text-sm font-medium text-foreground">
@@ -92,7 +92,7 @@ const Slide07Phase3: React.FC = () => {
             <li>• Participants randomly assigned a reference video and app</li>
             <li>• Task: Recreate reference video as closely as possible</li>
             <li>• Screen recording captured during task</li>
-            <li>• Post-task usability ratings collected</li>
+            <li>• Post-task usability ratings collected afterwards</li>
           </ul>
         </div>
 
@@ -105,6 +105,8 @@ const Slide07Phase3: React.FC = () => {
               • Compared ease-of-use ratings, task completion rates, and time on task across video types and editor
               types
             </li>
+            <li>
+              • Statistical tests to detect significant differences
           </ul>
         </div>
 
@@ -113,15 +115,15 @@ const Slide07Phase3: React.FC = () => {
           <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">Key Finding</p>
           <p className="mb-4 text-lg text-foreground">
             If we want more high-quality content, we need a more powerful editor. Different editors worked better for
-            different video types:
+            different video types.
           </p>
           <ul className="space-y-2 text-foreground">
             <li>
-              <strong>Simple Videos:</strong> Step-by-step editors performed better and rated easier to use
+              <strong>Basic Videos:</strong> Step-by-step editors performed better with faster completion rates and rated easier to use
             </li>
             <li>
-              <strong>Complex Videos:</strong> Stacked timeline editors performed better, with much faster completion
-              times and better usability rating
+              <strong>Advanced Videos:</strong> Stacked timeline editors performed better, with much faster completion
+              times, better usability rating, and fewer instances of users getting stuck (in observed videos)
             </li>
           </ul>
         </div>
@@ -131,11 +133,6 @@ const Slide07Phase3: React.FC = () => {
           <Placeholder
             type="chart"
             description="Interaction plot showing ease-of-use ratings by editor type and video complexity"
-            aspectRatio="video"
-          />
-          <Placeholder
-            type="chart"
-            description="Task completion time comparison across conditions"
             aspectRatio="video"
           />
         </div>
