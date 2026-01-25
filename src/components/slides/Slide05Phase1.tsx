@@ -79,9 +79,15 @@ const Slide05Phase1: React.FC = () => {
           <ul className="space-y-2 text-foreground">
             <li>
               • Creators preferred "stacked timeline" editors where video, audio, and text layers are all visible at
-              once
+              once on a single screen. Instagram's step-by-step flow forced them to edit video on one screen, then
+              switch to separate screens for audio, text, and effects—constantly jumping back and forth to line things
+              up.
             </li>
-            <li>• Making any video was easy on Instagram. But making a good video was hard</li>
+            <li>
+              • Making any video was easy on Instagram. But making a good video was hard. Creators felt they needed to
+              reach a quality bar before posting—unlike TikTok where the culture was more relaxed. Instagram's bar for
+              polish was much higher.
+            </li>
           </ul>
         </div>
 
