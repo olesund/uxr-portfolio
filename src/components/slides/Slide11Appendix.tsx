@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import SlideContainer from '@/components/presentation/SlideContainer';
-import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import AppendixModal from '@/components/presentation/AppendixModal';
 import Placeholder from '@/components/presentation/Placeholder';
-import { FileText, ExternalLink, PlayCircle } from 'lucide-react';
+import { FileText, PlayCircle } from 'lucide-react';
 
 type AppendixItem = {
   id: string;
@@ -15,15 +14,15 @@ type AppendixItem = {
 };
 
 const appendixItems: Record<string, AppendixItem[]> = {
-  'Phase 1': [
+  'Phase 1 Materials': [
     { id: 'screener', title: 'Screener Survey', phase: 'Phase 1', description: 'Recruitment screener for creator community' },
     { id: 'activities', title: 'Community Activities (Weeks 1-6)', phase: 'Phase 1', description: 'Example activities from the online community' },
   ],
-  'Phase 2': [
+  'Phase 2 Materials': [
     { id: 'coding', title: 'Coding Sheet for Videos', phase: 'Phase 2', description: 'Template used to code video attributes' },
     { id: 'viz', title: 'Visualization (Differences in Means, Regressions)', phase: 'Phase 2', description: 'Statistical analysis visualizations' },
   ],
-  'Phase 3': [
+  'Phase 3 Materials': [
     { id: 'usability', title: 'Usability Testing Flow', phase: 'Phase 3', description: 'Experience the study yourself!', isInteractive: true },
   ],
   'Evidence of Impact': [
@@ -66,36 +65,31 @@ const Slide11Appendix: React.FC = () => {
         </div>
 
         {/* Appendix Sections */}
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="space-y-6">
           {Object.entries(appendixItems).map(([section, items]) => (
-            <Card key={section}>
-              <CardContent className="p-6">
-                <h3 className="mb-4 font-semibold text-foreground">{section}</h3>
-                <div className="space-y-2">
-                  {items.map((item) => (
-                    <Button
-                      key={item.id}
-                      variant="ghost"
-                      className="h-auto w-full justify-start gap-3 px-3 py-3 text-left"
-                      onClick={() => handleOpenModal(item.id)}
-                    >
-                      {item.isInteractive ? (
-                        <PlayCircle className="h-5 w-5 shrink-0 text-primary" />
-                      ) : (
-                        <FileText className="h-5 w-5 shrink-0 text-muted-foreground" />
-                      )}
-                      <div className="flex-1">
-                        <p className="font-medium text-foreground">{item.title}</p>
-                        {item.isInteractive && (
-                          <p className="text-xs text-primary">Click to try it yourself!</p>
-                        )}
-                      </div>
-                      <ExternalLink className="h-4 w-4 text-muted-foreground" />
-                    </Button>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+            <div key={section}>
+              <p className="mb-2 font-medium text-foreground">{section}</p>
+              <div className="space-y-1">
+                {items.map((item) => (
+                  <Button
+                    key={item.id}
+                    variant="ghost"
+                    className="h-auto w-full justify-start gap-3 px-3 py-2 text-left"
+                    onClick={() => handleOpenModal(item.id)}
+                  >
+                    {item.isInteractive ? (
+                      <PlayCircle className="h-4 w-4 shrink-0 text-primary" />
+                    ) : (
+                      <FileText className="h-4 w-4 shrink-0 text-muted-foreground" />
+                    )}
+                    <span className="text-foreground">{item.title}</span>
+                    {item.isInteractive && (
+                      <span className="text-xs text-primary">(click to try it yourself!)</span>
+                    )}
+                  </Button>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
 
