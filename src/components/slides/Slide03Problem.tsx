@@ -1,7 +1,5 @@
 import React from 'react';
 import SlideContainer from '@/components/presentation/SlideContainer';
-import { Card, CardContent } from '@/components/ui/card';
-import { User, Users, Building2 } from 'lucide-react';
 
 const Slide03Problem: React.FC = () => {
   return (
@@ -18,19 +16,15 @@ const Slide03Problem: React.FC = () => {
         </div>
 
         {/* Key Questions */}
-        <div className="grid gap-6 md:grid-cols-2">
-          <div className="space-y-2 rounded-lg border border-primary/20 bg-primary/5 p-6">
-            <p className="text-sm font-medium uppercase tracking-wider text-primary">
-              Business Goal
-            </p>
+        <div className="space-y-6">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-wider text-primary">Business Goal</p>
             <p className="text-xl font-semibold text-foreground">
               Increase the production of short-form videos.
             </p>
           </div>
-          <div className="space-y-2 rounded-lg border border-primary/20 bg-primary/5 p-6">
-            <p className="text-sm font-medium uppercase tracking-wider text-primary">
-              Core Question
-            </p>
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-wider text-primary">Core Question</p>
             <p className="text-xl font-semibold text-foreground">
               How do we make it easier for users to make short-form videos on Instagram?
             </p>
@@ -42,35 +36,26 @@ const Slide03Problem: React.FC = () => {
           Another team focused on motivating people to make videos. My team focused on making the editing process easier.
         </p>
 
-        {/* Inset Box - Team Info */}
-        <Card className="bg-muted/50">
-          <CardContent className="grid gap-4 p-6 sm:grid-cols-3">
-            <div className="flex items-start gap-3">
-              <User className="mt-1 h-5 w-5 text-primary" />
-              <div>
-                <p className="text-sm font-medium text-muted-foreground">My Role</p>
-                <p className="font-medium text-foreground">Lead UX Researcher</p>
-                <p className="text-sm text-muted-foreground">Designed, ran, and presented all research</p>
-              </div>
+        {/* Team Info */}
+        <div className="rounded-lg bg-muted/50 p-6">
+          <div className="grid gap-6 sm:grid-cols-3">
+            <div>
+              <p className="text-sm text-muted-foreground">My Role</p>
+              <p className="font-medium text-foreground">Lead UX Researcher</p>
+              <p className="text-sm text-muted-foreground">Designed, ran, and presented all research</p>
             </div>
-            <div className="flex items-start gap-3">
-              <Users className="mt-1 h-5 w-5 text-primary" />
-              <div>
-                <p className="text-sm font-medium text-muted-foreground">Team</p>
-                <p className="font-medium text-foreground">Cross-functional</p>
-                <p className="text-sm text-muted-foreground">Product Manager, Product Designer, Data Scientist, iOS Engineer</p>
-              </div>
+            <div>
+              <p className="text-sm text-muted-foreground">Team</p>
+              <p className="font-medium text-foreground">Cross-functional</p>
+              <p className="text-sm text-muted-foreground">Product Manager, Product Designer, Data Scientist, iOS Engineer</p>
             </div>
-            <div className="flex items-start gap-3">
-              <Building2 className="mt-1 h-5 w-5 text-primary" />
-              <div>
-                <p className="text-sm font-medium text-muted-foreground">Stakeholders</p>
-                <p className="font-medium text-foreground">Senior Leadership</p>
-                <p className="text-sm text-muted-foreground">Including the Head of Instagram</p>
-              </div>
+            <div>
+              <p className="text-sm text-muted-foreground">Stakeholders</p>
+              <p className="font-medium text-foreground">Senior Leadership</p>
+              <p className="text-sm text-muted-foreground">Including the Head of Instagram</p>
             </div>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
       </div>
     </SlideContainer>
   );
