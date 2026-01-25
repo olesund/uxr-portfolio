@@ -17,12 +17,15 @@ const SlideContainer: React.FC<SlideContainerProps> = ({
   className,
   fullHeight = false,
 }) => {
+  const isEvenSlide = slideNumber % 2 === 0;
+
   return (
     <section
       id={`slide-${slideNumber}`}
       className={cn(
         'relative scroll-mt-0 snap-start px-6 py-12 md:px-12 lg:px-20',
         'border-b border-border/40',
+        isEvenSlide ? 'bg-muted/30' : 'bg-background',
         fullHeight && 'flex min-h-screen flex-col justify-center',
         !fullHeight && 'min-h-[80vh] py-16 md:py-24',
         className
