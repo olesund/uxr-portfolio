@@ -135,6 +135,7 @@ const Slide09Impact: React.FC = () => {
             </div>
           </div>
         </div>
+      </div>
     </SlideContainer>
   );
 };
