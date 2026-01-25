@@ -10,8 +10,8 @@ const Slide05Phase1: React.FC = () => {
         <div>
           <h3 className="mb-3 text-xl font-semibold text-foreground">Objective</h3>
           <p className="text-muted-foreground">
-            Understand how successful creators make videos and test new editing features to see which tools creators
-            find most useful.
+            Understand why some small-scale creators were seeing initial success with their Reels (to see if we can help
+            more users adopt similar tactics). Test new editing features to see which tools creators find most useful.
           </p>
         </div>
 
