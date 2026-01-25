@@ -1,7 +1,7 @@
-import React from 'react';
-import SlideContainer from '@/components/presentation/SlideContainer';
-import Placeholder from '@/components/presentation/Placeholder';
-import reelsEditorScreenshot from '@/assets/reels-editor-screenshot.webp';
+import React from "react";
+import SlideContainer from "@/components/presentation/SlideContainer";
+import Placeholder from "@/components/presentation/Placeholder";
+import reelsEditorScreenshot from "@/assets/reels-editor-screenshot.webp";
 
 const Slide09Impact: React.FC = () => {
   return (
@@ -18,25 +18,29 @@ const Slide09Impact: React.FC = () => {
         {/* Product Outcomes */}
         <div>
           <h3 className="mb-4 text-xl font-semibold text-foreground">Product Outcomes</h3>
-          
+
           <div className="space-y-4">
             <div className="rounded-2xl bg-muted/60 p-5">
               <p className="font-medium text-foreground">Shipped the New Editor</p>
               <p className="mt-1 text-muted-foreground">
-                A/B testing confirmed our findings: significantly more video production overall, especially high-quality videos (measured by views and likes)
+                A/B testing confirmed our findings: significantly more video production overall, especially high-quality
+                videos (measured by views and likes). When the feature finally rolled out to all users there was major
+                press release and PR campaign (a rare instance for product features)
               </p>
             </div>
-            
+
             {/* Quote and Screenshot */}
             <div className="grid gap-4 md:grid-cols-2 items-center">
               <blockquote className="rounded-2xl border-l-4 border-primary bg-muted/40 p-5">
                 <p className="text-muted-foreground italic">
-                  "We're making it easier for you to edit your reels on Instagram by bringing together video clips, audio, stickers, and text on a unified editing screen. This makes it easier to align and time elements of your reel to the right moments in a more visual way."
+                  "We're making it easier for you to edit your reels on Instagram by bringing together video clips,
+                  audio, stickers, and text on a unified editing screen. This makes it easier to align and time elements
+                  of your reel to the right moments in a more visual way."
                 </p>
                 <footer className="mt-3">
-                  <a 
-                    href="https://about.fb.com/news/2023/04/instagram-reels-trending-audio-and-gifts-updates/" 
-                    target="_blank" 
+                  <a
+                    href="https://about.fb.com/news/2023/04/instagram-reels-trending-audio-and-gifts-updates/"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm text-primary hover:underline"
                   >
@@ -45,18 +49,20 @@ const Slide09Impact: React.FC = () => {
                 </footer>
               </blockquote>
               <div className="rounded-2xl overflow-hidden">
-                <img 
-                  src={reelsEditorScreenshot} 
-                  alt="Instagram Reels stacked timeline editor interface" 
+                <img
+                  src={reelsEditorScreenshot}
+                  alt="Instagram Reels stacked timeline editor interface"
                   className="w-full h-auto"
                 />
               </div>
             </div>
-            
+
             <div className="rounded-2xl bg-muted/60 p-5">
               <p className="font-medium text-foreground">Instagram "Edits" App</p>
               <p className="mt-1 text-muted-foreground">
-                About a year later, Instagram released 'Edits'—a standalone editing app fully built around the stacked timeline design. This represented a major shift toward positioning Instagram as a serious creative platform.
+                About a year later, Instagram released 'Edits'—a standalone editing app fully built around the stacked
+                timeline design. This represented a major shift toward positioning Instagram as a serious creative
+                platform.
               </p>
             </div>
           </div>
