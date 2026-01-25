@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
+import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
 interface SlideContainerProps {
@@ -16,29 +17,8 @@ const SlideContainer: React.FC<SlideContainerProps> = ({
   className,
   fullHeight = false,
 }) => {
-  const ref = useRef<HTMLElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <section
-      ref={ref}
       id={`slide-${slideNumber}`}
       className={cn(
         'relative scroll-mt-0 snap-start px-6 py-12 md:px-12 lg:px-20',
@@ -48,20 +28,20 @@ const SlideContainer: React.FC<SlideContainerProps> = ({
       )}
       aria-label={header ? `Slide ${slideNumber}: ${header}` : `Slide ${slideNumber}`}
     >
-      <div
-        className={cn(
-          'mx-auto max-w-5xl',
-          isVisible ? 'animate-fade-in-up' : 'opacity-0'
-        )}
-        style={{ animationDelay: '0.1s' }}
+      <motion.div
+        className="mx-auto max-w-5xl"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+        viewport={{ once: true, margin: '-100px' }}
       >
         {header && (
-          <p className="mb-6 text-sm font-medium uppercase tracking-wider text-muted-foreground">
+          <p className="mb-6 text-sm font-medium uppercase tracking-wider text-primary">
             {header}
           </p>
         )}
         {children}
-      </div>
+      </motion.div>
     </section>
   );
 };
