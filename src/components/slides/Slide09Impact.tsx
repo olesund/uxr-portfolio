@@ -29,7 +29,6 @@ const Slide09Impact: React.FC = () => {
               </p>
             </div>
 
-            <div className="space-y-4">
             <div className="rounded-2xl bg-muted/60 p-5">
               <p className="font-medium text-foreground">PR campaign</p>
               <p className="mt-1 text-muted-foreground">
