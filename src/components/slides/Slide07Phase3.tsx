@@ -1,6 +1,6 @@
 import React from "react";
 import SlideContainer from "@/components/presentation/SlideContainer";
-import Placeholder from "@/components/presentation/Placeholder";
+import easeOfUseChart from "@/assets/ease-of-use-chart.png";
 import basicVideoExample from "@/assets/basic-video-example.mov";
 import advancedVideoExample from "@/assets/advanced-video-example.mov";
 
@@ -129,14 +129,17 @@ const Slide07Phase3: React.FC = () => {
           </ul>
         </div>
 
-        {/* Chart Placeholders */}
-        <div className="grid gap-4 md:grid-cols-2">
-          <Placeholder
-            type="chart"
-            description="Interaction plot showing ease-of-use ratings by editor type and video complexity"
-            aspectRatio="video"
+        {/* Ease-of-Use Chart */}
+        <div className="rounded-2xl overflow-hidden bg-background">
+          <img
+            src={easeOfUseChart}
+            alt="Interaction plot showing ease-of-use ratings by editor type and video complexity"
+            className="w-full h-auto"
           />
         </div>
+        <p className="text-center text-sm text-muted-foreground italic">
+          Example chart using dummy data.
+        </p>
       </div>
     </SlideContainer>
   );
