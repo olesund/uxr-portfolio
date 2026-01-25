@@ -105,9 +105,7 @@ const Slide07Phase3: React.FC = () => {
               • Compared ease-of-use ratings, task completion rates, and time on task across video types and editor
               types
             </li>
-            <li>
-              • Statistical tests to detect significant differences
-            </li>
+            <li>• Statistical tests to detect significant differences</li>
           </ul>
         </div>
 
@@ -120,7 +118,8 @@ const Slide07Phase3: React.FC = () => {
           </p>
           <ul className="space-y-2 text-foreground">
             <li>
-              <strong>Basic Videos:</strong> Step-by-step editors performed better with faster completion rates and rated easier to use
+              <strong>Basic Videos:</strong> Step-by-step editors performed better with faster completion rates and
+              rated easier to use
             </li>
             <li>
               <strong>Advanced Videos:</strong> Stacked timeline editors performed better, with much faster completion
@@ -137,9 +136,6 @@ const Slide07Phase3: React.FC = () => {
             className="w-full h-auto"
           />
         </div>
-        <p className="text-center text-sm text-muted-foreground italic">
-          Example chart using dummy data.
-        </p>
       </div>
     </SlideContainer>
   );
