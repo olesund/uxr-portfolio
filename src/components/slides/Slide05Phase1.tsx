@@ -1,6 +1,6 @@
 import React from 'react';
 import SlideContainer from '@/components/presentation/SlideContainer';
-import Placeholder from '@/components/presentation/Placeholder';
+import editorComparison from '@/assets/editor-comparison.png';
 
 const Slide05Phase1: React.FC = () => {
   return (
@@ -79,12 +79,14 @@ const Slide05Phase1: React.FC = () => {
           </ul>
         </div>
 
-        {/* Visual Placeholder */}
-        <Placeholder
-          type="image"
-          description="Side-by-side comparison: Linear Editor (Instagram Stories style) vs. Stacked Timeline Editor (CapCut style)"
-          aspectRatio="video"
-        />
+        {/* Editor Comparison */}
+        <div className="rounded-2xl overflow-hidden bg-background">
+          <img 
+            src={editorComparison} 
+            alt="Side-by-side comparison: Step-by-step editor (Instagram Stories style) vs. Stacked timeline editor (CapCut style)"
+            className="w-full h-auto object-contain"
+          />
+        </div>
 
         {/* Recommendation */}
         <div className="rounded-2xl bg-accent/50 p-6">
