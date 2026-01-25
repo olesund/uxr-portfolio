@@ -26,18 +26,20 @@ const Slide07Phase3: React.FC = () => {
                 <p className="font-medium text-foreground">Randomized Between-Subjects Study</p>
               </div>
               <div>
-                <p className="text-sm text-muted-foreground">Partner:</p>
-                <p className="font-medium text-foreground">MeasuringU (Usability Vendor)</p>
+                <p className="text-sm text-muted-foreground">Duration:</p>
+                <p className="font-medium text-foreground">Six weeks</p>
               </div>
               <div>
                 <p className="text-sm text-muted-foreground">Sample:</p>
-                <p className="font-medium text-foreground">
-                  400 Non-Professional Creators. US, Canada, UK, India (18-35)
-                </p>
+                <p className="font-medium text-foreground">400 Non-Professional Creators</p>
               </div>
               <div>
-                <p className="text-sm text-muted-foreground">Duration:</p>
-                <p className="font-medium text-foreground">Six weeks)</p>
+                <p className="text-sm text-muted-foreground">Criteria:</p>
+                <p className="font-medium text-foreground">US, Canada, UK, India (18-35)</p>
+              </div>
+              <div>
+                <p className="text-sm text-muted-foreground">Partner:</p>
+                <p className="font-medium text-foreground">MeasuringU (Usability Vendor)</p>
               </div>
             </div>
           </div>
