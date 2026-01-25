@@ -54,11 +54,9 @@ const Slide11Appendix: React.FC = () => {
 
   return (
     <SlideContainer slideNumber={10} header="Appendix">
-      <div className="space-y-8">
-        <div className="space-y-2">
-          <h2 className="text-2xl font-semibold text-foreground md:text-3xl">
-            Dummy Materials Overview
-          </h2>
+      <div className="space-y-10">
+        <div>
+          <h3 className="mb-3 text-xl font-semibold text-foreground">Dummy Materials Overview</h3>
           <p className="text-muted-foreground">
             The following documents are 'dummy materials' that I've re-created from memory (with some assistance from Claude).
           </p>
@@ -67,14 +65,14 @@ const Slide11Appendix: React.FC = () => {
         {/* Appendix Sections */}
         <div className="space-y-6">
           {Object.entries(appendixItems).map(([section, items]) => (
-            <div key={section}>
-              <p className="mb-2 font-medium text-foreground">{section}</p>
-              <div className="space-y-1">
+            <div key={section} className="rounded-2xl bg-muted/60 p-5">
+              <p className="mb-3 font-medium text-foreground">{section}</p>
+              <div className="space-y-2">
                 {items.map((item) => (
                   <Button
                     key={item.id}
                     variant="ghost"
-                    className="h-auto w-full justify-start gap-3 px-3 py-2 text-left"
+                    className="h-auto w-full justify-start gap-3 rounded-xl px-4 py-3 text-left hover:bg-background/80"
                     onClick={() => handleOpenModal(item.id)}
                   >
                     {item.isInteractive ? (

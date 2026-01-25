@@ -4,92 +4,112 @@ import Placeholder from '@/components/presentation/Placeholder';
 
 const Slide07Phase3: React.FC = () => {
   return (
-    <SlideContainer slideNumber={6} header="Phase 3: Comparative Usability Experiment">
-      <div className="space-y-8">
-        {/* Objective */}
-        <div className="space-y-4">
-          <h2 className="text-2xl font-semibold text-foreground md:text-3xl">
-            Does a stacked timeline make editing high-quality videos easier, or does it make things harder (as leadership feared)?
+    <SlideContainer slideNumber={6} header="Phase 3: Comparative Usability Study">
+      <div className="space-y-10">
+        {/* Hero Card */}
+        <div className="rounded-2xl bg-accent/50 p-6 md:p-8">
+          <p className="mb-2 text-sm font-medium text-primary">PHASE 3</p>
+          <h2 className="mb-3 text-2xl font-bold text-foreground">
+            Comparative Usability Study
           </h2>
-          <p className="text-lg text-muted-foreground">
-            Objective: Test which editor design makes it easier to create different types of videos.
+          <p className="text-muted-foreground">
+            Experimental study testing which architecture works best for basic vs. advanced videos. Proved stacked timeline editors make it easier to create high-quality videos.
           </p>
         </div>
 
+        {/* Objective */}
+        <div>
+          <h3 className="mb-3 text-xl font-semibold text-foreground">Objective</h3>
+          <p className="mb-4 text-muted-foreground">
+            Test which editing architecture makes it easier to create different types of videos.
+          </p>
+          <div className="rounded-2xl bg-accent/40 p-5">
+            <p className="mb-1 text-sm text-muted-foreground">Critical Question:</p>
+            <p className="text-foreground">
+              "Does the stacked timeline architecture make editing easier, or does it add complexity that makes things harder (as leadership feared)?"
+            </p>
+          </div>
+        </div>
+
         {/* Methodology */}
-        <div className="grid gap-x-8 gap-y-4 text-foreground sm:grid-cols-4">
-          <div>
-            <p className="text-sm text-muted-foreground">Method</p>
-            <p className="font-medium">Controlled experiment, remote, unmoderated</p>
-          </div>
-          <div>
-            <p className="text-sm text-muted-foreground">Partner</p>
-            <p className="font-medium">MeasuringU (Usability Testing Firm)</p>
-          </div>
-          <div>
-            <p className="text-sm text-muted-foreground">Sample</p>
-            <p className="font-medium">400 video creators</p>
-          </div>
-          <div>
-            <p className="text-sm text-muted-foreground">Criteria</p>
-            <p className="font-medium">US, Canada, UK, India (18-35)</p>
+        <div>
+          <h3 className="mb-4 text-xl font-semibold text-foreground">Methodology</h3>
+          <div className="rounded-2xl bg-muted/60 p-5">
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div>
+                <p className="text-sm text-muted-foreground">Method:</p>
+                <p className="font-medium text-foreground">Randomized Between-Subjects Experimental Study</p>
+              </div>
+              <div>
+                <p className="text-sm text-muted-foreground">Partner:</p>
+                <p className="font-medium text-foreground">MeasuringU (Quantitative Usability Vendor)</p>
+              </div>
+              <div>
+                <p className="text-sm text-muted-foreground">Sample:</p>
+                <p className="font-medium text-foreground">400 Non-Professional Video Creators</p>
+              </div>
+              <div>
+                <p className="text-sm text-muted-foreground">Markets:</p>
+                <p className="font-medium text-foreground">US, Canada, UK, India (18-35)</p>
+              </div>
+            </div>
           </div>
         </div>
 
         {/* Key Design Decision */}
-        <div className="space-y-2">
-          <p className="text-sm font-semibold uppercase tracking-wider text-primary">Key Design Decision</p>
+        <div>
           <p className="text-foreground">
-            Used existing market apps rather than building prototypes. This saved engineering time and allowed quick testing.
+            <span className="font-semibold">Key Design Decision:</span>{' '}
+            <span className="text-muted-foreground">
+              Used existing market apps rather than building prototypes. This saved engineering time and allowed quick testing.
+            </span>
           </p>
         </div>
 
         {/* Study Design */}
-        <div className="grid gap-8 sm:grid-cols-2">
-          <div className="space-y-2">
-            <p className="text-sm font-medium text-muted-foreground">What We Varied</p>
-            <ul className="space-y-1 text-foreground">
-              <li>• Video complexity (basic vs. advanced)</li>
-              <li>• Editor type (step-by-step vs. stacked timeline)</li>
-            </ul>
-          </div>
-          <div className="space-y-2">
-            <p className="text-sm font-medium text-muted-foreground">What We Measured</p>
-            <ul className="space-y-1 text-foreground">
-              <li>• Did they complete the task?</li>
-              <li>• How easy did they find it?</li>
-            </ul>
-          </div>
+        <div>
+          <h3 className="mb-3 text-xl font-semibold text-foreground">Study Design</h3>
+          <ul className="space-y-2 text-muted-foreground">
+            <li>
+              <span className="font-medium text-foreground">• Independent Variables:</span> Video complexity (basic vs. advanced), Editing architecture (linear vs. stacked timeline)
+            </li>
+            <li>
+              <span className="font-medium text-foreground">• Dependent Variables:</span> Task completion success, Ease of use ratings
+            </li>
+          </ul>
         </div>
 
         {/* Apps Tested */}
-        <div className="grid gap-8 sm:grid-cols-2">
-          <div className="space-y-2">
-            <p className="font-medium text-foreground">Step-by-Step Editors</p>
-            <p className="text-muted-foreground">Instagram Reels, TikTok, Facebook Reels</p>
-          </div>
-          <div className="space-y-2">
-            <p className="font-medium text-foreground">Stacked Timeline Editors</p>
-            <p className="text-muted-foreground">CapCut, InShot</p>
+        <div>
+          <h3 className="mb-4 text-xl font-semibold text-foreground">Apps Tested</h3>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="rounded-2xl bg-muted/60 p-5">
+              <p className="mb-1 text-sm text-muted-foreground">Linear Flow:</p>
+              <p className="font-medium text-foreground">Instagram Reels, TikTok, Facebook Reels</p>
+            </div>
+            <div className="rounded-2xl bg-accent/40 p-5">
+              <p className="mb-1 text-sm text-muted-foreground">Stacked Timeline:</p>
+              <p className="font-medium text-foreground">CapCut, InShot</p>
+            </div>
           </div>
         </div>
 
         {/* Task Design */}
-        <div className="space-y-4">
-          <p className="font-medium text-foreground">Task Design</p>
-          <p className="text-muted-foreground">
+        <div>
+          <h3 className="mb-3 text-xl font-semibold text-foreground">Task Design</h3>
+          <p className="mb-4 text-muted-foreground">
             I created two reference videos for participants to recreate using provided clips:
           </p>
-          <div className="grid gap-6 sm:grid-cols-2">
-            <div>
-              <p className="font-medium text-foreground">Basic Video</p>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="rounded-2xl bg-muted/60 p-5">
+              <p className="mb-2 font-medium text-foreground">Basic Video</p>
               <p className="text-muted-foreground">Single clip + music + one text element</p>
-              <p className="text-sm italic text-muted-foreground">Tests what step-by-step editors were designed for</p>
+              <p className="mt-2 text-sm italic text-muted-foreground">Tests what step-by-step editors were designed for</p>
             </div>
-            <div>
-              <p className="font-medium text-foreground">Advanced Video</p>
+            <div className="rounded-2xl bg-muted/60 p-5">
+              <p className="mb-2 font-medium text-foreground">Advanced Video</p>
               <p className="text-muted-foreground">Three clips synced to music beat + three text elements synced to video</p>
-              <p className="text-sm italic text-muted-foreground">Tests videos with the three success attributes from Phase 2</p>
+              <p className="mt-2 text-sm italic text-muted-foreground">Tests videos with the three success attributes from Phase 2</p>
             </div>
           </div>
         </div>
@@ -102,9 +122,9 @@ const Slide07Phase3: React.FC = () => {
         />
 
         {/* Procedure */}
-        <div className="space-y-2">
-          <p className="font-medium text-foreground">Procedure</p>
-          <ol className="space-y-1 text-muted-foreground">
+        <div>
+          <h3 className="mb-3 text-xl font-semibold text-foreground">Procedure</h3>
+          <ol className="space-y-2 text-muted-foreground">
             <li>1. Participants randomly assigned a reference video to recreate (basic or advanced) and app to edit with</li>
             <li>2. Task: Recreate reference video as closely as possible using the assigned app</li>
             <li>3. Screen recording captured during task</li>
@@ -112,36 +132,33 @@ const Slide07Phase3: React.FC = () => {
           </ol>
         </div>
 
-        {/* What I Did with the Data */}
-        <div className="space-y-2">
-          <p className="text-sm font-medium text-muted-foreground">What I Did with the Data</p>
-          <ul className="space-y-1 text-muted-foreground">
+        {/* Data Analysis */}
+        <div>
+          <h3 className="mb-3 text-xl font-semibold text-foreground">Data Analysis</h3>
+          <ul className="space-y-2 text-muted-foreground">
             <li>• Watched screen recordings to see where people struggled</li>
             <li>• Compared ease-of-use ratings across video types and editor types</li>
           </ul>
         </div>
 
         {/* Key Finding */}
-        <div className="border-l-4 border-primary pl-6">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-primary">Key Finding: Editor Type Must Match Video Complexity</p>
-          <p className="mb-6 text-lg text-foreground">
+        <div className="rounded-2xl bg-accent/50 p-6">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">Key Finding</p>
+          <p className="mb-4 text-lg font-medium text-foreground">
+            Editor Type Must Match Video Complexity
+          </p>
+          <p className="mb-6 text-muted-foreground">
             The results showed no single "best" editor. Instead, different editors worked better for different video types:
           </p>
           
-          <div className="grid gap-6 md:grid-cols-2">
-            <div>
-              <p className="mb-2 font-medium text-foreground">For Simple Videos (1 clip, 1 music, 1 text):</p>
-              <ul className="space-y-1 text-muted-foreground">
-                <li>• Step-by-step editors performed better and rated easier to use</li>
-                <li className="text-success">✓ Leadership was right about simple interfaces for simple tasks</li>
-              </ul>
+          <div className="grid gap-4 md:grid-cols-2">
+            <div className="rounded-xl bg-background/80 p-4">
+              <p className="mb-2 font-medium text-foreground">For Simple Videos:</p>
+              <p className="text-muted-foreground">Step-by-step editors performed better and rated easier to use. Leadership was right about simple interfaces for simple tasks.</p>
             </div>
-            <div>
-              <p className="mb-2 font-medium text-foreground">For Complex Videos (multiple clips + synchronization):</p>
-              <ul className="space-y-1 text-muted-foreground">
-                <li>• Stacked timeline editors performed better, rated easier to use, much faster completion times</li>
-                <li className="text-success">✓ Our team was right about stacked timelines for high-quality videos</li>
-              </ul>
+            <div className="rounded-xl bg-background/80 p-4">
+              <p className="mb-2 font-medium text-foreground">For Complex Videos:</p>
+              <p className="text-muted-foreground">Stacked timeline editors performed better, rated easier to use, with much faster completion times. Our team was right about stacked timelines for high-quality videos.</p>
             </div>
           </div>
         </div>
