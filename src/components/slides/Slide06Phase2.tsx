@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import SlideContainer from "@/components/presentation/SlideContainer";
 import Placeholder from "@/components/presentation/Placeholder";
+import videoAttributesChart from "@/assets/video-attributes-chart.png";
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 const Slide06Phase2: React.FC = () => {
   return (
@@ -73,11 +79,24 @@ const Slide06Phase2: React.FC = () => {
 
         {/* Chart Placeholders */}
         <div className="grid gap-4 md:grid-cols-2">
-          <Placeholder
-            type="chart"
-            description="Bar chart comparing % of high-quality vs. low-quality videos with each attribute"
-            aspectRatio="video"
-          />
+          <Dialog>
+            <DialogTrigger asChild>
+              <div className="rounded-2xl overflow-hidden bg-background cursor-pointer hover:opacity-90 transition-opacity">
+                <img 
+                  src={videoAttributesChart} 
+                  alt="Bar chart comparing % of high-quality vs. low-quality videos with each attribute"
+                  className="w-full h-auto object-contain"
+                />
+              </div>
+            </DialogTrigger>
+            <DialogContent className="max-w-4xl p-2">
+              <img 
+                src={videoAttributesChart} 
+                alt="Bar chart comparing % of high-quality vs. low-quality videos with each attribute"
+                className="w-full h-auto object-contain"
+              />
+            </DialogContent>
+          </Dialog>
           <Placeholder
             type="chart"
             description="Regression results showing which attributes predict video success"
