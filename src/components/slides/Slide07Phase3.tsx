@@ -53,8 +53,7 @@ const Slide07Phase3: React.FC = () => {
           </p>
           <ul className="space-y-2 text-muted-foreground">
             <li>
-              • <strong>Independent Variables:</strong> Video complexity (basic vs. advanced), Editor type (linear vs.
-              stacked)
+              • <strong>Independent Variables:</strong> Video complexity (basic vs. advanced), Editing apps (step-by-step flows vs. stacked timelines)
             </li>
             <li>
               • <strong>Dependent Variables:</strong> Task completion success, Ease of use ratings, Time on task
