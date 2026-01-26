@@ -36,10 +36,13 @@ const TesterExperienceModal: React.FC<TesterExperienceModalProps> = ({
   const [completionAnswer, setCompletionAnswer] = useState<string>('');
   const [easeAnswer, setEaseAnswer] = useState<string>('');
 
-  const { assignedApp, assignedVideo } = useMemo(() => {
+  const { assignedApp, assignedVideo, timeOnTask } = useMemo(() => {
     const app = apps[Math.floor(Math.random() * apps.length)];
     const video = Math.random() > 0.5 ? 'basic' : 'advanced';
-    return { assignedApp: app, assignedVideo: video };
+    const minutes = Math.floor(Math.random() * 4) + 1;
+    const seconds = Math.floor(Math.random() * 60);
+    const time = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+    return { assignedApp: app, assignedVideo: video, timeOnTask: time };
   }, [isOpen]);
 
   const handleClose = () => {
@@ -87,7 +90,7 @@ const TesterExperienceModal: React.FC<TesterExperienceModalProps> = ({
                   />
                 </div>
                 <p className="mt-4 text-sm text-muted-foreground italic">
-                  In the real study, participants would open {assignedApp.name} and recreate this video. 
+                  In the real study, participants would open {assignedApp.name} and tap "Start task" when they were ready to edit. 
                   For this simulation, imagine you've completed the task.
                 </p>
               </div>
@@ -183,12 +186,13 @@ const TesterExperienceModal: React.FC<TesterExperienceModalProps> = ({
                 </p>
               </div>
               <div className="rounded-2xl bg-muted/60 p-4 text-left">
-                <p className="mb-2 text-sm font-medium text-foreground">Your responses:</p>
+                <p className="mb-2 text-sm font-medium text-foreground">Example response</p>
                 <ul className="space-y-1 text-sm text-muted-foreground">
                   <li>• App: {assignedApp.name} ({assignedApp.type === 'step-by-step' ? 'Step-by-step' : 'Stacked timeline'})</li>
                   <li>• Video type: {assignedVideo === 'basic' ? 'Basic' : 'Advanced'}</li>
                   <li>• Completed: {completionAnswer === 'yes' ? 'Yes' : completionAnswer === 'partial' ? 'Partially' : 'No'}</li>
                   <li>• Ease rating: {easeAnswer}/5</li>
+                  <li>• Time on task: {timeOnTask}</li>
                 </ul>
               </div>
               <div className="flex justify-center gap-3">
