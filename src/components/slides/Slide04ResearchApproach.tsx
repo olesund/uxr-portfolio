@@ -24,7 +24,7 @@ const phases = [
 
 const Slide04ResearchApproach: React.FC = () => {
   return (
-    <SlideContainer slideNumber={3} header="Research Approach">
+    <SlideContainer slideNumber={3} header="Research Overview">
       <div className="space-y-10">
         <div>
           <h3 className="mb-3 text-xl font-semibold text-foreground">A Three-Phase Research Strategy</h3>
