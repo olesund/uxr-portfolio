@@ -6,17 +6,23 @@ const Slide05bPivot: React.FC = () => {
     <SlideContainer 
       slideNumber={5} 
       header="The Pivot"
-      className="!bg-primary/10"
+      className="!bg-foreground"
     >
       <div className="space-y-10">
+        {/* Header override for dark background */}
+        <style>{`
+          #slide-5 .text-primary { color: hsl(var(--primary)); }
+          #slide-5 > div > p { color: hsl(var(--background)); }
+        `}</style>
+        
         {/* Outcome */}
-        <div className="rounded-2xl bg-background p-6">
+        <div className="rounded-2xl bg-background/10 p-6 backdrop-blur-sm">
           <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">Outcome: Initial Rejection</p>
-          <p className="mb-4 text-foreground">
+          <p className="mb-4 text-background">
             Leadership pushed back hard. They wanted Instagram to 'feel simple' and worried that a stacked timeline was
             'too complex.'
           </p>
-          <ul className="space-y-1 text-muted-foreground">
+          <ul className="space-y-1 text-background/70">
             <li>
               • The Reels editor was based on Instagram Stories and TikTok. Why change a flow what works so well on
               TikTok?
@@ -30,24 +36,24 @@ const Slide05bPivot: React.FC = () => {
         </div>
 
         {/* New Core Question */}
-        <div className="rounded-2xl bg-accent/50 p-6">
+        <div className="rounded-2xl bg-primary/20 p-6 backdrop-blur-sm">
           <p className="mb-6 text-sm font-semibold uppercase tracking-wider text-primary">The New Core Question</p>
           <div className="space-y-4">
-            <p className="text-lg text-muted-foreground line-through decoration-2">
+            <p className="text-lg text-background/50 line-through decoration-2">
               How do we make it easier for users to make short-form videos on Instagram?
             </p>
-            <p className="text-xl font-medium text-foreground">
+            <p className="text-xl font-medium text-background">
               How do we make it easier for users to make <strong className="text-primary">good</strong> short-form videos on Instagram?
             </p>
           </div>
-          <div className="mt-6 pt-6 border-t border-border/40">
-            <p className="mb-4 text-foreground">
+          <div className="mt-6 pt-6 border-t border-background/20">
+            <p className="mb-4 text-background">
               We didn't give up. Me and my team — who made short-form videos ourselves all the time — had developed a
               strong perspective that our current editing flow was simply too difficult to use to make high-quality videos
               with your phone. But we understood that to convince our senior leadership team we needed to rigorously
               answer two additional questions:
             </p>
-            <ul className="space-y-1 text-foreground">
+            <ul className="space-y-1 text-background">
               <li>
                 <strong>A.</strong> What makes a video high-quality? (Because we knew Instagram users cared about their
                 videos being good.)
