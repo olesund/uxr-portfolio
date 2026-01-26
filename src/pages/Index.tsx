@@ -13,7 +13,7 @@ import Slide07Phase3 from '@/components/slides/Slide07Phase3';
 import Slide08Recommendation from '@/components/slides/Slide08Recommendation';
 import Slide09Impact from '@/components/slides/Slide09Impact';
 import Slide10Lessons from '@/components/slides/Slide10Lessons';
-import Slide11Appendix from '@/components/slides/Slide11Appendix';
+import Slide11FinalNote from '@/components/slides/Slide11FinalNote';
 
 const PresentationContent: React.FC = () => {
   const { isAuthenticated, setCurrentSlide } = usePresentation();
@@ -56,7 +56,7 @@ const PresentationContent: React.FC = () => {
           <Slide08Recommendation />
           <Slide09Impact />
           <Slide10Lessons />
-          <Slide11Appendix />
+          <Slide11FinalNote />
         </>
       )}
       <ProgressIndicator />
