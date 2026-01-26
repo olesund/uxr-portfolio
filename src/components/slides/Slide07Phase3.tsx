@@ -49,11 +49,14 @@ const Slide07Phase3: React.FC = () => {
         <div>
           <h3 className="mb-3 text-xl font-semibold text-foreground">Study Design</h3>
           <p className="mb-4 text-muted-foreground">
-            We partnered with a research vendor to run an experiment in which 200 testers tried to recreate an example video using a randomly assigned video editing app. Afterwards they indicated if they felt like they completed the task and rated how easy the task was.
+            We partnered with a research vendor to run an experiment in which 200 testers tried to recreate an example
+            video using a randomly assigned video editing app. Afterwards they indicated if they felt like they
+            completed the task and rated how easy the task was.
           </p>
           <ul className="space-y-2 text-muted-foreground">
             <li>
-              • <strong>Independent Variables:</strong> Video complexity (basic vs. advanced), Editing apps (step-by-step flows vs. stacked timelines)
+              • <strong>Independent Variables:</strong> Video complexity (basic vs. advanced), Editing apps
+              (step-by-step flows vs. stacked timelines)
             </li>
             <li>
               • <strong>Dependent Variables:</strong> Task completion success, Ease of use ratings, Time on task
@@ -91,22 +94,14 @@ const Slide07Phase3: React.FC = () => {
           </div>
         </div>
 
-        {/* Data Collection */}
-        <div>
-          <h3 className="mb-3 text-xl font-semibold text-foreground">Data Collection</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>• Participants randomly assigned a reference video and app</li>
-            <li>• Task: Recreate reference video as closely as possible</li>
-            <li>• Screen recording captured during task</li>
-            <li>• Post-task usability ratings collected afterwards</li>
-          </ul>
-        </div>
-
         {/* Data Analysis */}
         <div>
           <h3 className="mb-3 text-xl font-semibold text-foreground">Data Analysis</h3>
+          <p className="mb-4 text-muted-foreground">
+            For each participant we measured how long it took to complete the video editing task. We also asked them to
+            rate the difficulty of the task on a 5-point likert scale.
+          </p>
           <ul className="space-y-2 text-muted-foreground">
-            <li>• Watched screen recordings to see where people struggled</li>
             <li>
               • Compared ease-of-use ratings, task completion rates, and time on task across video types and editor
               types
@@ -119,8 +114,8 @@ const Slide07Phase3: React.FC = () => {
         <div className="rounded-2xl bg-accent/50 p-6">
           <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">Key Finding</p>
           <p className="mb-4 text-lg text-foreground">
-            If we want more high-quality content, we need a more powerful editor. Different editors worked better for
-            different video types.
+            There wasn't a single design that was always better: Different editors worked better for different video
+            types.
           </p>
           <ul className="space-y-2 text-foreground">
             <li>
