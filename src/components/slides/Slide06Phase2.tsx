@@ -60,17 +60,26 @@ const Slide06Phase2: React.FC = () => {
             </ul>
             
             {/* View Coding Sheet Button */}
-            <a 
-              href="/documents/Video_Coding_Sheet_Example.pdf" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-block mt-4"
-            >
-              <Button variant="outline" className="gap-2">
-                <FileText className="h-4 w-4" />
-                View example coding sheet
-              </Button>
-            </a>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button variant="outline" className="mt-4 gap-2">
+                  <FileText className="h-4 w-4" />
+                  View example coding sheet
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-4xl max-h-[90vh]">
+                <DialogHeader>
+                  <DialogTitle>Sample Video Coding Sheet</DialogTitle>
+                </DialogHeader>
+                <div className="w-full h-[70vh]">
+                  <iframe
+                    src="/documents/Video_Coding_Sheet_Example.pdf"
+                    className="w-full h-full rounded-lg border border-border"
+                    title="Video Coding Sheet Example"
+                  />
+                </div>
+              </DialogContent>
+            </Dialog>
           </div>
           
           {/* Sidebar box */}
