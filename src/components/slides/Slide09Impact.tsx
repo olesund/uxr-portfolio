@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import SlideContainer from "@/components/presentation/SlideContainer";
-import Placeholder from "@/components/presentation/Placeholder";
+import ImageLightbox from "@/components/presentation/ImageLightbox";
 import reelsEditorScreenshot from "@/assets/reels-editor-screenshot.webp";
 import editsAppScreenshot from "@/assets/edits-app-screenshot.webp";
 import reelsEditorBefore from "@/assets/reels-editor-before.png";
 import reelsEditorAfter from "@/assets/reels-editor-after.png";
 
 const Slide09Impact: React.FC = () => {
+  const [lightboxImage, setLightboxImage] = useState<{ src: string; alt: string } | null>(null);
+
+  const openLightbox = (src: string, alt: string) => {
+    setLightboxImage({ src, alt });
+  };
+
+  const closeLightbox = () => {
+    setLightboxImage(null);
+  };
+
   return (
     <SlideContainer slideNumber={8} header="Impact">
       <div className="space-y-10">
@@ -34,26 +44,32 @@ const Slide09Impact: React.FC = () => {
             {/* Before/After Comparison */}
             <div className="grid gap-4 md:grid-cols-2">
               <div className="space-y-2">
-                <div className="rounded-2xl overflow-hidden bg-background">
+                <button
+                  onClick={() => openLightbox(reelsEditorBefore, "Instagram Reels editor before - linear timeline")}
+                  className="rounded-2xl overflow-hidden bg-background cursor-pointer hover:opacity-90 transition-opacity w-full"
+                >
                   <img
                     src={reelsEditorBefore}
                     alt="Instagram Reels editor before - linear timeline"
-                    className="w-full h-auto"
+                    className="w-full h-auto max-h-[180px] object-contain"
                   />
-                </div>
+                </button>
                 <p className="text-sm font-medium text-foreground">Before</p>
                 <p className="text-sm text-muted-foreground">
                   Only video clips can be edited on this screen. Text and audio is edited elsewhere.
                 </p>
               </div>
               <div className="space-y-2">
-                <div className="rounded-2xl overflow-hidden bg-background">
+                <button
+                  onClick={() => openLightbox(reelsEditorAfter, "Instagram Reels editor after - stacked timeline")}
+                  className="rounded-2xl overflow-hidden bg-background cursor-pointer hover:opacity-90 transition-opacity w-full"
+                >
                   <img
                     src={reelsEditorAfter}
                     alt="Instagram Reels editor after - stacked timeline"
-                    className="w-full h-auto"
+                    className="w-full h-auto max-h-[180px] object-contain"
                   />
-                </div>
+                </button>
                 <p className="text-sm font-medium text-foreground">After</p>
                 <p className="text-sm text-muted-foreground">
                   Clips, audio, text and other effects are all edited from one surface.
@@ -136,6 +152,13 @@ const Slide09Impact: React.FC = () => {
           </div>
         </div>
       </div>
+
+      <ImageLightbox
+        isOpen={!!lightboxImage}
+        onClose={closeLightbox}
+        src={lightboxImage?.src || ''}
+        alt={lightboxImage?.alt || ''}
+      />
     </SlideContainer>
   );
 };
