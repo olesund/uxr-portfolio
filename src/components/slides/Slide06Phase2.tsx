@@ -45,26 +45,30 @@ const Slide06Phase2: React.FC = () => {
           </div>
         </div>
 
-        {/* Data Collection */}
-        <div>
-          <h3 className="mb-3 text-xl font-semibold text-foreground">Data Collection</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>• Recruited internal colleagues to watch 50-100 videos each</li>
-            <li>• Coders marked which attributes were present (yes/no)</li>
-            <li>• Coders didn't know if videos were high or low-quality (blinded)</li>
-          </ul>
-        </div>
-
-        {/* Attributes Coded */}
-        <div>
-          <h3 className="mb-3 text-xl font-semibold text-foreground">Examples of Attributes Coded</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>• Presence of humor, humans, animals</li>
-            <li>• Genre (sports, fashion, travel, dance)</li>
-            <li>• Music usage, number of clips, text on screen</li>
-            <li>• Cuts-to-music synchronization</li>
-            <li>• Etc.</li>
-          </ul>
+        {/* Data Collection with Sidebar */}
+        <div className="flex flex-col lg:flex-row gap-6">
+          <div className="flex-1">
+            <h3 className="mb-3 text-xl font-semibold text-foreground">Data Collection</h3>
+            <ul className="space-y-2 text-muted-foreground">
+              <li>• Recruited internal colleagues to watch 50-100 videos each</li>
+              <li>• Coders marked which attributes were present (yes/no)</li>
+              <li>• Coders didn't know if videos were high or low-quality (blinded)</li>
+            </ul>
+          </div>
+          
+          {/* Sidebar box */}
+          <div className="lg:w-72 shrink-0">
+            <div className="rounded-2xl bg-muted/60 p-5 border-l-4 border-primary">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">Examples of Attributes Coded</p>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>• Presence of humor, humans, animals</li>
+                <li>• Genre (sports, fashion, travel, dance)</li>
+                <li>• Music usage, number of clips, text on screen</li>
+                <li>• Cuts-to-music synchronization</li>
+                <li>• Etc.</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
         {/* Data Analysis */}
