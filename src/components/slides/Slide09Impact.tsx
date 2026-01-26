@@ -51,7 +51,7 @@ const Slide09Impact: React.FC = () => {
                   <img
                     src={reelsEditorBefore}
                     alt="Instagram Reels editor before - linear timeline"
-                    className="w-full h-auto max-h-[180px] object-contain"
+                    className="w-full h-auto max-h-[280px] object-contain"
                   />
                 </button>
                 <p className="text-sm font-medium text-foreground">Before</p>
@@ -67,7 +67,7 @@ const Slide09Impact: React.FC = () => {
                   <img
                     src={reelsEditorAfter}
                     alt="Instagram Reels editor after - stacked timeline"
-                    className="w-full h-auto max-h-[180px] object-contain"
+                    className="w-full h-auto max-h-[280px] object-contain"
                   />
                 </button>
                 <p className="text-sm font-medium text-foreground">After</p>
