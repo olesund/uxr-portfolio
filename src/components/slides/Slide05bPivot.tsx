@@ -6,7 +6,7 @@ const Slide05bPivot: React.FC = () => {
     <SlideContainer 
       slideNumber={5} 
       header="The Pivot"
-      className="!bg-[hsl(220,10%,20%)]"
+      className="!bg-[hsl(220,10%,20%)] !border-[hsl(220,10%,30%)]"
     >
       <div className="space-y-10">
         {/* Header override for dark background */}

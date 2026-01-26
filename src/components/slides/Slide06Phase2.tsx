@@ -8,7 +8,7 @@ import { FileText } from "lucide-react";
 
 const Slide06Phase2: React.FC = () => {
   return (
-    <SlideContainer slideNumber={5} header="Phase 2: Large-Scale Video Content Analysis">
+    <SlideContainer slideNumber={6} header="Phase 2: Large-Scale Video Content Analysis">
       <div className="space-y-10">
         {/* Objective */}
         <div>
