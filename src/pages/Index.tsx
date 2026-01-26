@@ -7,6 +7,7 @@ import Slide02Introduction from '@/components/slides/Slide02Introduction';
 import Slide03Problem from '@/components/slides/Slide03Problem';
 import Slide04ResearchApproach from '@/components/slides/Slide04ResearchApproach';
 import Slide05Phase1 from '@/components/slides/Slide05Phase1';
+import Slide05bPivot from '@/components/slides/Slide05bPivot';
 import Slide06Phase2 from '@/components/slides/Slide06Phase2';
 import Slide07Phase3 from '@/components/slides/Slide07Phase3';
 import Slide08Recommendation from '@/components/slides/Slide08Recommendation';
@@ -49,6 +50,7 @@ const PresentationContent: React.FC = () => {
           <Slide03Problem />
           <Slide04ResearchApproach />
           <Slide05Phase1 />
+          <Slide05bPivot />
           <Slide06Phase2 />
           <Slide07Phase3 />
           <Slide08Recommendation />
