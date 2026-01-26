@@ -14,7 +14,7 @@ interface PresentationContextType {
 const PresentationContext = createContext<PresentationContextType | undefined>(undefined);
 
 const CORRECT_PASSWORD = 'pepparkaka';
-const TOTAL_SLIDES = 11;
+const TOTAL_SLIDES = 12;
 
 export const PresentationProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(() => {
