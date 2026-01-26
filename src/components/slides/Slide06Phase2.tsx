@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import SlideContainer from "@/components/presentation/SlideContainer";
 import videoAttributesChart from "@/assets/video-attributes-chart.png";
 import regressionChart from "@/assets/regression-chart.png";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTrigger, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import { FileText } from "lucide-react";
 
 const Slide06Phase2: React.FC = () => {
   return (
@@ -54,6 +56,28 @@ const Slide06Phase2: React.FC = () => {
               <li>• Coders marked which attributes were present (yes/no)</li>
               <li>• Coders didn't know if videos were high or low-quality (blinded)</li>
             </ul>
+            
+            {/* View Coding Sheet Button */}
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button variant="outline" className="mt-4 gap-2">
+                  <FileText className="h-4 w-4" />
+                  View example coding sheet
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-4xl max-h-[90vh]">
+                <DialogHeader>
+                  <DialogTitle>Sample Video Coding Sheet</DialogTitle>
+                </DialogHeader>
+                <div className="w-full h-[70vh]">
+                  <iframe
+                    src="/documents/Video_Coding_Sheet_Example.pdf"
+                    className="w-full h-full rounded-lg border border-border"
+                    title="Video Coding Sheet Example"
+                  />
+                </div>
+              </DialogContent>
+            </Dialog>
           </div>
           
           {/* Sidebar box */}
