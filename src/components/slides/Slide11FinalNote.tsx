@@ -4,7 +4,7 @@ import { Linkedin, Globe } from 'lucide-react';
 
 const Slide11FinalNote: React.FC = () => {
   return (
-    <SlideContainer slideNumber={10} header="Final Note">
+    <SlideContainer slideNumber={11} header="Final Note">
       <div className="space-y-10">
         <div className="max-w-2xl">
           <p className="text-lg leading-relaxed text-muted-foreground">

@@ -4,15 +4,15 @@ import SlideContainer from '@/components/presentation/SlideContainer';
 const Slide10Lessons: React.FC = () => {
   return (
     <SlideContainer 
-      slideNumber={9} 
+      slideNumber={10} 
       header="Lessons Learned"
-      className="!bg-[hsl(220,10%,20%)]"
+      className="!bg-[hsl(220,10%,20%)] !border-[hsl(220,10%,30%)]"
     >
       <div className="space-y-10">
         {/* Header override for dark background */}
         <style>{`
-          #slide-9 .text-primary { color: hsl(25, 70%, 55%); }
-          #slide-9 > div > p { color: hsl(40, 30%, 95%); }
+          #slide-10 .text-primary { color: hsl(25, 70%, 55%); }
+          #slide-10 > div > p { color: hsl(40, 30%, 95%); }
         `}</style>
 
         <div>

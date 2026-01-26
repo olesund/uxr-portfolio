@@ -11,7 +11,7 @@ const Slide07Phase3: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <SlideContainer slideNumber={6} header="Phase 3: Comparative Usability Study">
+    <SlideContainer slideNumber={7} header="Phase 3: Comparative Usability Study">
       <div className="space-y-10">
         {/* Objective */}
         <div>
