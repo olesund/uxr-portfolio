@@ -1,15 +1,26 @@
 import React from 'react';
 import SlideContainer from '@/components/presentation/SlideContainer';
-
 const Slide03Problem: React.FC = () => {
-  return (
-    <SlideContainer slideNumber={2} header="Problem + Key Constraints">
+  return <SlideContainer slideNumber={2} header="Problem + Key Constraints">
       <div className="space-y-10">
         {/* Business Context */}
         <div>
           <h3 className="mb-3 text-xl font-semibold text-foreground">Business Context</h3>
           <p className="text-muted-foreground leading-relaxed">
-            Instagram Reels had recently launched as the company's top priority. But we faced a critical problem: people were watching Reels. A lot of them! But we didn't have enough creators making them. Demand outpaced supply. If viewers couldn't find enough entertaining videos, they'd stop using the feature.
+            Instagram Reels had recently launched as the company's top priority. But we faced a critical problem: a lot of users were watching our short-form videos, but we didn't have enough creators making them! Demand outpaced supply! If viewers couldn't find enough entertaining videos, we worried that they’d stop using Reels altogether and visit TikTok instead.
+
+
+
+
+
+
+
+
+
+
+
+
+ 
           </p>
         </div>
 
@@ -55,8 +66,6 @@ const Slide03Problem: React.FC = () => {
           </div>
         </div>
       </div>
-    </SlideContainer>
-  );
+    </SlideContainer>;
 };
-
 export default Slide03Problem;
