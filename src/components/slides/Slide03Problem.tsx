@@ -41,9 +41,7 @@ const Slide03Problem: React.FC = () => {
         </div>
 
         {/* Scope note */}
-        <p className="text-muted-foreground">
-          Another team focused on motivating people to make videos. My team focused on making the editing process easier.
-        </p>
+        <p className="text-muted-foreground">Another team focused on motivating people to make videos. My team focused on making the process easier.</p>
 
         {/* Team Info */}
         <div className="rounded-2xl bg-muted/60 p-5">
