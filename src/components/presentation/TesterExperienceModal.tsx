@@ -60,9 +60,9 @@ const TesterExperienceModal: React.FC<TesterExperienceModalProps> = ({
 
   return (
     <Dialog open={isOpen} onOpenChange={handleClose}>
-      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+      <DialogContent className="w-[calc(100vw-2rem)] max-w-2xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="text-xl">Tester Experience Simulation</DialogTitle>
+          <DialogTitle className="text-lg sm:text-xl pr-8">Tester Experience Simulation</DialogTitle>
           <DialogDescription>
             Experience what participants went through in our usability study
           </DialogDescription>

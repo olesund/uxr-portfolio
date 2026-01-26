@@ -77,13 +77,14 @@ const Slide07Phase3: React.FC = () => {
         </div>
 
         {/* Try the Tester Experience CTA */}
-        <div className="rounded-2xl border border-primary/20 bg-primary/5 p-6 text-center">
+        <div className="rounded-2xl border border-primary/20 bg-primary/5 p-4 sm:p-6 text-center">
           <Button 
             onClick={() => setIsModalOpen(true)} 
             size="lg" 
-            className="gap-2"
+            className="gap-2 w-full sm:w-auto text-sm sm:text-base whitespace-normal h-auto py-3"
           >
-            <Play className="h-5 w-5" /> See what this experiment looked like for the participant
+            <Play className="h-5 w-5 shrink-0" />
+            <span>See what this experiment looked like for the participant</span>
           </Button>
           <p className="mt-3 text-sm text-muted-foreground">
             You will be randomly assigned an app to download and a video to re-create (the "basic" or "advanced" example).
