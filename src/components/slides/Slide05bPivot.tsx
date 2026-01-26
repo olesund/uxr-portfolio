@@ -6,23 +6,23 @@ const Slide05bPivot: React.FC = () => {
     <SlideContainer 
       slideNumber={5} 
       header="The Pivot"
-      className="!bg-foreground"
+      className="!bg-[hsl(220,10%,20%)]"
     >
       <div className="space-y-10">
         {/* Header override for dark background */}
         <style>{`
-          #slide-5 .text-primary { color: hsl(var(--primary)); }
-          #slide-5 > div > p { color: hsl(var(--background)); }
+          #slide-5 .text-primary { color: hsl(25, 70%, 55%); }
+          #slide-5 > div > p { color: hsl(40, 30%, 95%); }
         `}</style>
         
         {/* Outcome */}
-        <div className="rounded-2xl bg-background/10 p-6 backdrop-blur-sm">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">Outcome: Initial Rejection</p>
-          <p className="mb-4 text-background">
+        <div className="rounded-2xl bg-[hsl(220,10%,28%)]/80 p-6 backdrop-blur-sm">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-wider" style={{ color: 'hsl(25, 70%, 55%)' }}>Outcome: Initial Rejection</p>
+          <p className="mb-4 text-[hsl(40,30%,95%)]">
             Leadership pushed back hard. They wanted Instagram to 'feel simple' and worried that a stacked timeline was
             'too complex.'
           </p>
-          <ul className="space-y-1 text-background/70">
+          <ul className="space-y-1 text-[hsl(40,30%,85%)]/80">
             <li>
               • The Reels editor was based on Instagram Stories and TikTok. Why change a flow what works so well on
               TikTok?
@@ -36,24 +36,24 @@ const Slide05bPivot: React.FC = () => {
         </div>
 
         {/* New Core Question */}
-        <div className="rounded-2xl bg-primary/20 p-6 backdrop-blur-sm">
-          <p className="mb-6 text-sm font-semibold uppercase tracking-wider text-primary">The New Core Question</p>
+        <div className="rounded-2xl bg-[hsl(25,50%,35%)]/30 p-6 backdrop-blur-sm">
+          <p className="mb-6 text-sm font-semibold uppercase tracking-wider" style={{ color: 'hsl(25, 70%, 55%)' }}>The New Core Question</p>
           <div className="space-y-4">
-            <p className="text-lg text-background/50 line-through decoration-2">
+            <p className="text-lg text-[hsl(40,30%,70%)] line-through decoration-2">
               How do we make it easier for users to make short-form videos on Instagram?
             </p>
-            <p className="text-xl font-medium text-background">
-              How do we make it easier for users to make <strong className="text-primary">good</strong> short-form videos on Instagram?
+            <p className="text-xl font-medium text-[hsl(40,30%,95%)]">
+              How do we make it easier for users to make <strong style={{ color: 'hsl(25, 70%, 55%)' }}>good</strong> short-form videos on Instagram?
             </p>
           </div>
-          <div className="mt-6 pt-6 border-t border-background/20">
-            <p className="mb-4 text-background">
+          <div className="mt-6 pt-6 border-t border-[hsl(40,30%,95%)]/20">
+            <p className="mb-4 text-[hsl(40,30%,95%)]">
               We didn't give up. Me and my team — who made short-form videos ourselves all the time — had developed a
               strong perspective that our current editing flow was simply too difficult to use to make high-quality videos
               with your phone. But we understood that to convince our senior leadership team we needed to rigorously
               answer two additional questions:
             </p>
-            <ul className="space-y-1 text-background">
+            <ul className="space-y-1 text-[hsl(40,30%,95%)]">
               <li>
                 <strong>A.</strong> What makes a video high-quality? (Because we knew Instagram users cared about their
                 videos being good.)
