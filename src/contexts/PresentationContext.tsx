@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useCallback, useEffect } from 'react';
+import { createContext, useContext, useState, useCallback, useEffect, type ReactNode } from 'react';
 
 interface PresentationContextType {
   isAuthenticated: boolean;
@@ -16,7 +16,7 @@ const PresentationContext = createContext<PresentationContextType | undefined>(u
 const CORRECT_PASSWORD = 'pepparkaka';
 const TOTAL_SLIDES = 12;
 
-export const PresentationProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const PresentationProvider = ({ children }: { children: ReactNode }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(() => {
     return sessionStorage.getItem('authenticated') === 'true';
   });
