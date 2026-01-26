@@ -31,7 +31,7 @@ const Slide07Phase3: React.FC = () => {
               </div>
               <div>
                 <p className="text-sm text-muted-foreground">Sample:</p>
-                <p className="font-medium text-foreground">400 Non-Professional Creators</p>
+                <p className="font-medium text-foreground">200 Non-Professional Creators</p>
               </div>
               <div>
                 <p className="text-sm text-muted-foreground">Criteria:</p>
@@ -48,6 +48,9 @@ const Slide07Phase3: React.FC = () => {
         {/* Study Design */}
         <div>
           <h3 className="mb-3 text-xl font-semibold text-foreground">Study Design</h3>
+          <p className="mb-4 text-muted-foreground">
+            We partnered with a research vendor to run an experiment in which 200 testers tried to recreate an example video using a randomly assigned video editing app. Afterwards they indicated if they felt like they completed the task and rated how easy the task was.
+          </p>
           <ul className="space-y-2 text-muted-foreground">
             <li>
               • <strong>Independent Variables:</strong> Video complexity (basic vs. advanced), Editor type (linear vs.
