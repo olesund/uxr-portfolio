@@ -59,7 +59,11 @@ const Slide07Phase3: React.FC = () => {
               • <strong>Dependent Variables:</strong> Task completion success, Ease of use ratings, Time on task
             </li>
             <li>
-              • <strong>Apps Tested:</strong> Instagram Reels, TikTok (linear) vs. CapCut, InShot (stacked)
+              • <strong>Apps Tested:</strong>
+              <ul className="ml-6 mt-1 space-y-1">
+                <li>— Step-by-step flow: Instagram Reels, TikTok</li>
+                <li>— Stacked timeline editors: CapCut, InShot</li>
+              </ul>
             </li>
           </ul>
         </div>
