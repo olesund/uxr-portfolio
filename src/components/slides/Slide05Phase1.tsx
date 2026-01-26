@@ -44,20 +44,20 @@ const Slide05Phase1: React.FC = () => {
         <div>
           <h3 className="mb-3 text-xl font-semibold text-foreground">Data Collection</h3>
           <ul className="space-y-2 text-muted-foreground">
-            <li>• Text posts and discussions in private Facebook group</li>
-            <li>• Video recordings of editing sessions</li>
-            <li>• One-on-one interviews</li>
-          </ul>
-        </div>
-
-        {/* Research Activities */}
-        <div>
-          <h3 className="mb-3 text-xl font-semibold text-foreground">Research Activities</h3>
-          <ul className="space-y-2 text-muted-foreground">
+            <p className="text-muted-foreground">
+              {" "}
+              Over the course of six weeks 20 Reels creators were part of a private Facebook group. Three days a week I
+              would ask them to complete a different activity. Examples included:
+            </p>
             <li>• Testing prototypes of new features and giving feedback the same day</li>
             <li>• Rating entertainment value of example videos created by our new features</li>
             <li>• Sharing creative process in 1-on-1 interviews with me</li>
             <li>• Discussing with one another and sharing tips and tricks for video creation</li>
+            <p>
+              Because the study ran for six weeks I had the opportunity to observe many real-life moments of short-form
+              video creations; more revealing than the sometimes artificial feedback received during one-off research
+              sessions.
+            </p>
           </ul>
         </div>
 
@@ -65,7 +65,9 @@ const Slide05Phase1: React.FC = () => {
         <div>
           <h3 className="mb-3 text-xl font-semibold text-foreground">Data Analysis</h3>
           <p className="text-muted-foreground">
-            Watched videos creators shared, read their discussions, and analyzed interview transcripts.
+            Throughout the six weeks I was analyzing the data (Facebook posts, videos that the creators made and posted,
+            notes from interviews) in real time and informed several smaller feature launches. At the end of the study
+            we revieved all data again to look for patterns and this is where our greatest insight emerged.
           </p>
         </div>
 
@@ -120,9 +122,15 @@ const Slide05Phase1: React.FC = () => {
             'too complex.'
           </p>
           <ul className="space-y-1 text-muted-foreground">
-            <li>• The Reels editor was based on Instagram Stories and TikTok. Why change what works?</li>
+            <li>
+              • The Reels editor was based on Instagram Stories and TikTok. Why change a flow what works so well on
+              TikTok?
+            </li>
             <li>• Quality is subjective. How do we know advanced videos are better for viewers?</li>
-            <li>• A complete redesign would require massive resources. How can we be sure?</li>
+            <li>
+              • A complete redesign would require massive resources. How can we be sure a different layout is actually
+              easier to use?
+            </li>
           </ul>
         </div>
 
@@ -130,12 +138,15 @@ const Slide05Phase1: React.FC = () => {
         <div className="rounded-2xl bg-accent/50 p-6">
           <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">The Pivot</p>
           <p className="mb-4 text-foreground">
-            We didn't give up. We believed a redesign was key to increasing video production. To make our case, we
-            launched two more studies to answer:
+            We didn't give up. Me and my team — who made short-form videos ourselves all the time — had developed a
+            strong perspective that our current editing flow was simply too difficult to use to make high-quality videos
+            with your phone. But we understood that to convince our senior leadership team we needed to rigorously
+            answer two additional questions:
           </p>
           <ul className="space-y-1 text-foreground">
             <li>
-              <strong>A.</strong> What makes a video high-quality?
+              <strong>A.</strong> What makes a video high-quality? (Because we knew Instagram users cared about their
+              videos being good.)
             </li>
             <li>
               <strong>B.</strong> Which video editor design makes it easier to create high-quality videos?
