@@ -52,9 +52,11 @@ const Slide06Phase2: React.FC = () => {
           <div className="flex-1">
             <h3 className="mb-3 text-xl font-semibold text-foreground">Data Collection</h3>
             <ul className="space-y-2 text-muted-foreground">
-              <li>• Recruited internal colleagues to watch 50-100 videos each</li>
-              <li>• Coders marked which attributes were present (yes/no)</li>
-              <li>• Coders didn't know if videos were high or low-quality (blinded)</li>
+              <li>• Recruited internal colleagues to watch 50-100 videos each, randomly assigned from both the low and high-quality pools</li>
+              <li>• Coders marked which attributes were present in each video (yes=1/no=0)</li>
+              <li>• Coders didn't know if a video was high or low-quality (blinded) to keep their responses unbiased</li>
+              <li>• Coders completed a training session with example videos and a coding manual defining each attribute</li>
+              <li>• 10% of videos were coded by multiple coders to assess inter-rater reliability (κ &gt; 0.80)</li>
             </ul>
             
             {/* View Coding Sheet Button */}
