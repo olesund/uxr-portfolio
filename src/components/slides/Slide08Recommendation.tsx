@@ -6,6 +6,21 @@ const Slide08Recommendation: React.FC = () => {
   return (
     <SlideContainer slideNumber={8} header="Final Recommendation">
       <div className="space-y-10">
+        {/* Key Message */}
+        <div className="rounded-2xl bg-accent/50 p-6">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">Key Message to Leadership</p>
+          <blockquote className="mb-4 text-2xl font-semibold text-foreground">
+            'Simple' doesn't always mean 'easy.'
+          </blockquote>
+          <p className="mb-4 text-lg text-foreground">
+            The right editor depends on what you're trying to make.
+          </p>
+          <p className="text-muted-foreground">
+            Leadership assumed 'simple = easy,' but our data showed simplicity becomes a barrier for complex tasks. For videos people actually want to watch (videos with the three success attributes), the 'simple' step-by-step editor was harder to use than the 'complex' stacked timeline.
+          </p>
+        </div>
+
+        {/* Three Pieces of Evidence */}
         <div>
           <h3 className="mb-3 text-xl font-semibold text-foreground">Three Pieces of Evidence</h3>
           <p className="text-muted-foreground">
@@ -13,7 +28,6 @@ const Slide08Recommendation: React.FC = () => {
           </p>
         </div>
 
-        {/* Evidence List */}
         <div className="space-y-4">
           <div className="rounded-2xl bg-muted/60 p-5">
             <p className="font-semibold text-foreground">1. User Feedback (Phase 1)</p>
@@ -27,20 +41,6 @@ const Slide08Recommendation: React.FC = () => {
             <p className="font-semibold text-foreground">3. Usability Testing (Phase 3)</p>
             <p className="mt-1 text-muted-foreground">High-quality videos require precise timing across layers—nearly impossible with a step-by-step flow</p>
           </div>
-        </div>
-
-        {/* Key Message */}
-        <div className="rounded-2xl bg-accent/50 p-6">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">Key Message to Leadership</p>
-          <blockquote className="mb-4 text-2xl font-semibold text-foreground">
-            'Simple' doesn't always mean 'easy.'
-          </blockquote>
-          <p className="mb-4 text-lg text-foreground">
-            The right editor depends on what you're trying to make.
-          </p>
-          <p className="text-muted-foreground">
-            Leadership assumed 'simple = easy,' but our data showed simplicity becomes a barrier for complex tasks. For videos people actually want to watch (videos with the three success attributes), the 'simple' step-by-step editor was harder to use than the 'complex' stacked timeline.
-          </p>
         </div>
 
         {/* Flywheel Concept */}
