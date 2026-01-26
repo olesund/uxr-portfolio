@@ -97,19 +97,19 @@ const Slide07Phase3: React.FC = () => {
           <h3 className="mb-4 text-xl font-semibold text-foreground">Reference videos (that users recreated)</h3>
           <div className="grid gap-4 md:grid-cols-2">
             <div className="rounded-2xl bg-muted/60 p-4">
-              <p className="mb-3 text-sm font-medium text-foreground">
+              <p className="mb-3 text-base font-medium text-foreground">
                 <strong>Basic Video:</strong> Single clip + music + one text element
               </p>
               <div className="rounded-xl overflow-hidden bg-background">
-                <video src={basicVideoExample} controls className="w-full h-auto" preload="metadata" />
+                <video src={basicVideoExample} controls className="w-full h-auto max-h-[200px] object-contain" preload="metadata" />
               </div>
             </div>
             <div className="rounded-2xl bg-muted/60 p-4">
-              <p className="mb-3 text-sm font-medium text-foreground">
+              <p className="mb-3 text-base font-medium text-foreground">
                 <strong>Advanced Video:</strong> Three clips synced to music + three text elements synced to video
               </p>
               <div className="rounded-xl overflow-hidden bg-background">
-                <video src={advancedVideoExample} controls className="w-full h-auto" preload="metadata" />
+                <video src={advancedVideoExample} controls className="w-full h-auto max-h-[200px] object-contain" preload="metadata" />
               </div>
             </div>
           </div>
