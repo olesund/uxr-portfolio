@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import SlideContainer from "@/components/presentation/SlideContainer";
+import { Button } from "@/components/ui/button";
+import { Play } from "lucide-react";
+import TesterExperienceModal from "@/components/presentation/TesterExperienceModal";
 import easeOfUseChart from "@/assets/ease-of-use-chart.png";
 import basicVideoExample from "@/assets/basic-video-example.mov";
 import advancedVideoExample from "@/assets/advanced-video-example.mov";
 
 const Slide07Phase3: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <SlideContainer slideNumber={6} header="Phase 3: Comparative Usability Study">
       <div className="space-y-10">
@@ -70,6 +75,22 @@ const Slide07Phase3: React.FC = () => {
             </li>
           </ul>
         </div>
+
+        {/* Try the Tester Experience CTA */}
+        <div className="rounded-2xl border border-primary/20 bg-primary/5 p-6 text-center">
+          <Button 
+            onClick={() => setIsModalOpen(true)} 
+            size="lg" 
+            className="gap-2"
+          >
+            <Play className="h-5 w-5" /> See what this experiment looked like for the participant
+          </Button>
+          <p className="mt-3 text-sm text-muted-foreground">
+            You will be randomly assigned an app to download and a video to re-create (the "basic" or "advanced" example).
+          </p>
+        </div>
+
+        <TesterExperienceModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
         {/* Reference Videos (that users recreated) */}
         <div>
