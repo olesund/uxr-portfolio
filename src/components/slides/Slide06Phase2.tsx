@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import SlideContainer from "@/components/presentation/SlideContainer";
 import videoAttributesChart from "@/assets/video-attributes-chart.png";
-import regressionChart from "@/assets/regression-chart.png";
+import regressionChart from "@/assets/instagram-reels-regression-example.png";
 import { Dialog, DialogContent, DialogTrigger, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { FileText } from "lucide-react";
