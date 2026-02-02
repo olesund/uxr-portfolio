@@ -15,7 +15,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename="/uxr-portfolio">
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/work/instagram-reels" element={<InstagramReels />} />
