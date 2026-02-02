@@ -4,7 +4,7 @@ import flywheelDiagram from '@/assets/flywheel-diagram.png';
 
 const Slide08Recommendation: React.FC = () => {
   return (
-    <SlideContainer slideNumber={8} header="Final Recommendation">
+    <SlideContainer slideNumber={7} header="Final Recommendation">
       <div className="space-y-10">
         {/* Key Message */}
         <div className="rounded-2xl bg-accent/50 p-6">

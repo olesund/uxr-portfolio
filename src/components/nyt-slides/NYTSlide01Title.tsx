@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ArrowDown, ArrowLeft } from 'lucide-react';
 
-const Slide01Title: React.FC = () => {
+const NYTSlide01Title: React.FC = () => {
   const scrollToContent = () => {
     document.getElementById('slide-1')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -23,10 +23,10 @@ const Slide01Title: React.FC = () => {
       </Link>
       <div className="max-w-3xl text-center">
         <h1 className="mb-6 text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-6xl">
-          Instagram Reels Video Editor Research
+          NYT Watch Tab: Video News Consumption Research
         </h1>
         <p className="mb-12 text-lg text-muted-foreground md:text-xl">
-          Three phases of mixed-methods research that led to a major redesign of Instagram's video editor
+          A research program that explained neutral A/B test results and informed a strategic pivot
         </p>
 
         <Button
@@ -49,4 +49,4 @@ const Slide01Title: React.FC = () => {
   );
 };
 
-export default Slide01Title;
+export default NYTSlide01Title;

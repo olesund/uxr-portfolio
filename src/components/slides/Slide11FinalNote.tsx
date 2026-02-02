@@ -8,7 +8,7 @@ const Slide11FinalNote: React.FC = () => {
       <div className="space-y-10">
         <div className="max-w-2xl">
           <p className="text-lg leading-relaxed text-muted-foreground">
-            It was a joy – and sometimes a pain – to make this case study using Lovable. Can't wait to share my thoughts on areas that could be immediately improved and to hopefully join the team to continuously improve the product!
+            Thank you for taking the time to read through this case study. I hope it gives you a sense of how I approach research challenges.
           </p>
           
           <p className="mt-6 text-lg text-muted-foreground">
@@ -29,7 +29,7 @@ const Slide11FinalNote: React.FC = () => {
         {/* Links */}
         <div className="flex flex-wrap gap-4 pt-4">
           <a
-            href="https://linkedin.com/in/erik-olesund"
+            href="https://www.linkedin.com/in/erik-olesund"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-muted/60 px-5 py-3 text-sm font-medium text-foreground transition-colors hover:bg-muted"

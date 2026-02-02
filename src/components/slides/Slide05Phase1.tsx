@@ -4,7 +4,7 @@ import editorComparison from "@/assets/editor-comparison.png";
 
 const Slide05Phase1: React.FC = () => {
   return (
-    <SlideContainer slideNumber={4} header="Phase 1: Online Community of Reels Creators">
+    <SlideContainer slideNumber={3} header="Phase 1: Online Community of Reels Creators">
       <div className="space-y-10">
         {/* Objective */}
         <div>

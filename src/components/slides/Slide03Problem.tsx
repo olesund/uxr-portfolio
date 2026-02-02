@@ -1,7 +1,7 @@
 import React from 'react';
 import SlideContainer from '@/components/presentation/SlideContainer';
 const Slide03Problem: React.FC = () => {
-  return <SlideContainer slideNumber={2} header="Problem + Key Constraints">
+  return <SlideContainer slideNumber={1} header="Problem + Key Constraints">
       <div className="space-y-10">
         {/* Business Context */}
         <div>
@@ -48,7 +48,7 @@ const Slide03Problem: React.FC = () => {
           <div className="grid gap-6 sm:grid-cols-3">
             <div>
               <p className="text-sm text-muted-foreground">My Role</p>
-              <p className="font-medium text-foreground">Lead UX Researcher</p>
+              <p className="font-medium text-foreground">UX Researcher</p>
               <p className="mt-1 text-sm text-muted-foreground">Designed, ran, and presented all research</p>
             </div>
             <div>

@@ -18,7 +18,7 @@ const Slide09Impact: React.FC = () => {
   };
 
   return (
-    <SlideContainer slideNumber={9} header="Impact">
+    <SlideContainer slideNumber={8} header="Impact">
       <div className="space-y-10">
         {/* Leadership Decision */}
         <div className="rounded-2xl bg-accent/50 p-6">

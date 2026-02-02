@@ -9,10 +9,10 @@ const Slide02Introduction: React.FC = () => {
         {/* Text content - 60% on desktop */}
         <div className="space-y-6 md:col-span-3 md:order-1">
           <p className="text-muted-foreground leading-relaxed">
-            I'm Erik – a UX researcher with 10+ years driving product decisions through fast-moving research. I combine strong data analysis skills with deep expertise in understanding what users need. I'm an enthusiastic early adopter of AI and thrilled about the possibility of joining Lovable.
+            I'm Erik – a UX researcher with 10+ years driving product decisions through fast-moving research. I combine strong data analysis skills with deep expertise in understanding what users need.
           </p>
           <p className="text-muted-foreground leading-relaxed">
-            I'm currently at The New York Times, but today I'm sharing a case study from my time at Instagram that's particularly relevant to this role.
+            I'm currently at The New York Times, but today I'm sharing a case study from my time at Instagram.
           </p>
           <p className="text-sm italic text-muted-foreground">
             Due to confidentiality, I can't share real documents or data—instead I'll provide reconstructed examples.
