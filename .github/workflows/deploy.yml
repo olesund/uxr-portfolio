@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - claude/deploy-github-pages-WVLQr
   workflow_dispatch:
 
 permissions:
