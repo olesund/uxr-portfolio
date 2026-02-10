@@ -1,4 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
+import { useViewMode } from '@/hooks/useViewMode';
+import ModeToggle from '@/components/presentation/ModeToggle';
+import PresentationControls from '@/components/presentation/PresentationControls';
+
+// Read mode slides
 import NYTSlide01Title from '@/components/nyt-slides/NYTSlide01Title';
 import NYTSlide02Context from '@/components/nyt-slides/NYTSlide02Context';
 import NYTSlide03Objectives from '@/components/nyt-slides/NYTSlide03Objectives';
@@ -10,14 +15,40 @@ import NYTSlide08Recommendations from '@/components/nyt-slides/NYTSlide08Recomme
 import NYTSlide09Impact from '@/components/nyt-slides/NYTSlide09Impact';
 import NYTSlide10Reflection from '@/components/nyt-slides/NYTSlide10Reflection';
 
+// Present mode slides
+import NYTSlide01TitlePresent from '@/components/nyt-slides-present/NYTSlide01TitlePresent';
+import NYTSlide02ContextPresent from '@/components/nyt-slides-present/NYTSlide02ContextPresent';
+import NYTSlide03ObjectivesPresent from '@/components/nyt-slides-present/NYTSlide03ObjectivesPresent';
+import NYTSlide04ApproachPresent from '@/components/nyt-slides-present/NYTSlide04ApproachPresent';
+import NYTSlide05FindingsPresent from '@/components/nyt-slides-present/NYTSlide05FindingsPresent';
+import NYTSlide06InsightPresent from '@/components/nyt-slides-present/NYTSlide06InsightPresent';
+import NYTSlide07TriangulationPresent from '@/components/nyt-slides-present/NYTSlide07TriangulationPresent';
+import NYTSlide08RecommendationsPresent from '@/components/nyt-slides-present/NYTSlide08RecommendationsPresent';
+import NYTSlide09ImpactPresent from '@/components/nyt-slides-present/NYTSlide09ImpactPresent';
+import NYTSlide10ReflectionPresent from '@/components/nyt-slides-present/NYTSlide10ReflectionPresent';
+
 const TOTAL_SLIDES = 10;
+
+const presentSlides = [
+  NYTSlide01TitlePresent,
+  NYTSlide02ContextPresent,
+  NYTSlide03ObjectivesPresent,
+  NYTSlide04ApproachPresent,
+  NYTSlide05FindingsPresent,
+  NYTSlide06InsightPresent,
+  NYTSlide07TriangulationPresent,
+  NYTSlide08RecommendationsPresent,
+  NYTSlide09ImpactPresent,
+  NYTSlide10ReflectionPresent,
+];
 
 const NYTWatchTab: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const { mode, setMode, isPresent } = useViewMode();
 
   useEffect(() => {
-    if (!containerRef.current) return;
+    if (isPresent || !containerRef.current) return;
 
     const slides = containerRef.current.querySelectorAll('section[id^="slide-"]');
 
@@ -36,7 +67,7 @@ const NYTWatchTab: React.FC = () => {
 
     slides.forEach((slide) => observer.observe(slide));
     return () => observer.disconnect();
-  }, []);
+  }, [isPresent]);
 
   const progress = ((currentSlide + 1) / TOTAL_SLIDES) * 100;
 
@@ -44,8 +75,42 @@ const NYTWatchTab: React.FC = () => {
     document.getElementById(`slide-${index}`)?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const handlePrevious = useCallback(() => {
+    setCurrentSlide((prev) => Math.max(0, prev - 1));
+  }, []);
+
+  const handleNext = useCallback(() => {
+    setCurrentSlide((prev) => Math.min(TOTAL_SLIDES - 1, prev + 1));
+  }, []);
+
+  const handleExit = useCallback(() => {
+    setMode('read');
+  }, [setMode]);
+
+  // Render present mode
+  if (isPresent) {
+    const CurrentPresentSlide = presentSlides[currentSlide];
+
+    return (
+      <main className="min-h-screen bg-background">
+        <ModeToggle mode={mode} onModeChange={setMode} />
+        <CurrentPresentSlide />
+        <PresentationControls
+          currentSlide={currentSlide}
+          totalSlides={TOTAL_SLIDES}
+          onPrevious={handlePrevious}
+          onNext={handleNext}
+          onExit={handleExit}
+        />
+      </main>
+    );
+  }
+
+  // Render read mode
   return (
     <main className="min-h-screen bg-background">
+      <ModeToggle mode={mode} onModeChange={setMode} />
+
       <div ref={containerRef} className="snap-y snap-mandatory">
         <NYTSlide01Title />
         <NYTSlide02Context />

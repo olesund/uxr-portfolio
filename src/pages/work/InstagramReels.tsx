@@ -1,4 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
+import { useViewMode } from '@/hooks/useViewMode';
+import ModeToggle from '@/components/presentation/ModeToggle';
+import PresentationControls from '@/components/presentation/PresentationControls';
+
+// Read mode slides
 import Slide01Title from '@/components/slides/Slide01Title';
 import Slide03Problem from '@/components/slides/Slide03Problem';
 import Slide04ResearchApproach from '@/components/slides/Slide04ResearchApproach';
@@ -10,14 +15,40 @@ import Slide08Recommendation from '@/components/slides/Slide08Recommendation';
 import Slide09Impact from '@/components/slides/Slide09Impact';
 import Slide10Lessons from '@/components/slides/Slide10Lessons';
 
+// Present mode slides
+import Slide01TitlePresent from '@/components/slides-present/Slide01TitlePresent';
+import Slide03ProblemPresent from '@/components/slides-present/Slide03ProblemPresent';
+import Slide04ResearchApproachPresent from '@/components/slides-present/Slide04ResearchApproachPresent';
+import Slide05Phase1Present from '@/components/slides-present/Slide05Phase1Present';
+import Slide05bPivotPresent from '@/components/slides-present/Slide05bPivotPresent';
+import Slide06Phase2Present from '@/components/slides-present/Slide06Phase2Present';
+import Slide07Phase3Present from '@/components/slides-present/Slide07Phase3Present';
+import Slide08RecommendationPresent from '@/components/slides-present/Slide08RecommendationPresent';
+import Slide09ImpactPresent from '@/components/slides-present/Slide09ImpactPresent';
+import Slide10LessonsPresent from '@/components/slides-present/Slide10LessonsPresent';
+
 const TOTAL_SLIDES = 10;
+
+const presentSlides = [
+  Slide01TitlePresent,
+  Slide03ProblemPresent,
+  Slide04ResearchApproachPresent,
+  Slide05Phase1Present,
+  Slide05bPivotPresent,
+  Slide06Phase2Present,
+  Slide07Phase3Present,
+  Slide08RecommendationPresent,
+  Slide09ImpactPresent,
+  Slide10LessonsPresent,
+];
 
 const InstagramReels: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const { mode, setMode, isPresent } = useViewMode();
 
   useEffect(() => {
-    if (!containerRef.current) return;
+    if (isPresent || !containerRef.current) return;
 
     const slides = containerRef.current.querySelectorAll('section[id^="slide-"]');
 
@@ -36,7 +67,7 @@ const InstagramReels: React.FC = () => {
 
     slides.forEach((slide) => observer.observe(slide));
     return () => observer.disconnect();
-  }, []);
+  }, [isPresent]);
 
   const progress = ((currentSlide + 1) / TOTAL_SLIDES) * 100;
 
@@ -44,8 +75,42 @@ const InstagramReels: React.FC = () => {
     document.getElementById(`slide-${index}`)?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const handlePrevious = useCallback(() => {
+    setCurrentSlide((prev) => Math.max(0, prev - 1));
+  }, []);
+
+  const handleNext = useCallback(() => {
+    setCurrentSlide((prev) => Math.min(TOTAL_SLIDES - 1, prev + 1));
+  }, []);
+
+  const handleExit = useCallback(() => {
+    setMode('read');
+  }, [setMode]);
+
+  // Render present mode
+  if (isPresent) {
+    const CurrentPresentSlide = presentSlides[currentSlide];
+
+    return (
+      <main className="min-h-screen bg-background">
+        <ModeToggle mode={mode} onModeChange={setMode} />
+        <CurrentPresentSlide />
+        <PresentationControls
+          currentSlide={currentSlide}
+          totalSlides={TOTAL_SLIDES}
+          onPrevious={handlePrevious}
+          onNext={handleNext}
+          onExit={handleExit}
+        />
+      </main>
+    );
+  }
+
+  // Render read mode
   return (
     <main className="min-h-screen bg-background">
+      <ModeToggle mode={mode} onModeChange={setMode} />
+
       <div ref={containerRef} className="snap-y snap-mandatory">
         <Slide01Title />
         <Slide03Problem />
