@@ -399,14 +399,29 @@ const InstagramReelsCaseStudy: React.FC<Props> = ({ isPresent, currentSlide }) =
               <p className="text-sm text-muted-foreground">{content.impact.beforeAfter.after}</p>
             </div>
           </div>
-          <blockquote className="rounded-2xl border-l-4 border-primary bg-muted/40 p-5">
-            <p className="text-muted-foreground italic">{content.impact.pressQuote}</p>
-            <footer className="mt-3">
-              <a href={content.impact.pressUrl} target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:underline">
-                — {content.impact.pressSource}
-              </a>
-            </footer>
-          </blockquote>
+          <div>
+            <p className="mb-4 text-muted-foreground">{content.impact.prCampaign}</p>
+            <blockquote className="rounded-2xl border-l-4 border-primary bg-muted/40 p-5">
+              <p className="text-muted-foreground italic">{content.impact.pressQuote}</p>
+              <footer className="mt-3">
+                <a href={content.impact.pressUrl} target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:underline">
+                  — {content.impact.pressSource}
+                </a>
+              </footer>
+            </blockquote>
+          </div>
+          <div className="rounded-2xl bg-accent/50 p-6">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">One Year Later</p>
+            <p className="mb-4 text-foreground">{content.impact.editsApp}</p>
+            <blockquote className="rounded-xl border-l-4 border-primary/50 bg-background/50 p-4">
+              <p className="text-muted-foreground italic">{content.impact.editsQuote}</p>
+              <footer className="mt-2">
+                <a href={content.impact.editsUrl} target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:underline">
+                  — Instagram Press Release
+                </a>
+              </footer>
+            </blockquote>
+          </div>
         </div>
       </ReadSlide>
 

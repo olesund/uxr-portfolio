@@ -567,7 +567,7 @@ function renderPresentSlide(slideIndex: number) {
                   <p className="font-semibold text-white">{item.hypothesis.split('?')[0].replace('Are ', '').replace('Is there', 'There is')}</p>
                 </div>
               ))}
-              {content.findings.notValidated.slice(0, 2).map((item, i) => (
+              {content.findings.notValidated.map((item, i) => (
                 <div key={i} className="rounded-2xl bg-red-500/20 p-4 border border-red-500/30">
                   <div className="mb-2 flex items-center gap-2">
                     <div className="flex h-6 w-6 items-center justify-center rounded-full bg-red-500"><X className="h-4 w-4 text-white" /></div>
