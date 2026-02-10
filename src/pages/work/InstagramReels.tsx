@@ -1,46 +1,17 @@
+/**
+ * Instagram Reels Case Study Page
+ *
+ * This page uses the consolidated InstagramReelsCaseStudy component.
+ * To edit content, see: src/data/instagram-reels-content.ts
+ */
+
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { useViewMode } from '@/hooks/useViewMode';
 import ModeToggle from '@/components/presentation/ModeToggle';
 import PresentationControls from '@/components/presentation/PresentationControls';
-
-// Read mode slides
-import Slide01Title from '@/components/slides/Slide01Title';
-import Slide03Problem from '@/components/slides/Slide03Problem';
-import Slide04ResearchApproach from '@/components/slides/Slide04ResearchApproach';
-import Slide05Phase1 from '@/components/slides/Slide05Phase1';
-import Slide05bPivot from '@/components/slides/Slide05bPivot';
-import Slide06Phase2 from '@/components/slides/Slide06Phase2';
-import Slide07Phase3 from '@/components/slides/Slide07Phase3';
-import Slide08Recommendation from '@/components/slides/Slide08Recommendation';
-import Slide09Impact from '@/components/slides/Slide09Impact';
-import Slide10Lessons from '@/components/slides/Slide10Lessons';
-
-// Present mode slides
-import Slide01TitlePresent from '@/components/slides-present/Slide01TitlePresent';
-import Slide03ProblemPresent from '@/components/slides-present/Slide03ProblemPresent';
-import Slide04ResearchApproachPresent from '@/components/slides-present/Slide04ResearchApproachPresent';
-import Slide05Phase1Present from '@/components/slides-present/Slide05Phase1Present';
-import Slide05bPivotPresent from '@/components/slides-present/Slide05bPivotPresent';
-import Slide06Phase2Present from '@/components/slides-present/Slide06Phase2Present';
-import Slide07Phase3Present from '@/components/slides-present/Slide07Phase3Present';
-import Slide08RecommendationPresent from '@/components/slides-present/Slide08RecommendationPresent';
-import Slide09ImpactPresent from '@/components/slides-present/Slide09ImpactPresent';
-import Slide10LessonsPresent from '@/components/slides-present/Slide10LessonsPresent';
+import InstagramReelsCaseStudy from '@/components/case-study/InstagramReelsCaseStudy';
 
 const TOTAL_SLIDES = 10;
-
-const presentSlides = [
-  Slide01TitlePresent,
-  Slide03ProblemPresent,
-  Slide04ResearchApproachPresent,
-  Slide05Phase1Present,
-  Slide05bPivotPresent,
-  Slide06Phase2Present,
-  Slide07Phase3Present,
-  Slide08RecommendationPresent,
-  Slide09ImpactPresent,
-  Slide10LessonsPresent,
-];
 
 const InstagramReels: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -89,12 +60,10 @@ const InstagramReels: React.FC = () => {
 
   // Render present mode
   if (isPresent) {
-    const CurrentPresentSlide = presentSlides[currentSlide];
-
     return (
       <main className="min-h-screen bg-background">
         <ModeToggle mode={mode} onModeChange={setMode} />
-        <CurrentPresentSlide />
+        <InstagramReelsCaseStudy isPresent={true} currentSlide={currentSlide} />
         <PresentationControls
           currentSlide={currentSlide}
           totalSlides={TOTAL_SLIDES}
@@ -112,16 +81,7 @@ const InstagramReels: React.FC = () => {
       <ModeToggle mode={mode} onModeChange={setMode} />
 
       <div ref={containerRef} className="snap-y snap-mandatory">
-        <Slide01Title />
-        <Slide03Problem />
-        <Slide04ResearchApproach />
-        <Slide05Phase1 />
-        <Slide05bPivot />
-        <Slide06Phase2 />
-        <Slide07Phase3 />
-        <Slide08Recommendation />
-        <Slide09Impact />
-        <Slide10Lessons />
+        <InstagramReelsCaseStudy isPresent={false} currentSlide={currentSlide} />
       </div>
 
       {/* Progress indicator */}

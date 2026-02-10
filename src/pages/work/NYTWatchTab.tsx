@@ -1,46 +1,17 @@
+/**
+ * NYT Watch Tab Case Study Page
+ *
+ * This page uses the consolidated NYTWatchTabCaseStudy component.
+ * To edit content, see: src/data/nyt-watch-tab-content.ts
+ */
+
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { useViewMode } from '@/hooks/useViewMode';
 import ModeToggle from '@/components/presentation/ModeToggle';
 import PresentationControls from '@/components/presentation/PresentationControls';
-
-// Read mode slides
-import NYTSlide01Title from '@/components/nyt-slides/NYTSlide01Title';
-import NYTSlide02Context from '@/components/nyt-slides/NYTSlide02Context';
-import NYTSlide03Objectives from '@/components/nyt-slides/NYTSlide03Objectives';
-import NYTSlide04Approach from '@/components/nyt-slides/NYTSlide04Approach';
-import NYTSlide05Findings from '@/components/nyt-slides/NYTSlide05Findings';
-import NYTSlide06Insight from '@/components/nyt-slides/NYTSlide06Insight';
-import NYTSlide07Triangulation from '@/components/nyt-slides/NYTSlide07Triangulation';
-import NYTSlide08Recommendations from '@/components/nyt-slides/NYTSlide08Recommendations';
-import NYTSlide09Impact from '@/components/nyt-slides/NYTSlide09Impact';
-import NYTSlide10Reflection from '@/components/nyt-slides/NYTSlide10Reflection';
-
-// Present mode slides
-import NYTSlide01TitlePresent from '@/components/nyt-slides-present/NYTSlide01TitlePresent';
-import NYTSlide02ContextPresent from '@/components/nyt-slides-present/NYTSlide02ContextPresent';
-import NYTSlide03ObjectivesPresent from '@/components/nyt-slides-present/NYTSlide03ObjectivesPresent';
-import NYTSlide04ApproachPresent from '@/components/nyt-slides-present/NYTSlide04ApproachPresent';
-import NYTSlide05FindingsPresent from '@/components/nyt-slides-present/NYTSlide05FindingsPresent';
-import NYTSlide06InsightPresent from '@/components/nyt-slides-present/NYTSlide06InsightPresent';
-import NYTSlide07TriangulationPresent from '@/components/nyt-slides-present/NYTSlide07TriangulationPresent';
-import NYTSlide08RecommendationsPresent from '@/components/nyt-slides-present/NYTSlide08RecommendationsPresent';
-import NYTSlide09ImpactPresent from '@/components/nyt-slides-present/NYTSlide09ImpactPresent';
-import NYTSlide10ReflectionPresent from '@/components/nyt-slides-present/NYTSlide10ReflectionPresent';
+import NYTWatchTabCaseStudy from '@/components/case-study/NYTWatchTabCaseStudy';
 
 const TOTAL_SLIDES = 10;
-
-const presentSlides = [
-  NYTSlide01TitlePresent,
-  NYTSlide02ContextPresent,
-  NYTSlide03ObjectivesPresent,
-  NYTSlide04ApproachPresent,
-  NYTSlide05FindingsPresent,
-  NYTSlide06InsightPresent,
-  NYTSlide07TriangulationPresent,
-  NYTSlide08RecommendationsPresent,
-  NYTSlide09ImpactPresent,
-  NYTSlide10ReflectionPresent,
-];
 
 const NYTWatchTab: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -89,12 +60,10 @@ const NYTWatchTab: React.FC = () => {
 
   // Render present mode
   if (isPresent) {
-    const CurrentPresentSlide = presentSlides[currentSlide];
-
     return (
       <main className="min-h-screen bg-background">
         <ModeToggle mode={mode} onModeChange={setMode} />
-        <CurrentPresentSlide />
+        <NYTWatchTabCaseStudy isPresent={true} currentSlide={currentSlide} />
         <PresentationControls
           currentSlide={currentSlide}
           totalSlides={TOTAL_SLIDES}
@@ -112,16 +81,7 @@ const NYTWatchTab: React.FC = () => {
       <ModeToggle mode={mode} onModeChange={setMode} />
 
       <div ref={containerRef} className="snap-y snap-mandatory">
-        <NYTSlide01Title />
-        <NYTSlide02Context />
-        <NYTSlide03Objectives />
-        <NYTSlide04Approach />
-        <NYTSlide05Findings />
-        <NYTSlide06Insight />
-        <NYTSlide07Triangulation />
-        <NYTSlide08Recommendations />
-        <NYTSlide09Impact />
-        <NYTSlide10Reflection />
+        <NYTWatchTabCaseStudy isPresent={false} currentSlide={currentSlide} />
       </div>
 
       {/* Progress indicator */}
