@@ -24,14 +24,15 @@ const PresentSlideContainer: React.FC<PresentSlideContainerProps> = ({
         exit={{ opacity: 0, x: -20 }}
         transition={{ duration: 0.3, ease: 'easeOut' }}
         className={cn(
-          'flex min-h-screen flex-col items-center justify-center bg-background px-8 py-16 md:px-16 lg:px-24',
+          'flex min-h-screen flex-col items-center justify-center px-8 py-16 md:px-16 lg:px-24',
+          'bg-slate-900 text-slate-100',
           className
         )}
         aria-label={header ? `Slide ${slideNumber + 1}: ${header}` : `Slide ${slideNumber + 1}`}
       >
         <div className="mx-auto w-full max-w-4xl">
           {header && (
-            <p className="mb-8 text-sm font-medium uppercase tracking-wider text-primary">
+            <p className="mb-8 text-sm font-medium uppercase tracking-wider text-orange-400">
               {header}
             </p>
           )}

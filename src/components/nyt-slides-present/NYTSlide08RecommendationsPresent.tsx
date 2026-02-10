@@ -6,37 +6,37 @@ const NYTSlide08RecommendationsPresent: React.FC = () => {
     <PresentSlideContainer slideNumber={7} header="Recommendations">
       <div className="space-y-8">
         <div>
-          <h2 className="mb-4 text-3xl font-bold text-foreground">Communication Strategy</h2>
+          <h2 className="mb-4 text-3xl font-bold text-white">Communication Strategy</h2>
           <div className="grid gap-3 md:grid-cols-2">
-            <div className="rounded-xl bg-muted/60 p-4">
-              <p className="font-semibold text-foreground">Pre-meeting 1:1s</p>
-              <p className="text-sm text-muted-foreground">Let stakeholders internalize data before group discussion</p>
+            <div className="rounded-xl bg-slate-800/80 p-4 border border-slate-700">
+              <p className="font-semibold text-white">Pre-meeting 1:1s</p>
+              <p className="text-sm text-slate-300">Let stakeholders internalize data before group discussion</p>
             </div>
-            <div className="rounded-xl bg-muted/60 p-4">
-              <p className="font-semibold text-foreground">Led with learning</p>
-              <p className="text-sm text-muted-foreground">Started with validated hypotheses, not failures</p>
+            <div className="rounded-xl bg-slate-800/80 p-4 border border-slate-700">
+              <p className="font-semibold text-white">Led with learning</p>
+              <p className="text-sm text-slate-300">Started with validated hypotheses, not failures</p>
             </div>
-            <div className="rounded-xl bg-muted/60 p-4">
-              <p className="font-semibold text-foreground">Framed as opportunities</p>
-              <p className="text-sm text-muted-foreground">Not criticisms of the original vision</p>
+            <div className="rounded-xl bg-slate-800/80 p-4 border border-slate-700">
+              <p className="font-semibold text-white">Framed as opportunities</p>
+              <p className="text-sm text-slate-300">Not criticisms of the original vision</p>
             </div>
-            <div className="rounded-xl bg-muted/60 p-4">
-              <p className="font-semibold text-foreground">Let recommendations emerge</p>
-              <p className="text-sm text-muted-foreground">Senior editor suggested the pivot himself</p>
+            <div className="rounded-xl bg-slate-800/80 p-4 border border-slate-700">
+              <p className="font-semibold text-white">Let recommendations emerge</p>
+              <p className="text-sm text-slate-300">Senior editor suggested the pivot himself</p>
             </div>
           </div>
         </div>
 
         <div>
-          <h3 className="mb-4 text-xl font-semibold text-foreground">The Recommendations</h3>
+          <h3 className="mb-4 text-xl font-semibold text-white">The Recommendations</h3>
           <div className="grid gap-4 md:grid-cols-2">
-            <div className="rounded-2xl bg-accent/50 p-5">
-              <p className="mb-2 font-semibold text-foreground">1. Meet users where they are</p>
-              <p className="text-muted-foreground">Integrate video into article pages—the #1 visited surface</p>
+            <div className="rounded-2xl bg-orange-500/20 p-5 border border-orange-500/30">
+              <p className="mb-2 font-semibold text-white">1. Meet users where they are</p>
+              <p className="text-slate-300">Integrate video into article pages—the #1 visited surface</p>
             </div>
-            <div className="rounded-2xl bg-accent/50 p-5">
-              <p className="mb-2 font-semibold text-foreground">2. Enable intent-driven discovery</p>
-              <p className="text-muted-foreground">Add search, categories, or navigation for specific videos</p>
+            <div className="rounded-2xl bg-orange-500/20 p-5 border border-orange-500/30">
+              <p className="mb-2 font-semibold text-white">2. Enable intent-driven discovery</p>
+              <p className="text-slate-300">Add search, categories, or navigation for specific videos</p>
             </div>
           </div>
         </div>

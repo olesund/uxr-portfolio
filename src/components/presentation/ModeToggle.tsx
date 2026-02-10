@@ -10,13 +10,20 @@ interface ModeToggleProps {
 
 const ModeToggle: React.FC<ModeToggleProps> = ({ mode, onModeChange }) => {
   return (
-    <div className="fixed right-4 top-4 z-50 flex items-center gap-1 rounded-full bg-background/95 p-1 shadow-lg backdrop-blur-sm border border-border">
+    <div className={cn(
+      "fixed right-4 top-4 z-50 flex items-center gap-1 rounded-full p-1 shadow-lg backdrop-blur-sm border",
+      mode === 'present'
+        ? 'bg-slate-800/95 border-slate-700'
+        : 'bg-background/95 border-border'
+    )}>
       <button
         onClick={() => onModeChange('read')}
         className={cn(
           'flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-medium transition-all',
           mode === 'read'
             ? 'bg-primary text-primary-foreground'
+            : mode === 'present'
+            ? 'text-slate-400 hover:text-white'
             : 'text-muted-foreground hover:text-foreground'
         )}
         aria-label="Switch to Read mode"
@@ -29,7 +36,7 @@ const ModeToggle: React.FC<ModeToggleProps> = ({ mode, onModeChange }) => {
         className={cn(
           'flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-medium transition-all',
           mode === 'present'
-            ? 'bg-primary text-primary-foreground'
+            ? 'bg-orange-500 text-white'
             : 'text-muted-foreground hover:text-foreground'
         )}
         aria-label="Switch to Present mode"

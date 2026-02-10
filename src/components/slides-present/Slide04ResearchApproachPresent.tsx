@@ -26,22 +26,22 @@ const Slide04ResearchApproachPresent: React.FC = () => {
   return (
     <PresentSlideContainer slideNumber={2} header="Research Overview">
       <div className="space-y-8">
-        <h2 className="text-3xl font-bold text-foreground md:text-4xl">
+        <h2 className="text-3xl font-bold text-white md:text-4xl">
           A Three-Phase Research Strategy
         </h2>
-        <p className="text-xl text-muted-foreground">
+        <p className="text-xl text-slate-300">
           Each phase built on the previous, moving from exploration to experimentation.
         </p>
 
         <div className="space-y-4">
           {phases.map((phase) => (
-            <div key={phase.number} className="rounded-2xl bg-muted/60 p-5">
+            <div key={phase.number} className="rounded-2xl bg-slate-800/80 p-5 border border-slate-700">
               <div className="flex items-baseline gap-3 mb-2">
-                <span className="text-lg font-bold text-primary">Phase {phase.number}</span>
-                <span className="text-sm text-muted-foreground">({phase.type})</span>
+                <span className="text-lg font-bold text-orange-400">Phase {phase.number}</span>
+                <span className="text-sm text-slate-400">({phase.type})</span>
               </div>
-              <h4 className="text-lg font-semibold text-foreground">{phase.title}</h4>
-              <p className="mt-1 text-muted-foreground">{phase.insight}</p>
+              <h4 className="text-lg font-semibold text-white">{phase.title}</h4>
+              <p className="mt-1 text-slate-300">{phase.insight}</p>
             </div>
           ))}
         </div>

@@ -8,45 +8,45 @@ const Slide07Phase3Present: React.FC = () => {
       <div className="space-y-8">
         <div className="grid gap-6 md:grid-cols-2">
           <div>
-            <h2 className="mb-4 text-3xl font-bold text-foreground">
+            <h2 className="mb-4 text-3xl font-bold text-white">
               Which Editor Works Better?
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl text-slate-300">
               200 testers recreated videos using different editing apps.
             </p>
           </div>
-          <div className="rounded-2xl bg-muted/60 p-4 text-sm">
+          <div className="rounded-2xl bg-slate-800/80 p-4 text-sm border border-slate-700">
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <p className="text-muted-foreground">Method</p>
-                <p className="font-medium text-foreground">Randomized Study</p>
+                <p className="text-slate-400">Method</p>
+                <p className="font-medium text-white">Randomized Study</p>
               </div>
               <div>
-                <p className="text-muted-foreground">Sample</p>
-                <p className="font-medium text-foreground">200 Creators</p>
+                <p className="text-slate-400">Sample</p>
+                <p className="font-medium text-white">200 Creators</p>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="rounded-2xl bg-accent/50 p-6">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-primary">Key Finding</p>
-          <p className="text-xl font-semibold text-foreground mb-4">
+        <div className="rounded-2xl bg-orange-500/20 p-6 border border-orange-500/30">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-orange-400">Key Finding</p>
+          <p className="text-xl font-semibold text-white mb-4">
             Different editors worked better for different video types.
           </p>
           <div className="grid gap-4 md:grid-cols-2">
-            <div className="rounded-xl bg-background/50 p-4">
-              <p className="font-semibold text-foreground">Basic Videos</p>
-              <p className="text-muted-foreground">Step-by-step editors performed better</p>
+            <div className="rounded-xl bg-slate-800/80 p-4 border border-slate-700">
+              <p className="font-semibold text-white">Basic Videos</p>
+              <p className="text-slate-300">Step-by-step editors performed better</p>
             </div>
-            <div className="rounded-xl bg-background/50 p-4">
-              <p className="font-semibold text-foreground">Advanced Videos</p>
-              <p className="text-muted-foreground">Stacked timelines performed <strong>much</strong> better</p>
+            <div className="rounded-xl bg-slate-800/80 p-4 border border-slate-700">
+              <p className="font-semibold text-white">Advanced Videos</p>
+              <p className="text-slate-300">Stacked timelines performed <strong className="text-orange-400">much</strong> better</p>
             </div>
           </div>
         </div>
 
-        <div className="rounded-2xl overflow-hidden bg-background">
+        <div className="rounded-2xl overflow-hidden bg-white/10 p-2">
           <img
             src={easeOfUseChart}
             alt="Ease-of-use ratings by editor type and video complexity"
