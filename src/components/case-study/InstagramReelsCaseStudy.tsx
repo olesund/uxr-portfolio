@@ -1,17 +1,19 @@
 /**
  * Instagram Reels Case Study
  *
- * All content comes from: src/data/instagram-reels-content.ts
- * Edit that file to change any text on this page.
+ * Content comes from: src/data/instagram-reels-content.ts
  */
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowDown, ArrowLeft } from 'lucide-react';
+import { ArrowDown, ArrowLeft, Play, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogTrigger, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { cn } from '@/lib/utils';
-import { instagramReelsContent as content } from '@/data/instagram-reels-content';
+import { sharedContent, readContent } from '@/data/instagram-reels-content';
+import TesterExperienceModal from '@/components/presentation/TesterExperienceModal';
+import ImageLightbox from '@/components/presentation/ImageLightbox';
 
 // Assets
 import editorComparison from '@/assets/editor-comparison.png';
@@ -19,11 +21,12 @@ import easeOfUseChart from '@/assets/ease-of-use-chart.png';
 import flywheelDiagram from '@/assets/flywheel-diagram.png';
 import reelsEditorBefore from '@/assets/reels-editor-before.png';
 import reelsEditorAfter from '@/assets/reels-editor-after.png';
-
-interface Props {
-  isPresent: boolean;
-  currentSlide: number;
-}
+import videoAttributesChart from '@/assets/video-attributes-chart.png';
+import regressionChart from '@/assets/instagram-reels-regression-example.png';
+import reelsEditorScreenshot from '@/assets/reels-editor-screenshot.webp';
+import editsAppScreenshot from '@/assets/edits-app-screenshot.webp';
+import basicVideoExample from '@/assets/basic-video-example.mov';
+import advancedVideoExample from '@/assets/advanced-video-example.mov';
 
 // ============================================
 // SLIDE WRAPPER COMPONENTS
@@ -71,40 +74,18 @@ const ReadSlide: React.FC<{
   );
 };
 
-const PresentSlide: React.FC<{ header?: string; children: React.ReactNode }> = ({ header, children }) => (
-  <motion.section
-    initial={{ opacity: 0, x: 20 }}
-    animate={{ opacity: 1, x: 0 }}
-    exit={{ opacity: 0, x: -20 }}
-    transition={{ duration: 0.3, ease: 'easeOut' }}
-    className="flex min-h-screen flex-col items-center justify-center px-8 py-16 md:px-16 lg:px-24 bg-slate-900 text-slate-100"
-  >
-    <div className="mx-auto w-full max-w-4xl">
-      {header && (
-        <p className="mb-8 text-sm font-medium uppercase tracking-wider text-orange-400">
-          {header}
-        </p>
-      )}
-      {children}
-    </div>
-  </motion.section>
-);
-
 // ============================================
 // MAIN COMPONENT
 // ============================================
 
-const InstagramReelsCaseStudy: React.FC<Props> = ({ isPresent, currentSlide }) => {
+const InstagramReelsCaseStudy: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [lightboxImage, setLightboxImage] = useState<{ src: string; alt: string } | null>(null);
+
   const scrollToSlide = (index: number) => {
     document.getElementById(`slide-${index}`)?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  // PRESENT MODE - Show only current slide
-  if (isPresent) {
-    return renderPresentSlide(currentSlide, scrollToSlide);
-  }
-
-  // READ MODE - Show all slides
   return (
     <>
       {/* Slide 0: Title */}
@@ -118,10 +99,10 @@ const InstagramReelsCaseStudy: React.FC<Props> = ({ isPresent, currentSlide }) =
         </Link>
         <div className="max-w-3xl text-center">
           <h1 className="mb-6 text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-6xl">
-            {content.meta.title}
+            {readContent.title.headline}
           </h1>
           <p className="mb-12 text-lg text-muted-foreground md:text-xl">
-            {content.meta.subtitle}
+            {readContent.title.subtitle}
           </p>
           <Button variant="outline" size="lg" onClick={() => scrollToSlide(1)} className="group">
             Start Reading
@@ -129,44 +110,44 @@ const InstagramReelsCaseStudy: React.FC<Props> = ({ isPresent, currentSlide }) =
           </Button>
         </div>
         <footer className="absolute bottom-8 text-center">
-          <p className="text-sm text-muted-foreground">{content.meta.author}, {content.meta.role}</p>
+          <p className="text-sm text-muted-foreground">{sharedContent.meta.author}, {sharedContent.meta.role}</p>
         </footer>
       </section>
 
       {/* Slide 1: Problem */}
-      <ReadSlide slideNumber={1} header={content.problem.header}>
+      <ReadSlide slideNumber={1} header={readContent.problem.header}>
         <div className="space-y-10">
           <div>
-            <h3 className="mb-3 text-xl font-semibold text-foreground">{content.problem.read.businessContextTitle}</h3>
-            <p className="text-muted-foreground leading-relaxed">{content.problem.read.businessContext}</p>
+            <h3 className="mb-3 text-xl font-semibold text-foreground">{readContent.problem.businessContextTitle}</h3>
+            <p className="text-muted-foreground leading-relaxed">{readContent.problem.businessContext}</p>
           </div>
           <div className="space-y-4">
             <div className="rounded-2xl bg-accent/50 p-5">
               <p className="mb-1 text-sm text-muted-foreground">Business Goal</p>
-              <p className="text-lg font-semibold text-foreground">{content.problem.read.businessGoal}</p>
+              <p className="text-lg font-semibold text-foreground">{readContent.problem.businessGoal}</p>
             </div>
             <div className="rounded-2xl bg-accent/50 p-5">
               <p className="mb-1 text-sm text-muted-foreground">Core Question</p>
-              <p className="text-lg font-semibold text-foreground">{content.problem.read.coreQuestion}</p>
+              <p className="text-lg font-semibold text-foreground">{readContent.problem.coreQuestion}</p>
             </div>
           </div>
-          <p className="text-muted-foreground text-sm mx-[30px]">{content.problem.read.scopeNote}</p>
+          <p className="text-muted-foreground text-sm mx-[30px]">{readContent.problem.scopeNote}</p>
           <div className="rounded-2xl bg-muted/60 p-5">
             <div className="grid gap-6 sm:grid-cols-3">
               <div>
                 <p className="text-sm text-muted-foreground">My Role</p>
-                <p className="font-medium text-foreground">{content.problem.team.myRole}</p>
-                <p className="mt-1 text-sm text-muted-foreground">{content.problem.team.myRoleDescription}</p>
+                <p className="font-medium text-foreground">{sharedContent.team.myRole}</p>
+                <p className="mt-1 text-sm text-muted-foreground">{sharedContent.team.myRoleDescription}</p>
               </div>
               <div>
                 <p className="text-sm text-muted-foreground">Team</p>
-                <p className="font-medium text-foreground">{content.problem.team.team}</p>
-                <p className="mt-1 text-sm text-muted-foreground">{content.problem.team.teamDescription}</p>
+                <p className="font-medium text-foreground">{sharedContent.team.team}</p>
+                <p className="mt-1 text-sm text-muted-foreground">{sharedContent.team.teamDescription}</p>
               </div>
               <div>
                 <p className="text-sm text-muted-foreground">Stakeholders</p>
-                <p className="font-medium text-foreground">{content.problem.team.stakeholders}</p>
-                <p className="mt-1 text-sm text-muted-foreground">{content.problem.team.stakeholdersDescription}</p>
+                <p className="font-medium text-foreground">{sharedContent.team.stakeholders}</p>
+                <p className="mt-1 text-sm text-muted-foreground">{sharedContent.team.stakeholdersDescription}</p>
               </div>
             </div>
           </div>
@@ -174,14 +155,14 @@ const InstagramReelsCaseStudy: React.FC<Props> = ({ isPresent, currentSlide }) =
       </ReadSlide>
 
       {/* Slide 2: Research Overview */}
-      <ReadSlide slideNumber={2} header={content.researchOverview.header}>
+      <ReadSlide slideNumber={2} header={readContent.researchOverview.header}>
         <div className="space-y-10">
           <div>
-            <h3 className="mb-3 text-xl font-semibold text-foreground">{content.researchOverview.title}</h3>
-            <p className="text-muted-foreground">{content.researchOverview.description}</p>
+            <h3 className="mb-3 text-xl font-semibold text-foreground">{readContent.researchOverview.title}</h3>
+            <p className="text-muted-foreground">{readContent.researchOverview.description}</p>
           </div>
           <div className="space-y-4">
-            {content.researchOverview.phases.map((phase) => (
+            {readContent.researchOverview.phases.map((phase) => (
               <div key={phase.number} className="rounded-2xl bg-muted/60 p-5">
                 <div className="mb-2 flex items-baseline gap-3">
                   <span className="text-sm font-medium text-primary">Phase {phase.number}</span>
@@ -192,21 +173,27 @@ const InstagramReelsCaseStudy: React.FC<Props> = ({ isPresent, currentSlide }) =
               </div>
             ))}
           </div>
+          {readContent.researchOverview.collaboration && (
+            <div className="rounded-xl border border-border bg-background p-4">
+              <p className="mb-1 text-sm font-medium text-primary">Cross-Functional Collaboration</p>
+              <p className="text-muted-foreground">{readContent.researchOverview.collaboration}</p>
+            </div>
+          )}
         </div>
       </ReadSlide>
 
       {/* Slide 3: Phase 1 */}
-      <ReadSlide slideNumber={3} header={content.phase1.header}>
+      <ReadSlide slideNumber={3} header={readContent.phase1.header}>
         <div className="space-y-10">
           <div>
             <h3 className="mb-3 text-xl font-semibold text-foreground">Objective</h3>
-            <p className="text-muted-foreground">{content.phase1.objective}</p>
+            <p className="text-muted-foreground">{readContent.phase1.objective}</p>
           </div>
           <div>
             <h3 className="mb-4 text-xl font-semibold text-foreground">Methodology</h3>
             <div className="rounded-2xl bg-muted/60 p-5">
               <div className="grid gap-4 sm:grid-cols-2">
-                {Object.entries(content.phase1.methodology).map(([key, value]) => (
+                {Object.entries(readContent.phase1.methodology).map(([key, value]) => (
                   <div key={key}>
                     <p className="text-sm text-muted-foreground">{key.charAt(0).toUpperCase() + key.slice(1)}:</p>
                     <p className="font-medium text-foreground">{value}</p>
@@ -217,19 +204,19 @@ const InstagramReelsCaseStudy: React.FC<Props> = ({ isPresent, currentSlide }) =
           </div>
           <div>
             <h3 className="mb-3 text-xl font-semibold text-foreground">Data Collection</h3>
-            <p className="text-muted-foreground mb-2">{content.phase1.dataCollectionIntro}</p>
+            <p className="text-muted-foreground mb-2">{readContent.phase1.dataCollectionIntro}</p>
             <ul className="space-y-2 text-muted-foreground">
-              {content.phase1.dataCollection.map((item, i) => (
+              {readContent.phase1.dataCollection.map((item, i) => (
                 <li key={i}>• {item}</li>
               ))}
             </ul>
-            <p className="mt-4 text-muted-foreground">{content.phase1.dataCollectionNote}</p>
+            <p className="mt-4 text-muted-foreground">{readContent.phase1.dataCollectionNote}</p>
           </div>
           <div className="rounded-2xl bg-accent/50 p-6">
             <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">Key Finding</p>
-            <p className="mb-4 text-lg text-foreground">{content.phase1.keyFinding}</p>
+            <p className="mb-4 text-lg text-foreground">{readContent.phase1.keyFinding}</p>
             <ul className="space-y-2 text-foreground">
-              {content.phase1.keyFindingDetails.map((detail, i) => (
+              {readContent.phase1.keyFindingDetails.map((detail, i) => (
                 <li key={i}>• {detail}</li>
               ))}
             </ul>
@@ -239,55 +226,58 @@ const InstagramReelsCaseStudy: React.FC<Props> = ({ isPresent, currentSlide }) =
           </div>
           <div className="rounded-2xl bg-accent/50 p-6">
             <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">Recommendation to Leadership</p>
-            <p className="text-foreground">{content.phase1.recommendation}</p>
+            <p className="text-foreground">{readContent.phase1.recommendation}</p>
           </div>
         </div>
       </ReadSlide>
 
       {/* Slide 4: The Pivot */}
-      <ReadSlide slideNumber={4} header={content.pivot.header} dark>
+      <ReadSlide slideNumber={4} header={readContent.pivot.header} dark>
         <div className="space-y-10">
           <div className="rounded-2xl bg-[hsl(220,10%,28%)]/80 p-6 backdrop-blur-sm">
             <p className="mb-3 text-sm font-semibold uppercase tracking-wider" style={{ color: 'hsl(25, 70%, 55%)' }}>Outcome: Initial Rejection</p>
-            <p className="mb-4 text-[hsl(40,30%,95%)]">{content.pivot.outcome}</p>
+            <p className="mb-4 text-[hsl(40,30%,95%)]">{readContent.pivot.outcome}</p>
             <ul className="space-y-1 text-[hsl(40,30%,85%)]/80">
-              {content.pivot.pushbackPoints.map((point, i) => (
+              {readContent.pivot.pushbackPoints.map((point, i) => (
                 <li key={i}>• {point}</li>
               ))}
             </ul>
           </div>
           <div className="rounded-2xl bg-[hsl(25,50%,35%)]/30 p-6 backdrop-blur-sm">
             <p className="mb-6 text-sm font-semibold uppercase tracking-wider" style={{ color: 'hsl(25, 70%, 55%)' }}>The New Core Question</p>
-            <p className="text-lg text-[hsl(40,30%,70%)] line-through decoration-2">{content.pivot.oldQuestion}</p>
+            <p className="text-lg text-[hsl(40,30%,70%)] line-through decoration-2">{readContent.pivot.oldQuestion}</p>
             <p className="text-xl font-medium text-[hsl(40,30%,95%)] mt-4">
-              {content.pivot.newQuestion.replace('good', '')}
+              How do we make it easier for users to make{' '}
               <strong style={{ color: 'hsl(25, 70%, 55%)' }}>good</strong>
-              {' short-form videos on Instagram?'}
+              {' '}short-form videos on Instagram?
             </p>
             <div className="mt-6 pt-6 border-t border-[hsl(40,30%,95%)]/20">
-              <p className="mb-4 text-[hsl(40,30%,95%)]">{content.pivot.followUp}</p>
+              <p className="mb-4 text-[hsl(40,30%,95%)]">{readContent.pivot.followUp}</p>
               <ul className="space-y-1 text-[hsl(40,30%,95%)]">
-                {content.pivot.additionalQuestions.map((q, i) => (
+                {readContent.pivot.additionalQuestions.map((q, i) => (
                   <li key={i}><strong>{q.charAt(0)}</strong>{q.slice(1)}</li>
                 ))}
               </ul>
             </div>
+            {readContent.pivot.constraintNote && (
+              <p className="mt-6 pt-6 border-t border-[hsl(40,30%,95%)]/20 text-sm text-[hsl(40,30%,85%)]">{readContent.pivot.constraintNote}</p>
+            )}
           </div>
         </div>
       </ReadSlide>
 
       {/* Slide 5: Phase 2 */}
-      <ReadSlide slideNumber={5} header={content.phase2.header}>
+      <ReadSlide slideNumber={5} header={readContent.phase2.header}>
         <div className="space-y-10">
           <div>
             <h3 className="mb-3 text-xl font-semibold text-foreground">Objective</h3>
-            <p className="text-muted-foreground">{content.phase2.objective}</p>
+            <p className="text-muted-foreground">{readContent.phase2.objective}</p>
           </div>
           <div>
             <h3 className="mb-4 text-xl font-semibold text-foreground">Methodology</h3>
             <div className="rounded-2xl bg-muted/60 p-5">
               <div className="grid gap-4 sm:grid-cols-2">
-                {Object.entries(content.phase2.methodology).map(([key, value]) => (
+                {Object.entries(readContent.phase2.methodology).map(([key, value]) => (
                   <div key={key}>
                     <p className="text-sm text-muted-foreground">{key.replace(/([A-Z])/g, ' $1').trim()}:</p>
                     <p className="font-medium text-foreground">{value}</p>
@@ -296,30 +286,138 @@ const InstagramReelsCaseStudy: React.FC<Props> = ({ isPresent, currentSlide }) =
               </div>
             </div>
           </div>
+
+          {/* Data Collection with Sidebar */}
+          <div className="flex flex-col lg:flex-row gap-6">
+            <div className="flex-1">
+              <h3 className="mb-3 text-xl font-semibold text-foreground">Data Collection</h3>
+              <ul className="space-y-2 text-muted-foreground">
+                {readContent.phase2.dataCollection.map((item, i) => (
+                  <li key={i}>• {item}</li>
+                ))}
+              </ul>
+
+              {/* View Coding Sheet Button */}
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button variant="outline" className="mt-4 gap-2">
+                    <FileText className="h-4 w-4" />
+                    View example coding sheet
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="max-w-4xl max-h-[90vh]">
+                  <DialogHeader>
+                    <DialogTitle>Sample Video Coding Sheet</DialogTitle>
+                  </DialogHeader>
+                  <div className="w-full h-[70vh]">
+                    <iframe
+                      src="/documents/Video_Coding_Sheet_Example.pdf"
+                      className="w-full h-full rounded-lg border border-border"
+                      title="Video Coding Sheet Example"
+                    />
+                  </div>
+                </DialogContent>
+              </Dialog>
+            </div>
+
+            {/* Sidebar box */}
+            <div className="lg:w-72 shrink-0">
+              <div className="rounded-2xl bg-muted/60 p-5 border-l-4 border-primary">
+                <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">Examples of Attributes Coded</p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  {readContent.phase2.attributeExamples.map((item, i) => (
+                    <li key={i}>• {item}</li>
+                  ))}
+                  <li>• Etc.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Data Analysis */}
+          <div>
+            <h3 className="mb-3 text-xl font-semibold text-foreground">Data Analysis</h3>
+            <ul className="space-y-2 text-muted-foreground">
+              {readContent.phase2.dataAnalysis.map((item, i) => (
+                <li key={i}>• {item}</li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Charts */}
+          <div>
+            <div className="grid gap-4 md:grid-cols-2">
+              <Dialog>
+                <DialogTrigger asChild>
+                  <div className="rounded-2xl overflow-hidden bg-background cursor-pointer hover:opacity-90 transition-opacity">
+                    <img
+                      src={videoAttributesChart}
+                      alt="Bar chart comparing % of high-quality vs. low-quality videos with each attribute"
+                      className="w-full h-auto object-contain"
+                    />
+                  </div>
+                </DialogTrigger>
+                <DialogContent className="max-w-4xl p-2">
+                  <img
+                    src={videoAttributesChart}
+                    alt="Bar chart comparing % of high-quality vs. low-quality videos with each attribute"
+                    className="w-full h-auto object-contain"
+                  />
+                </DialogContent>
+              </Dialog>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <div className="rounded-2xl overflow-hidden bg-background cursor-pointer hover:opacity-90 transition-opacity">
+                    <img
+                      src={regressionChart}
+                      alt="Regression results showing which attributes predict video success"
+                      className="w-full h-auto object-contain"
+                    />
+                  </div>
+                </DialogTrigger>
+                <DialogContent className="max-w-4xl p-2">
+                  <img
+                    src={regressionChart}
+                    alt="Regression results showing which attributes predict video success"
+                    className="w-full h-auto object-contain"
+                  />
+                </DialogContent>
+              </Dialog>
+            </div>
+            <p className="mt-3 text-center text-sm text-muted-foreground italic">Example charts using dummy data.</p>
+          </div>
+
+          {/* Key Finding */}
           <div className="rounded-2xl bg-accent/50 p-6">
             <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">Key Finding</p>
-            <p className="mb-4 text-lg text-foreground">{content.phase2.keyFinding}</p>
+            <p className="mb-4 text-lg text-foreground">{readContent.phase2.keyFinding}</p>
             <ul className="space-y-2 text-foreground">
-              {content.phase2.keyAttributes.map((attr, i) => (
+              {readContent.phase2.keyAttributes.map((attr, i) => (
                 <li key={i}><strong>{i + 1}. {attr.name}</strong> — {attr.description}</li>
               ))}
             </ul>
+          </div>
+
+          {/* Outcome */}
+          <div className="rounded-2xl bg-accent/50 p-6">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">Outcome</p>
+            <p className="text-foreground">{readContent.phase2.outcomeNote}</p>
           </div>
         </div>
       </ReadSlide>
 
       {/* Slide 6: Phase 3 */}
-      <ReadSlide slideNumber={6} header={content.phase3.header}>
+      <ReadSlide slideNumber={6} header={readContent.phase3.header}>
         <div className="space-y-10">
           <div>
             <h3 className="mb-3 text-xl font-semibold text-foreground">Objective</h3>
-            <p className="text-muted-foreground">{content.phase3.objective}</p>
+            <p className="text-muted-foreground">{readContent.phase3.objective}</p>
           </div>
           <div>
             <h3 className="mb-4 text-xl font-semibold text-foreground">Methodology</h3>
             <div className="rounded-2xl bg-muted/60 p-5">
               <div className="grid gap-4 sm:grid-cols-2">
-                {Object.entries(content.phase3.methodology).map(([key, value]) => (
+                {Object.entries(readContent.phase3.methodology).map(([key, value]) => (
                   <div key={key}>
                     <p className="text-sm text-muted-foreground">{key.replace(/([A-Z])/g, ' $1').trim()}:</p>
                     <p className="font-medium text-foreground">{value}</p>
@@ -328,33 +426,106 @@ const InstagramReelsCaseStudy: React.FC<Props> = ({ isPresent, currentSlide }) =
               </div>
             </div>
           </div>
-          <div className="rounded-2xl bg-accent/50 p-6">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">Key Finding</p>
-            <p className="mb-4 text-lg text-foreground">{content.phase3.keyFinding}</p>
-            <ul className="space-y-2 text-foreground">
-              <li><strong>Basic Videos:</strong> {content.phase3.keyFindingDetails.basic}</li>
-              <li><strong>Advanced Videos:</strong> {content.phase3.keyFindingDetails.advanced}</li>
+
+          {/* Study Design */}
+          <div>
+            <h3 className="mb-3 text-xl font-semibold text-foreground">Study Design</h3>
+            <p className="mb-4 text-muted-foreground">{readContent.phase3.studyDesign}</p>
+            <ul className="space-y-2 text-muted-foreground">
+              <li>• <strong>Independent Variables:</strong> {readContent.phase3.independentVariables}</li>
+              <li>• <strong>Dependent Variables:</strong> {readContent.phase3.dependentVariables}</li>
+              <li>
+                • <strong>Apps Tested:</strong>
+                <ul className="ml-6 mt-1 space-y-1">
+                  <li>— Step-by-step flow: {readContent.phase3.appsTestedStepByStep.join(', ')}</li>
+                  <li>— Stacked timeline editors: {readContent.phase3.appsTestedStacked.join(', ')}</li>
+                </ul>
+              </li>
             </ul>
           </div>
+
+          {/* Try the Tester Experience CTA */}
+          <div className="rounded-2xl border border-primary/20 bg-primary/5 p-4 sm:p-6 text-center">
+            <Button
+              onClick={() => setIsModalOpen(true)}
+              size="lg"
+              className="gap-2 w-full sm:w-auto text-sm sm:text-base whitespace-normal h-auto py-3"
+            >
+              <Play className="h-5 w-5 shrink-0" />
+              <span>See what this experiment looked like for the participant</span>
+            </Button>
+            <p className="mt-3 text-sm text-muted-foreground">
+              You will be randomly assigned an app to download and a video to re-create (the "basic" or "advanced" example).
+            </p>
+          </div>
+
+          <TesterExperienceModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+
+          {/* Reference Videos (that users recreated) */}
+          <div>
+            <h3 className="mb-4 text-xl font-semibold text-foreground">Reference videos (that users recreated)</h3>
+            <div className="grid gap-4 md:grid-cols-2">
+              <div className="rounded-2xl bg-muted/60 p-4">
+                <p className="mb-3 text-base font-medium text-foreground">
+                  <strong>Basic Video:</strong> {readContent.phase3.referenceVideos.basic}
+                </p>
+                <div className="rounded-xl overflow-hidden bg-background">
+                  <video src={basicVideoExample} controls className="w-full h-auto max-h-[200px] object-contain" preload="metadata" />
+                </div>
+              </div>
+              <div className="rounded-2xl bg-muted/60 p-4">
+                <p className="mb-3 text-base font-medium text-foreground">
+                  <strong>Advanced Video:</strong> {readContent.phase3.referenceVideos.advanced}
+                </p>
+                <div className="rounded-xl overflow-hidden bg-background">
+                  <video src={advancedVideoExample} controls className="w-full h-auto max-h-[200px] object-contain" preload="metadata" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Data Analysis */}
+          <div>
+            <h3 className="mb-3 text-xl font-semibold text-foreground">Data Analysis</h3>
+            <p className="mb-4 text-muted-foreground">{readContent.phase3.dataAnalysis}</p>
+            <ul className="space-y-2 text-muted-foreground">
+              {readContent.phase3.analysisPoints.map((item, i) => (
+                <li key={i}>• {item}</li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Key Finding */}
+          <div className="rounded-2xl bg-accent/50 p-6">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">Key Finding</p>
+            <p className="mb-4 text-lg text-foreground">{readContent.phase3.keyFinding}</p>
+            <ul className="space-y-2 text-foreground">
+              <li><strong>Basic Videos:</strong> {readContent.phase3.keyFindingDetails.basic}</li>
+              <li><strong>Advanced Videos:</strong> {readContent.phase3.keyFindingDetails.advanced}</li>
+            </ul>
+          </div>
+
+          {/* Ease-of-Use Chart */}
           <div className="rounded-2xl overflow-hidden bg-background">
-            <img src={easeOfUseChart} alt="Ease of use chart" className="w-full h-auto" />
+            <img src={easeOfUseChart} alt="Interaction plot showing ease-of-use ratings by editor type and video complexity" className="w-full h-auto" />
           </div>
         </div>
       </ReadSlide>
 
       {/* Slide 7: Recommendation */}
-      <ReadSlide slideNumber={7} header={content.recommendation.header}>
+      <ReadSlide slideNumber={7} header={readContent.recommendation.header}>
         <div className="space-y-10">
           <div className="rounded-2xl bg-accent/50 p-6">
             <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">Key Message to Leadership</p>
-            <blockquote className="mb-4 text-2xl font-semibold text-foreground">{content.recommendation.keyMessage}</blockquote>
-            <p className="mb-4 text-lg text-foreground">{content.recommendation.keyMessageSubtitle}</p>
-            <p className="text-muted-foreground">{content.recommendation.keyMessageExplanation}</p>
+            <blockquote className="mb-4 text-2xl font-semibold text-foreground">{readContent.recommendation.keyMessage}</blockquote>
+            <p className="mb-4 text-lg text-foreground">{readContent.recommendation.keyMessageSubtitle}</p>
+            <p className="text-muted-foreground">{readContent.recommendation.keyMessageExplanation}</p>
           </div>
           <div>
             <h3 className="mb-3 text-xl font-semibold text-foreground">Three Pieces of Evidence</h3>
+            <p className="mb-4 text-muted-foreground">The final presentation synthesized findings from all three research phases:</p>
             <div className="space-y-4">
-              {content.recommendation.threeEvidencePoints.map((point, i) => (
+              {readContent.recommendation.threeEvidencePoints.map((point, i) => (
                 <div key={i} className="rounded-2xl bg-muted/60 p-5">
                   <p className="font-semibold text-foreground">{point.title}</p>
                   <p className="mt-1 text-muted-foreground">{point.description}</p>
@@ -363,8 +534,8 @@ const InstagramReelsCaseStudy: React.FC<Props> = ({ isPresent, currentSlide }) =
             </div>
           </div>
           <div>
-            <h3 className="mb-3 text-xl font-semibold text-foreground">{content.recommendation.flywheelTitle}</h3>
-            <p className="text-muted-foreground">{content.recommendation.flywheelExplanation}</p>
+            <h3 className="mb-3 text-xl font-semibold text-foreground">{readContent.recommendation.flywheelTitle}</h3>
+            <p className="text-muted-foreground">{readContent.recommendation.flywheelExplanation}</p>
           </div>
           <div className="rounded-2xl overflow-hidden bg-background">
             <img src={flywheelDiagram} alt="Flywheel diagram" className="w-full h-auto" />
@@ -373,64 +544,121 @@ const InstagramReelsCaseStudy: React.FC<Props> = ({ isPresent, currentSlide }) =
       </ReadSlide>
 
       {/* Slide 8: Impact */}
-      <ReadSlide slideNumber={8} header={content.impact.header}>
+      <ReadSlide slideNumber={8} header={readContent.impact.header}>
         <div className="space-y-10">
+          {/* Leadership Decision */}
           <div className="rounded-2xl bg-accent/50 p-6">
             <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">Leadership Decision</p>
-            <p className="text-xl font-semibold text-foreground">{content.impact.leadershipDecision}</p>
+            <p className="text-xl font-semibold text-foreground">{readContent.impact.leadershipDecision}</p>
           </div>
-          <div className="rounded-2xl bg-muted/60 p-5">
-            <p className="font-medium text-foreground">Shipped the New Editor</p>
-            <p className="mt-1 text-muted-foreground">{content.impact.shippedEditor}</p>
-          </div>
-          <div className="grid gap-4 md:grid-cols-2">
-            <div className="space-y-2">
-              <div className="rounded-2xl overflow-hidden bg-background">
-                <img src={reelsEditorBefore} alt="Before" className="w-full h-auto max-h-[420px] object-contain" />
-              </div>
-              <p className="text-sm font-medium text-foreground">Before</p>
-              <p className="text-sm text-muted-foreground">{content.impact.beforeAfter.before}</p>
-            </div>
-            <div className="space-y-2">
-              <div className="rounded-2xl overflow-hidden bg-background">
-                <img src={reelsEditorAfter} alt="After" className="w-full h-auto max-h-[420px] object-contain" />
-              </div>
-              <p className="text-sm font-medium text-foreground">After</p>
-              <p className="text-sm text-muted-foreground">{content.impact.beforeAfter.after}</p>
-            </div>
-          </div>
+
+          {/* Product Outcomes */}
           <div>
-            <p className="mb-4 text-muted-foreground">{content.impact.prCampaign}</p>
-            <blockquote className="rounded-2xl border-l-4 border-primary bg-muted/40 p-5">
-              <p className="text-muted-foreground italic">{content.impact.pressQuote}</p>
-              <footer className="mt-3">
-                <a href={content.impact.pressUrl} target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:underline">
-                  — {content.impact.pressSource}
-                </a>
-              </footer>
-            </blockquote>
-          </div>
-          <div className="rounded-2xl bg-accent/50 p-6">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">One Year Later</p>
-            <p className="mb-4 text-foreground">{content.impact.editsApp}</p>
-            <blockquote className="rounded-xl border-l-4 border-primary/50 bg-background/50 p-4">
-              <p className="text-muted-foreground italic">{content.impact.editsQuote}</p>
-              <footer className="mt-2">
-                <a href={content.impact.editsUrl} target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:underline">
-                  — Instagram Press Release
-                </a>
-              </footer>
-            </blockquote>
+            <h3 className="mb-4 text-xl font-semibold text-foreground">Product Outcomes</h3>
+
+            <div className="space-y-4">
+              <div className="rounded-2xl bg-muted/60 p-5">
+                <p className="font-medium text-foreground">Shipped the New Editor</p>
+                <p className="mt-1 text-muted-foreground">{readContent.impact.shippedEditor}</p>
+              </div>
+
+              {/* Before/After Comparison with Lightbox */}
+              <div className="grid gap-4 md:grid-cols-2">
+                <div className="space-y-2">
+                  <button
+                    onClick={() => setLightboxImage({ src: reelsEditorBefore, alt: 'Instagram Reels editor before - linear timeline' })}
+                    className="rounded-2xl overflow-hidden bg-background cursor-pointer hover:opacity-90 transition-opacity w-full"
+                  >
+                    <img
+                      src={reelsEditorBefore}
+                      alt="Instagram Reels editor before - linear timeline"
+                      className="w-full h-auto max-h-[420px] object-contain"
+                    />
+                  </button>
+                  <p className="text-sm font-medium text-foreground">Before</p>
+                  <p className="text-sm text-muted-foreground">{readContent.impact.beforeAfter.before}</p>
+                </div>
+                <div className="space-y-2">
+                  <button
+                    onClick={() => setLightboxImage({ src: reelsEditorAfter, alt: 'Instagram Reels editor after - stacked timeline' })}
+                    className="rounded-2xl overflow-hidden bg-background cursor-pointer hover:opacity-90 transition-opacity w-full"
+                  >
+                    <img
+                      src={reelsEditorAfter}
+                      alt="Instagram Reels editor after - stacked timeline"
+                      className="w-full h-auto max-h-[420px] object-contain"
+                    />
+                  </button>
+                  <p className="text-sm font-medium text-foreground">After</p>
+                  <p className="text-sm text-muted-foreground">{readContent.impact.beforeAfter.after}</p>
+                </div>
+              </div>
+
+              <div className="rounded-2xl bg-muted/60 p-5">
+                <p className="font-medium text-foreground">PR campaign</p>
+                <p className="mt-1 text-muted-foreground">{readContent.impact.prCampaign}</p>
+              </div>
+
+              {/* Quote and Screenshot side by side */}
+              <div className="grid gap-4 md:grid-cols-2 items-center">
+                <blockquote className="rounded-2xl border-l-4 border-primary bg-muted/40 p-5">
+                  <p className="text-muted-foreground italic">{readContent.impact.pressQuote}</p>
+                  <footer className="mt-3">
+                    <a href={readContent.impact.pressUrl} target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:underline">
+                      — {readContent.impact.pressSource}
+                    </a>
+                  </footer>
+                </blockquote>
+                <div className="rounded-2xl overflow-hidden">
+                  <img
+                    src={reelsEditorScreenshot}
+                    alt="Instagram Reels stacked timeline editor interface"
+                    className="w-full h-auto"
+                  />
+                </div>
+              </div>
+
+              <div className="rounded-2xl bg-muted/60 p-5">
+                <p className="font-medium text-foreground">Instagram "Edits" App</p>
+                <p className="mt-1 text-muted-foreground">{readContent.impact.editsApp}</p>
+              </div>
+
+              {/* Edits App Quote and Screenshot side by side */}
+              <div className="grid gap-4 md:grid-cols-2 items-center">
+                <blockquote className="rounded-2xl border-l-4 border-primary bg-muted/40 p-5">
+                  <p className="text-muted-foreground italic">{readContent.impact.editsQuote}</p>
+                  <footer className="mt-3">
+                    <a href={readContent.impact.editsUrl} target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:underline">
+                      — Instagram Press Release
+                    </a>
+                  </footer>
+                </blockquote>
+                <div className="rounded-2xl overflow-hidden">
+                  <img
+                    src={editsAppScreenshot}
+                    alt="Instagram Edits app interface showing video editing features"
+                    className="w-full h-auto"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+
+        <ImageLightbox
+          isOpen={!!lightboxImage}
+          onClose={() => setLightboxImage(null)}
+          src={lightboxImage?.src || ''}
+          alt={lightboxImage?.alt || ''}
+        />
       </ReadSlide>
 
       {/* Slide 9: Lessons */}
-      <ReadSlide slideNumber={9} header={content.lessons.header} dark>
+      <ReadSlide slideNumber={9} header={readContent.lessons.header} dark>
         <div className="space-y-10">
-          <h3 className="mb-3 text-xl font-semibold text-[hsl(40,30%,95%)]">{content.lessons.title}</h3>
+          <h3 className="mb-3 text-xl font-semibold text-[hsl(40,30%,95%)]">{readContent.lessons.title}</h3>
           <div className="space-y-4">
-            {content.lessons.lessonsList.map((lesson) => (
+            {readContent.lessons.lessonsList.map((lesson) => (
               <div key={lesson.number} className="rounded-2xl bg-[hsl(220,10%,28%)]/80 p-5">
                 <p className="mb-1 text-sm font-medium" style={{ color: 'hsl(25, 70%, 55%)' }}>{lesson.number}</p>
                 <p className="font-semibold text-[hsl(40,30%,95%)]">{lesson.title}</p>
@@ -440,285 +668,12 @@ const InstagramReelsCaseStudy: React.FC<Props> = ({ isPresent, currentSlide }) =
           </div>
           <div className="rounded-2xl bg-[hsl(25,50%,35%)]/30 p-6">
             <p className="mb-3 text-sm font-semibold uppercase tracking-wider" style={{ color: 'hsl(25, 70%, 55%)' }}>What I'd Do Differently</p>
-            <p className="text-[hsl(40,30%,95%)]">{content.lessons.whatIdDoDifferently}</p>
+            <p className="text-[hsl(40,30%,95%)]">{readContent.lessons.whatIdDoDifferently}</p>
           </div>
         </div>
       </ReadSlide>
     </>
   );
 };
-
-// ============================================
-// PRESENT MODE SLIDES
-// ============================================
-
-function renderPresentSlide(slideIndex: number, scrollToSlide: (n: number) => void) {
-  switch (slideIndex) {
-    case 0:
-      return (
-        <PresentSlide>
-          <div className="text-center">
-            <h1 className="mb-8 text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">{content.meta.title}</h1>
-            <p className="mb-12 text-xl text-slate-300 md:text-2xl">{content.meta.subtitleShort}</p>
-            <div className="mt-16 space-y-2 text-slate-400">
-              <p className="text-lg">{content.meta.author}</p>
-              <p>{content.meta.role}</p>
-            </div>
-          </div>
-        </PresentSlide>
-      );
-
-    case 1:
-      return (
-        <PresentSlide header={content.problem.header}>
-          <div className="space-y-10">
-            <div>
-              <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">{content.problem.present.title}</h2>
-              <p className="text-xl text-slate-300">{content.problem.present.description}</p>
-            </div>
-            <div className="grid gap-6 md:grid-cols-2">
-              <div className="rounded-2xl bg-slate-800/80 p-6 border border-slate-700">
-                <p className="mb-2 text-sm text-slate-400">Business Goal</p>
-                <p className="text-xl font-semibold text-white">{content.problem.present.businessGoal}</p>
-              </div>
-              <div className="rounded-2xl bg-slate-800/80 p-6 border border-slate-700">
-                <p className="mb-2 text-sm text-slate-400">Core Question</p>
-                <p className="text-xl font-semibold text-white">{content.problem.present.coreQuestion}</p>
-              </div>
-            </div>
-            <div className="rounded-2xl bg-slate-800/50 p-6 border border-slate-700">
-              <div className="grid gap-4 md:grid-cols-3 text-center">
-                <div><p className="text-sm text-slate-400">My Role</p><p className="font-semibold text-white">{content.problem.team.myRole}</p></div>
-                <div><p className="text-sm text-slate-400">Team</p><p className="font-semibold text-white">{content.problem.team.team}</p></div>
-                <div><p className="text-sm text-slate-400">Stakeholders</p><p className="font-semibold text-white">{content.problem.team.stakeholders}</p></div>
-              </div>
-            </div>
-          </div>
-        </PresentSlide>
-      );
-
-    case 2:
-      return (
-        <PresentSlide header={content.researchOverview.header}>
-          <div className="space-y-8">
-            <h2 className="text-3xl font-bold text-white md:text-4xl">{content.researchOverview.title}</h2>
-            <p className="text-xl text-slate-300">{content.researchOverview.description}</p>
-            <div className="space-y-4">
-              {content.researchOverview.phases.map((phase) => (
-                <div key={phase.number} className="rounded-2xl bg-slate-800/80 p-5 border border-slate-700">
-                  <div className="flex items-baseline gap-3 mb-2">
-                    <span className="text-lg font-bold text-orange-400">Phase {phase.number}</span>
-                    <span className="text-sm text-slate-400">({phase.type})</span>
-                  </div>
-                  <h4 className="text-lg font-semibold text-white">{phase.title}</h4>
-                  <p className="mt-1 text-slate-300">{phase.insight}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </PresentSlide>
-      );
-
-    case 3:
-      return (
-        <PresentSlide header={content.phase1.header}>
-          <div className="space-y-8">
-            <div className="grid gap-6 md:grid-cols-2">
-              <div>
-                <h2 className="mb-4 text-3xl font-bold text-white">Key Finding</h2>
-                <p className="text-xl text-slate-300">{content.phase1.keyFinding}</p>
-              </div>
-              <div className="rounded-2xl bg-slate-800/80 p-4 text-sm border border-slate-700">
-                <div className="grid grid-cols-2 gap-3">
-                  <div><p className="text-slate-400">Method</p><p className="font-medium text-white">{content.phase1.methodology.method}</p></div>
-                  <div><p className="text-slate-400">Duration</p><p className="font-medium text-white">{content.phase1.methodology.duration}</p></div>
-                  <div><p className="text-slate-400">Sample</p><p className="font-medium text-white">{content.phase1.methodology.sample}</p></div>
-                </div>
-              </div>
-            </div>
-            <div className="rounded-2xl bg-orange-500/20 p-6 border border-orange-500/30">
-              <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-orange-400">Why They Avoided Our Editor</p>
-              <ul className="space-y-2 text-lg text-white">
-                {content.phase1.keyFindingDetails.slice(0, 2).map((detail, i) => (
-                  <li key={i}>• {detail.split('.')[0]}.</li>
-                ))}
-              </ul>
-            </div>
-            <div className="rounded-2xl overflow-hidden bg-white/10 p-2">
-              <img src={editorComparison} alt="Editor comparison" className="w-full h-auto max-h-[200px] object-contain" />
-            </div>
-          </div>
-        </PresentSlide>
-      );
-
-    case 4:
-      return (
-        <PresentSlide header={content.pivot.header}>
-          <div className="space-y-8">
-            <div className="rounded-2xl bg-red-500/20 p-6 border border-red-500/30">
-              <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-red-400">Outcome: Initial Rejection</p>
-              <p className="text-xl text-white">{content.pivot.outcome}</p>
-            </div>
-            <div className="rounded-2xl bg-orange-500/20 p-6 border border-orange-500/30">
-              <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-orange-400">The New Core Question</p>
-              <p className="text-lg text-slate-400 line-through decoration-2 mb-3">{content.pivot.oldQuestion}</p>
-              <p className="text-2xl font-medium text-white">
-                How do we make it easier to make <strong className="text-orange-400">good</strong> short-form videos?
-              </p>
-            </div>
-            <div className="text-white">
-              <p className="mb-4 text-slate-300">We needed to rigorously answer two questions:</p>
-              <ul className="space-y-2 text-lg">
-                {content.pivot.additionalQuestions.map((q, i) => (
-                  <li key={i}><strong className="text-orange-400">{q.charAt(0)}.</strong>{q.slice(2)}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </PresentSlide>
-      );
-
-    case 5:
-      return (
-        <PresentSlide header={content.phase2.header}>
-          <div className="space-y-8">
-            <div className="grid gap-6 md:grid-cols-2">
-              <div>
-                <h2 className="mb-4 text-3xl font-bold text-white">What Makes Videos Successful?</h2>
-                <p className="text-xl text-slate-300">{content.phase2.objective}</p>
-              </div>
-              <div className="rounded-2xl bg-slate-800/80 p-4 text-sm border border-slate-700">
-                <div className="grid grid-cols-2 gap-3">
-                  <div><p className="text-slate-400">Method</p><p className="font-medium text-white">{content.phase2.methodology.method}</p></div>
-                  <div><p className="text-slate-400">Sample</p><p className="font-medium text-white">{content.phase2.methodology.sample}</p></div>
-                </div>
-              </div>
-            </div>
-            <div className="rounded-2xl bg-orange-500/20 p-6 border border-orange-500/30">
-              <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-orange-400">Three Attributes Strongly Predicted Success</p>
-              <div className="grid gap-4 md:grid-cols-3">
-                {content.phase2.keyAttributes.map((attr, i) => (
-                  <div key={i} className="rounded-xl bg-slate-800/80 p-4 text-center border border-slate-700">
-                    <p className="text-2xl font-bold text-orange-400">{i + 1}</p>
-                    <p className="mt-2 font-semibold text-white">{attr.name}</p>
-                    <p className="text-sm text-slate-400">{attr.description}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </PresentSlide>
-      );
-
-    case 6:
-      return (
-        <PresentSlide header={content.phase3.header}>
-          <div className="space-y-8">
-            <div className="grid gap-6 md:grid-cols-2">
-              <div>
-                <h2 className="mb-4 text-3xl font-bold text-white">Which Editor Works Better?</h2>
-                <p className="text-xl text-slate-300">200 testers recreated videos using different editing apps.</p>
-              </div>
-              <div className="rounded-2xl bg-slate-800/80 p-4 text-sm border border-slate-700">
-                <div className="grid grid-cols-2 gap-3">
-                  <div><p className="text-slate-400">Method</p><p className="font-medium text-white">{content.phase3.methodology.method}</p></div>
-                  <div><p className="text-slate-400">Sample</p><p className="font-medium text-white">{content.phase3.methodology.sample}</p></div>
-                </div>
-              </div>
-            </div>
-            <div className="rounded-2xl bg-orange-500/20 p-6 border border-orange-500/30">
-              <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-orange-400">Key Finding</p>
-              <p className="text-xl font-semibold text-white mb-4">{content.phase3.keyFinding}</p>
-              <div className="grid gap-4 md:grid-cols-2">
-                <div className="rounded-xl bg-slate-800/80 p-4 border border-slate-700">
-                  <p className="font-semibold text-white">Basic Videos</p>
-                  <p className="text-slate-300">{content.phase3.keyFindingDetails.basic}</p>
-                </div>
-                <div className="rounded-xl bg-slate-800/80 p-4 border border-slate-700">
-                  <p className="font-semibold text-white">Advanced Videos</p>
-                  <p className="text-slate-300">{content.phase3.keyFindingDetails.advanced}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </PresentSlide>
-      );
-
-    case 7:
-      return (
-        <PresentSlide header={content.recommendation.header}>
-          <div className="space-y-8">
-            <div className="rounded-2xl bg-orange-500/20 p-8 text-center border border-orange-500/30">
-              <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-orange-400">Key Message to Leadership</p>
-              <blockquote className="text-3xl font-bold text-white md:text-4xl">{content.recommendation.keyMessage}</blockquote>
-              <p className="mt-6 text-xl text-slate-300">{content.recommendation.keyMessageSubtitle}</p>
-            </div>
-            <div>
-              <h3 className="mb-4 text-xl font-semibold text-white">Three Pieces of Evidence</h3>
-              <div className="space-y-3">
-                {content.recommendation.threeEvidencePoints.map((point, i) => (
-                  <div key={i} className="rounded-xl bg-slate-800/80 p-4 border border-slate-700">
-                    <p className="font-semibold text-white">{point.title}</p>
-                    <p className="text-slate-300">{point.description}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </PresentSlide>
-      );
-
-    case 8:
-      return (
-        <PresentSlide header={content.impact.header}>
-          <div className="space-y-8">
-            <div className="rounded-2xl bg-green-500/20 p-6 text-center border border-green-500/30">
-              <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-green-400">Leadership Decision</p>
-              <p className="text-2xl font-bold text-white">{content.impact.leadershipDecision}</p>
-            </div>
-            <div className="grid gap-6 md:grid-cols-2">
-              <div className="space-y-2">
-                <div className="rounded-xl overflow-hidden bg-white/10 p-2">
-                  <img src={reelsEditorBefore} alt="Before" className="w-full h-auto max-h-[180px] object-contain" />
-                </div>
-                <p className="text-center font-medium text-white">Before</p>
-              </div>
-              <div className="space-y-2">
-                <div className="rounded-xl overflow-hidden bg-white/10 p-2">
-                  <img src={reelsEditorAfter} alt="After" className="w-full h-auto max-h-[180px] object-contain" />
-                </div>
-                <p className="text-center font-medium text-white">After</p>
-              </div>
-            </div>
-          </div>
-        </PresentSlide>
-      );
-
-    case 9:
-      return (
-        <PresentSlide header={content.lessons.header}>
-          <div className="space-y-8">
-            <h2 className="text-3xl font-bold text-white">{content.lessons.title}</h2>
-            <div className="space-y-4">
-              {content.lessons.lessonsList.map((lesson) => (
-                <div key={lesson.number} className="rounded-2xl bg-slate-800/80 p-5 border border-slate-700">
-                  <p className="mb-1 text-sm font-medium text-orange-400">{lesson.number}</p>
-                  <p className="text-xl font-semibold text-white">{lesson.title}</p>
-                  <p className="mt-2 text-slate-300">{lesson.description}</p>
-                </div>
-              ))}
-            </div>
-            <div className="rounded-2xl bg-orange-500/20 p-6 border border-orange-500/30">
-              <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-orange-400">What I'd Do Differently</p>
-              <p className="text-lg text-white">{content.lessons.whatIdDoDifferently}</p>
-            </div>
-          </div>
-        </PresentSlide>
-      );
-
-    default:
-      return null;
-  }
-}
 
 export default InstagramReelsCaseStudy;

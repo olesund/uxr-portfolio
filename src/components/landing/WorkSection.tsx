@@ -20,6 +20,14 @@ const WorkSection: React.FC = () => {
       tags: ['Survey Research', 'Diary Study', 'Behavioral Data', 'Stakeholder Management'],
       href: '/work/nyt-watch-tab',
     },
+    {
+      title: 'Strategy for YouTube',
+      subtitle: 'The New York Times',
+      description:
+        'A self-initiated research program across News, Cooking, and Wirecutter that defined the NYT\'s YouTube strategy using surveys, diary studies, and content analysis.',
+      tags: ['Cross-Organizational', 'Survey Research', 'Diary Study', 'Strategic Research'],
+      href: '/work/nyt-youtube',
+    },
   ];
 
   return (

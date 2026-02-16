@@ -1,16 +1,16 @@
 /**
- * NYT Watch Tab Case Study Page
+ * NYT YouTube Strategy Case Study Page
  *
- * This page uses the consolidated NYTWatchTabCaseStudy component.
- * To edit content, see: src/data/nyt-watch-tab-content.ts
+ * This page uses the consolidated NYTYouTubeCaseStudy component.
+ * To edit content, see: src/data/nyt-youtube-content.ts
  */
 
 import React, { useEffect, useRef, useState } from 'react';
-import NYTWatchTabCaseStudy from '@/components/case-study/NYTWatchTabCaseStudy';
+import NYTYouTubeCaseStudy from '@/components/case-study/NYTYouTubeCaseStudy';
 
 const TOTAL_SLIDES = 10;
 
-const NYTWatchTab: React.FC = () => {
+const NYTYouTube: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -45,7 +45,7 @@ const NYTWatchTab: React.FC = () => {
   return (
     <main className="min-h-screen bg-background">
       <div ref={containerRef} className="snap-y snap-mandatory">
-        <NYTWatchTabCaseStudy />
+        <NYTYouTubeCaseStudy />
       </div>
 
       {/* Progress indicator */}
@@ -73,4 +73,4 @@ const NYTWatchTab: React.FC = () => {
   );
 };
 
-export default NYTWatchTab;
+export default NYTYouTube;

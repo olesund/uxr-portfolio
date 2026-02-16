@@ -5,10 +5,7 @@
  * To edit content, see: src/data/instagram-reels-content.ts
  */
 
-import React, { useEffect, useRef, useState, useCallback } from 'react';
-import { useViewMode } from '@/hooks/useViewMode';
-import ModeToggle from '@/components/presentation/ModeToggle';
-import PresentationControls from '@/components/presentation/PresentationControls';
+import React, { useEffect, useRef, useState } from 'react';
 import InstagramReelsCaseStudy from '@/components/case-study/InstagramReelsCaseStudy';
 
 const TOTAL_SLIDES = 10;
@@ -16,10 +13,9 @@ const TOTAL_SLIDES = 10;
 const InstagramReels: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const { mode, setMode, isPresent } = useViewMode();
 
   useEffect(() => {
-    if (isPresent || !containerRef.current) return;
+    if (!containerRef.current) return;
 
     const slides = containerRef.current.querySelectorAll('section[id^="slide-"]');
 
@@ -38,7 +34,7 @@ const InstagramReels: React.FC = () => {
 
     slides.forEach((slide) => observer.observe(slide));
     return () => observer.disconnect();
-  }, [isPresent]);
+  }, []);
 
   const progress = ((currentSlide + 1) / TOTAL_SLIDES) * 100;
 
@@ -46,42 +42,10 @@ const InstagramReels: React.FC = () => {
     document.getElementById(`slide-${index}`)?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const handlePrevious = useCallback(() => {
-    setCurrentSlide((prev) => Math.max(0, prev - 1));
-  }, []);
-
-  const handleNext = useCallback(() => {
-    setCurrentSlide((prev) => Math.min(TOTAL_SLIDES - 1, prev + 1));
-  }, []);
-
-  const handleExit = useCallback(() => {
-    setMode('read');
-  }, [setMode]);
-
-  // Render present mode
-  if (isPresent) {
-    return (
-      <main className="min-h-screen bg-background">
-        <ModeToggle mode={mode} onModeChange={setMode} />
-        <InstagramReelsCaseStudy isPresent={true} currentSlide={currentSlide} />
-        <PresentationControls
-          currentSlide={currentSlide}
-          totalSlides={TOTAL_SLIDES}
-          onPrevious={handlePrevious}
-          onNext={handleNext}
-          onExit={handleExit}
-        />
-      </main>
-    );
-  }
-
-  // Render read mode
   return (
     <main className="min-h-screen bg-background">
-      <ModeToggle mode={mode} onModeChange={setMode} />
-
       <div ref={containerRef} className="snap-y snap-mandatory">
-        <InstagramReelsCaseStudy isPresent={false} currentSlide={currentSlide} />
+        <InstagramReelsCaseStudy />
       </div>
 
       {/* Progress indicator */}
