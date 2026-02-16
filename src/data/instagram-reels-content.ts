@@ -15,16 +15,16 @@ export const sharedContent = {
   },
   team: {
     myRole: "Lead UX Researcher",
-    myRoleDescription: "Designed, ran, and presented all research",
-    team: "Cross-functional",
-    teamDescription: "Product Manager, Product Designer, Data Scientist, iOS Engineer",
+    myRoleDescription: "Designed, ran, and presented all research across three phases",
+    team: "Cross-Functional",
+    teamDescription: "My PM was a key partner in shaping research objectives, timelines, and the final recommendation to leadership. Our designer created rapid prototypes from creator feedback that I could test within days. A data scientist defined success criteria by analyzing view distributions. A second UXR assisted with data analysis in Phases 2 and 3.",
     stakeholders: "Senior Leadership",
     stakeholdersDescription: "Including the Head of Instagram",
   },
 };
 
 // ============================================
-// CONTENT
+// READ MODE CONTENT
 // ============================================
 export const readContent = {
   // ---------- SLIDE 0: TITLE ----------
@@ -40,7 +40,6 @@ export const readContent = {
     businessContext: "Instagram Reels had recently launched as the company's top priority. But we faced a critical problem: a lot of users were watching our short-form videos, but we didn't have enough creators making them! Demand outpaced supply! If viewers couldn't find enough entertaining videos, we worried that they'd stop using Reels altogether and visit TikTok instead.",
     businessGoal: "Increase the production of short-form videos.",
     coreQuestion: "How do we make it easier for users to make short-form videos on Instagram?",
-    scopeNote: "Another team focused on motivating people to make videos. My team focused on making the process easier.",
   },
 
   // ---------- SLIDE 2: RESEARCH OVERVIEW ----------
@@ -48,7 +47,6 @@ export const readContent = {
     header: "Research Overview",
     title: "A Three-Phase Research Strategy",
     description: "This started as a small study with 20 creators but grew to include two larger projects. Each phase built on the previous, moving from exploration to experimentation.",
-    collaboration: "Throughout the three phases I worked closely with my PM, designer, data scientist and another UX researcher. The PM was my key partner in shaping the research objectives, timelines, and eventually recommendation to leadership. The designer created rapid prototypes based on creator feedback that I could test in the community within days. Our data scientist helped define the criteria for what counted as a 'successful' Reel by analyzing view distributions. The other UXR assisted with the analysis of data in phase 2 and 3.",
     phases: [
       {
         number: "01",
@@ -126,7 +124,7 @@ export const readContent = {
       duration: "Three weeks",
       sample: "2,000 Videos (1,000 each group)",
       successThreshold: ">1,000 views (top 10% in US)",
-      coders: "Internal colleagues (blinded)",
+      coders: "Myself + eight colleagues (blinded) that I recruited as volunteers",
     },
     dataCollection: [
       "Recruited internal colleagues to watch 50-100 videos each, randomly assigned from both the low and high-quality pools",
@@ -227,6 +225,243 @@ export const readContent = {
     editsApp: "About a year later, Instagram released 'Edits'—a standalone editing app fully built around the stacked timeline design. This represented a major shift toward positioning Instagram as a serious creative platform.",
     editsQuote: "\"Today, we're launching Edits, a new video creation app that helps you make great videos directly on your phone. If you're passionate about making videos, Edits has the tools you need to support your creation process, all in one place.\"",
     editsUrl: "https://about.fb.com/news/2025/04/introducing-edits-streamlined-video-creation-app/",
+  },
+
+  // ---------- SLIDE 9: LESSONS ----------
+  lessons: {
+    header: "Lessons Learned",
+    title: "What This Project Taught Me",
+    lessonsList: [
+      {
+        number: "01",
+        title: "Misalignment often comes from different assumptions",
+        description: "Our team and leadership both wanted an easy-to-use editor—but we hadn't aligned on what types of videos to prioritize.",
+      },
+      {
+        number: "02",
+        title: "Study what people make to understand your product",
+        description: "Analyzing user-created content showed us what makes videos successful. This was before AI made it easy—it was manual and tedious. Today I use this method at much larger scale.",
+      },
+    ],
+    whatIdDoDifferently: "Have leadership experience the problem firsthand. My team made videos every week, so we felt the limitations intuitively. Leadership wasn't using the product and assumed 'simple = easy' without testing it. Hands-on experience could have accelerated alignment.",
+  },
+};
+
+// ============================================
+// PRESENT MODE CONTENT
+// ============================================
+export const presentContent = {
+  // ---------- SLIDE 0: TITLE ----------
+  title: {
+    headline: "Instagram Reels Video Editor Research",
+    subtitle: "Three phases of mixed-methods research that led to a major redesign",
+  },
+
+  // ---------- SLIDE 1: PROBLEM ----------
+  problem: {
+    header: "Problem + Key Constraints",
+    businessContextTitle: "Business Context",
+    businessContext: "Instagram Reels was the company's top priority. Demand outpaced supply and we needed more users to make videos.",
+    businessGoal: "Increase the production of short-form videos.",
+    coreQuestion: "How do we make it easier for users to make short-form videos on Instagram?",
+  },
+
+  // ---------- SLIDE 2: RESEARCH OVERVIEW ----------
+  researchOverview: {
+    header: "Research Overview",
+    title: "A Three-Phase Research Strategy",
+    description: "This started as a small study with 20 creators but grew to include two larger projects. Each phase built on the previous, moving from exploration to experimentation.",
+    phases: [
+      {
+        number: "01",
+        title: "Online Community of 20 Reels Creators",
+        type: "Qualitative",
+        description: "Talked to and observed Reels creators over six weeks. Discovered they were using third-party apps (like CapCut) instead of Instagram to edit their videos.",
+      },
+      {
+        number: "02",
+        title: "Large-Scale Video Content Analysis",
+        type: "Quantitative",
+        description: "Analyzed 2,000 videos to identify what makes videos successful. Found that high-quality videos use multiple clips synced to music with text overlaid.",
+      },
+      {
+        number: "03",
+        title: "Usability Testing Experiment",
+        type: "Experimental",
+        description: "Tested which editor design works best for simple vs. complex videos. Proved that different designs work better for different video types.",
+      },
+    ],
+  },
+
+  // ---------- SLIDE 3: PHASE 1 ----------
+  phase1: {
+    header: "Phase 1: Online Community of Reels Creators",
+    pages: [
+      {
+        title: "Objective, Methodology & Data Collection",
+        objective: "Understand why some small-scale creators were seeing initial success with their Reels. Test new editing features to see which tools creators find most useful.",
+        methodology: {
+          method: "Online Community Research",
+          duration: "Six Weeks",
+          sample: "20 Non-Professional Reels Creators",
+          criteria: "US, 18-35, 10+ Reels, 1,000+ views",
+        },
+        dataCollection: "Over six weeks, 20 Reels creators completed activities in a private Facebook group three times per week: testing prototypes, rating videos, sharing their creative process in interviews, and discussing tips with one another.",
+      },
+      {
+        title: "Video Editor UX Architecture Paradigms",
+        imageOnly: true,
+      },
+      {
+        title: "Key Finding & Recommendation",
+        finding: "Most creators actively avoided Instagram's native editor for actual video creation. Instead, they used third-party apps (like CapCut), then uploaded finished videos to Instagram.",
+        details: [
+          "Creators preferred \"stacked timeline\" editors where video, audio, and text layers are all visible at once on a single screen.",
+          "Making any video was easy on Instagram. But making a good video was hard. Creators felt they needed to reach a quality bar before posting.",
+        ],
+        recommendation: "It's not enough to make it easy to create any video—users want to create good videos. We should redesign the editor from a step-by-step flow to a stacked timeline where video, audio, and text are all on one screen in different layers.",
+      },
+    ],
+  },
+
+  // ---------- SLIDE 4: THE PIVOT ----------
+  pivot: {
+    header: "The Pivot",
+    pages: [
+      {
+        title: "Initial Rejection",
+        outcome: "Leadership pushed back hard. They wanted Instagram to 'feel simple' and worried that a stacked timeline was 'too complex.'",
+        pushbackPoints: [
+          "The Reels editor was based on Instagram Stories and TikTok. Why change a flow that works so well on TikTok?",
+          "Quality is subjective. How do we know advanced videos are better for viewers?",
+          "A complete redesign would require massive resources. We couldn't afford to build and test a new editor without stronger evidence.",
+        ],
+      },
+      {
+        title: "The New Core Question",
+        oldQuestion: "How do we make it easier for users to make short-form videos on Instagram?",
+        newQuestionPrefix: "How do we make it easier for users to make ",
+        newQuestionHighlight: "good",
+        newQuestionSuffix: " short-form videos on Instagram?",
+        followUp: "We needed to rigorously answer two additional questions to build the case incrementally:",
+        additionalQuestions: [
+          "A. What makes a video high-quality?",
+          "B. Which video editor design makes it easier to create high-quality videos?",
+        ],
+      },
+    ],
+  },
+
+  // ---------- SLIDE 5: PHASE 2 ----------
+  phase2: {
+    header: "Phase 2: Large-Scale Video Content Analysis",
+    pages: [
+      {
+        title: "Objective & Methodology",
+        objective: "Determine the attributes that set high-quality videos apart from less engaging ones.",
+        methodology: {
+          method: "Content Analysis",
+          duration: "Three weeks",
+          sample: "2,000 Videos (1,000 each group)",
+          successThreshold: ">1,000 views (top 10% in US)",
+          coders: "Myself + eight colleagues (blinded)",
+        },
+      },
+      {
+        title: "Data Collection & Analysis",
+        dataCollection: "Recruited internal colleagues to watch 50-100 videos each. Coders marked which attributes were present (humor, music, multiple clips, text sync, etc.). Coders didn't know if a video was high or low-quality to keep responses unbiased.",
+        dataAnalysis: "Compared attribute frequency in high vs. low-quality videos. Ran chi-square tests for statistical significance and logistic regression to find strongest predictors.",
+      },
+      {
+        title: "Key Finding & Outcome",
+        keyFinding: "Three attributes strongly predicted if a video was high-quality (received > 1,000 views):",
+        keyAttributes: [
+          { name: "Multiple Clips", description: "Videos used more than one clip (vs. single-shot)" },
+          { name: "Music Sync", description: "Clips synced to beat/rhythm of music" },
+          { name: "Text Sync", description: "Text elements precisely timed to match video and music" },
+        ],
+        outcome: "We had an objective definition of what makes videos high-quality. Next, we tested which editor design makes it easier to create these kinds of videos.",
+      },
+    ],
+  },
+
+  // ---------- SLIDE 6: PHASE 3 ----------
+  phase3: {
+    header: "Phase 3: Comparative Usability Study",
+    pages: [
+      {
+        title: "Objective, Methodology & Study Design",
+        objective: "Test which editing architecture makes it easier to create different types of videos.",
+        methodology: {
+          method: "Randomized Between-Subjects Study",
+          duration: "Six weeks",
+          sample: "200 Non-Professional Creators",
+          criteria: "US, Canada, UK, India (18-35)",
+          partner: "MeasuringU (Usability Vendor)",
+        },
+        studyDesign: "200 testers tried to recreate an example video using a randomly assigned video editing app. We measured task completion success, ease of use ratings, and time on task.",
+        independentVariables: "Video complexity (basic vs. advanced), Editing apps (step-by-step flows vs. stacked timelines)",
+      },
+      {
+        title: "Reference Videos",
+        basic: "Single clip + music + one text element",
+        advanced: "Three clips synced to music + three text elements synced to video",
+      },
+      {
+        title: "Key Finding",
+        finding: "There wasn't a single design that was always better: Different editors worked better for different video types.",
+        details: {
+          basic: "Step-by-step editors performed better with faster completion rates and rated easier to use",
+          advanced: "Stacked timeline editors performed better, with much faster completion times, better usability ratings, and fewer instances of users getting stuck",
+        },
+      },
+    ],
+  },
+
+  // ---------- SLIDE 7: RECOMMENDATION ----------
+  recommendation: {
+    header: "Final Recommendation",
+    pages: [
+      {
+        title: "Key Message to Leadership",
+        keyMessage: "'Simple' doesn't always mean 'easy.'",
+        keyMessageSubtitle: "The right editor depends on what you're trying to make.",
+        keyMessageExplanation: "Leadership assumed 'simple = easy,' but our data showed simplicity becomes a barrier for complex tasks. For videos people actually want to watch, the 'simple' step-by-step editor was harder to use than the 'complex' stacked timeline.",
+      },
+      {
+        title: "The Flywheel Effect",
+        flywheelExplanation: "We should prioritize high-quality videos because they create a healthy cycle: Good videos → More viewers → More creator reach → More production → More good videos. Good content is key to getting the flywheel spinning.",
+      },
+    ],
+  },
+
+  // ---------- SLIDE 8: IMPACT ----------
+  impact: {
+    header: "Impact",
+    leadershipDecision: "Leadership approved the redesign—a decision they had initially rejected.",
+    pages: [
+      {
+        title: "Product Outcome",
+        shippedEditor: "A/B testing confirmed our findings: significantly more video production overall, especially high-quality videos (measured by views and likes).",
+        beforeAfter: {
+          before: "Only video clips can be edited on this screen. Text and audio is edited elsewhere.",
+          after: "Clips, audio, text and other effects are all edited from one surface.",
+        },
+      },
+      {
+        title: "PR Campaign",
+        prCampaign: "When the feature finally rolled out to all users there was major press release and PR campaign (a rare instance for product features)",
+        pressQuote: "\"We're making it easier for you to edit your reels on Instagram by bringing together video clips, audio, stickers, and text on a unified editing screen. This makes it easier to align and time elements of your reel to the right moments in a more visual way.\"",
+        pressSource: "Instagram Press Release",
+        pressUrl: "https://about.fb.com/news/2023/04/instagram-reels-trending-audio-and-gifts-updates/",
+      },
+      {
+        title: "Instagram 'Edits' App",
+        editsApp: "About a year later, Instagram released 'Edits'—a standalone editing app fully built around the stacked timeline design. This represented a major shift toward positioning Instagram as a serious creative platform.",
+        editsQuote: "\"Today, we're launching Edits, a new video creation app that helps you make great videos directly on your phone. If you're passionate about making videos, Edits has the tools you need to support your creation process, all in one place.\"",
+        editsUrl: "https://about.fb.com/news/2025/04/introducing-edits-streamlined-video-creation-app/",
+      },
+    ],
   },
 
   // ---------- SLIDE 9: LESSONS ----------

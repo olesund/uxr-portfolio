@@ -9,14 +9,14 @@
 // ============================================
 export const sharedContent = {
   meta: {
-    title: "The New York Times | Strategy for YouTube",
+    title: "YouTube and Video Strategy for The New York Times",
     subtitle: "A self-initiated, cross-organizational research program that shaped YouTube strategy across News, Cooking, and Wirecutter",
     author: "Erik Olesund",
     role: "UX Researcher",
   },
   team: {
     myRole: "Lead UX Researcher",
-    myRoleDescription: "Proactively proposed and led all research across three business units",
+    myRoleDescription: "Proactively proposed and led all research across three business verticals",
     team: "Cross-organizational",
     teamDescription: "Partnered with stakeholders across News, Cooking, and Wirecutter; Audience Editor in the Newsroom for content analysis",
     stakeholders: "Senior Leadership",
@@ -25,21 +25,24 @@ export const sharedContent = {
 };
 
 // ============================================
-// CONTENT
+// READ MODE CONTENT
 // ============================================
 export const readContent = {
   // ---------- SLIDE 0: TITLE ----------
   title: {
-    headline: "The New York Times | Strategy for YouTube",
+    headline: "YouTube and Video Strategy for The New York Times",
     subtitle: "A self-initiated, cross-organizational research program that shaped YouTube strategy across News, Cooking, and Wirecutter",
   },
 
   // ---------- SLIDE 1: BACKGROUND ----------
   background: {
     header: "Background",
-    opportunityTitle: "A Self-Initiated Research Program",
-    opportunity: "I proactively proposed that we better understand the opportunity on YouTube. I was reading studies from Pew showing that a third of Americans get news on the platform already, but knew that NYT News was barely maintaining a presence there. I also knew that a senior editor on the Masthead who had been behind some of NYT's most innovative initiatives (like The Daily) was curious about YouTube.",
-    constraints: "Initially I was told not to pursue this because \"no one was directly asking for it.\" I convinced the head of research it was worth pursuing and secured a small budget to get started. I kept her and the chief data officer in the loop throughout. Working with a small budget meant I had to be strategic: I couldn't run bespoke studies for each team. Instead, I designed a single survey and parallel diary studies that could answer questions across all three business units simultaneously, maximizing insight per dollar while coordinating across organizations with different priorities and timelines.",
+    contextConstraintsTitle: "Context & Constraints",
+    contextConstraintsBullets: [
+      "Pew studies showed a third of Americans already get news on YouTube, but NYT News was barely maintaining a presence on the platform.",
+      "I proactively pitched this research and secured a small budget after initial pushback that \"no one was directly asking for it.\" A senior Masthead editor (behind initiatives like The Daily) championed the effort internally.",
+      "I designed a single survey and parallel diary studies that answered questions across all three business verticals simultaneously.",
+    ],
     bigQuestionsTitle: "The Big Questions",
     bigQuestions: [
       "Will it make business sense for the NYT to invest in improving our presence on YouTube? Who might we reach? Will this audience ever become paying subscribers?",
@@ -54,15 +57,15 @@ export const readContent = {
     teams: [
       {
         name: "News",
-        assumption: "YouTube is not worth our time. The audience is too young and not interested in ever paying for news or the NYT. Our current approach where we cross-post vertical videos originally made for Instagram and TikTok will do just fine.",
+        assumption: "YouTube is not worth our time. The audience is too young and not interested in ever paying for news or the NYT. We don't have the operational capacity to break news and compete with CNN. Our current approach where we cross-post vertical videos originally made for Instagram and TikTok will do just fine.",
       },
       {
         name: "Cooking",
-        assumption: "YouTube is important to us but primarily as a brand builder. People go there to learn or be entertained, not to cook.",
+        assumption: "YouTube is important to us primarily as a brand builder. People go there to learn or be entertained, not to cook. Our current video series are successful and enough.",
       },
       {
         name: "Wirecutter",
-        assumption: "We have no idea what's going on with YouTube but we feel like trying something. Our biggest bet is a weekly show (modeled after our podcast) focused on product reviews and home advice.",
+        assumption: "Our big bet is a weekly talk show (modeled after our podcast \"The Wirecutter Show\") focused on product reviews and home advice. We think there is demand for our content as entertainment, not utility.",
       },
     ],
   },
@@ -74,7 +77,6 @@ export const readContent = {
       {
         title: "1. Describe the Audience",
         questions: [
-          "What role does YouTube play in the US news media landscape today?",
           "Who is using YouTube for our categories (News, Cooking, Wirecutter)?",
           "What is their openness to paying for news?",
           "Who is the NYT already reaching on YouTube, and what is the overlap between YouTube category audiences and current NYT readers?",
@@ -84,9 +86,8 @@ export const readContent = {
         title: "2. Understand Use Cases and Winning Formats",
         questions: [
           "Why are people who watch videos in our categories doing this on YouTube? What jobs to be done are they looking to solve?",
-          "How are they using it and what are they watching?",
+          "What are people watching in each category, and which formats are most successful?",
           "What impact can we detect from our current presence on YouTube?",
-          "What formats are people watching in each category? Which ones are more or less successful?",
         ],
       },
     ],
@@ -165,7 +166,7 @@ export const readContent = {
         { title: "1. Data Weighting", description: "Data was weighted by our market research vendor to be representative of the U.S. general population." },
         { title: "2. Respondent Classification", description: "Respondents were classified as platform users (use YouTube, Instagram, or TikTok at least several times per month), category audience (watch video content in News, Cooking, or Product Reviews), and/or category audience on a specific platform — enabling comparisons across platforms and content types." },
         { title: "3. Cross-Tabulation", description: "Ran weighted cross-tabs to compare audience demographics, attitudes, and behaviors across platforms and categories. This allowed us to identify where YouTube audiences differed from Instagram and TikTok audiences." },
-        { title: "4. Visualizations", description: "Created publication-quality charts following NYT visual style guidelines — clean typography, purposeful color choices, and clear data hierarchy — to communicate findings to stakeholders across three business units." },
+        { title: "4. Visualizations", description: "Created publication-quality charts following NYT visual style guidelines — clean typography, purposeful color choices, and clear data hierarchy — to communicate findings to stakeholders across three business verticals." },
       ],
     },
     diaryExamples: {
@@ -198,7 +199,7 @@ export const readContent = {
       steps: [
         { title: "1. Export from dscout", description: "Exported all responses from dscout into a deck for easy review by me and the team, including video recordings, transcripts, screenshots, and links submitted by participants." },
         { title: "2. Transcript and Video Review", description: "Reviewed transcripts and video examples across all three category studies (News, Cooking, Product Reviews) to identify key themes — looking for patterns in why participants watch, what they consider \"good,\" and how they discover content." },
-        { title: "3. Illustrative Examples", description: "Pulled the strongest illustrative examples (video clips, participant quotes, and submitted screenshots) into the main presentation to bring findings to life for stakeholders across each business unit." },
+        { title: "3. Illustrative Examples", description: "Pulled the strongest illustrative examples (video clips, participant quotes, and submitted screenshots) into the main presentation to bring findings to life for stakeholders across each business vertical." },
       ],
     },
   },
@@ -206,10 +207,10 @@ export const readContent = {
   // ---------- SLIDE 5: FINDINGS - AUDIENCE ----------
   findingsAudience: {
     header: "Key Findings: The Audience",
-    leadFinding: "YouTube presents a clear opportunity to reach and grow our engaged prospects, so long as we perform much better on the platform.",
+    leadFinding: "YouTube presents a clear opportunity to reach new audiences for News, Cooking, and Wirecutter — but each brand needs a fundamentally new approach to succeed on the platform.",
     findings: [
       {
-        title: "YouTube is not just for kids",
+        title: "YouTube is used by everyone, not just kids and teenagers.",
         description: "The category audiences we hope to reach were older than we expected.",
       },
       {
@@ -218,7 +219,7 @@ export const readContent = {
       },
       {
         title: "YouTube lets us reach new audiences",
-        description: "YouTube lets us reach audiences who aren't already deeply engaged with The Times on-site.",
+        description: "YouTube lets us reach audiences who aren't already deeply engaged with The Times on-site, but they are looking for content that is different from what each brand planned to offer.",
       },
     ],
   },
@@ -226,7 +227,7 @@ export const readContent = {
   // ---------- SLIDE 6: FINDINGS - USE CASES ----------
   findingsUseCases: {
     header: "Key Findings: Use Cases and Winning Formats by Category",
-    leadFinding: "People use YouTube for our categories for use cases that are distinct from why they use TikTok and Instagram.",
+    leadFinding: "What people want from YouTube in each category is fundamentally different from what they seek on TikTok and Instagram.",
     categories: [
       {
         name: "News",
@@ -252,7 +253,6 @@ export const readContent = {
   // ---------- SLIDE 7: RECOMMENDATIONS ----------
   recommendations: {
     header: "Recommendations",
-    enterpriseRecommendation: "Increase investment in and focus on YouTube across the organization because the potential to reach our target audience is high.",
     teamRecommendations: [
       {
         team: "News",
@@ -260,11 +260,11 @@ export const readContent = {
       },
       {
         team: "Wirecutter",
-        recommendation: "YouTube is a search engine. Turn your top-performing reviews into videos and focus on the core use case of helping people decide what products to buy and how to use them.",
+        recommendation: "Turn your top-performing reviews into videos and focus on the core use case: helping people decide what to buy and how to use products. De-prioritize the weekly talk show concept — people use YouTube like a search engine for reviews, not as a source for entertainment or inspiration in this category.",
       },
       {
         team: "Cooking",
-        recommendation: "You're already doing a lot to help people learn or be entertained. Pilot video recipes that people can cook along with to reach an even wider audience that might be primed to also come to you directly and pay for your larger database of recipes.",
+        recommendation: "Current video series focused on learning and entertainment are already performing well. In addition, start creating video recipes that people can cook along with to reach an even wider audience and serve the top use cases for food videos on the platform.",
       },
     ],
   },
@@ -272,13 +272,12 @@ export const readContent = {
   // ---------- SLIDE 8: IMPACT ----------
   impact: {
     header: "Impact",
-    title: "Research shaped YouTube strategy across three business units",
+    title: "Research shaped video strategy across three business verticals",
     teams: [
       {
         team: "News",
         outcomes: [
-          "Shifted resources to podcast video production, prioritizing shows focused on explaining a slice of the world hosted by strong personalities (Ezra Klein, Popcast, Wesley Morris)",
-          "Audio-first teams received support to script and shoot for video",
+          "Shifted resources from breaking news clips to podcast video production, prioritizing shows that help people make sense of the news and current events — hosted by strong personalities (Ezra Klein, Popcast, Wesley Morris)",
           "Video team in the newsroom took a beat to rethink the long-term strategy for news videos",
           "Stopped cross-posting vertical videos to avoid hurting engagement",
         ],
@@ -286,7 +285,7 @@ export const readContent = {
       {
         team: "Wirecutter",
         outcomes: [
-          "Enthusiastically let go of their original weekly show plan",
+          "Enthusiastically let go of their original plan to create a weekly talk show",
           "Pivoted to making video versions of their top-performing reviews",
         ],
       },
@@ -318,7 +317,215 @@ export const readContent = {
       {
         number: "03",
         title: "Cross-organizational research requires extra investment in alignment",
-        description: "Working across three business units with different priorities and timelines meant spending significant time on stakeholder alignment — not just sharing findings, but ensuring each team understood how the insights applied to their specific context. The payoff was worth it: teams that felt ownership over the research were far more likely to act on it.",
+        description: "Working across three business verticals with different priorities and timelines meant spending significant time on stakeholder alignment — not just sharing findings, but ensuring each team understood how the insights applied to their specific context. The payoff was worth it: teams that felt ownership over the research were far more likely to act on it.",
+      },
+    ],
+  },
+};
+
+// ============================================
+// PRESENT MODE CONTENT
+// ============================================
+export const presentContent = {
+  // ---------- SLIDE 0: TITLE ----------
+  title: {
+    headline: "YouTube and Video Strategy for The New York Times",
+    subtitle: "A self-initiated, cross-organizational research program that shaped YouTube strategy across News, Cooking, and Wirecutter",
+  },
+
+  // ---------- SLIDE 1: BACKGROUND ----------
+  background: {
+    header: "Background",
+    bigQuestions: [
+      "Will it make business sense for the NYT to invest in improving our presence on YouTube? Who might we reach? Will this audience ever become paying subscribers?",
+      "If we focus more on YouTube, what content will work for each of our brands — News, Cooking, and Wirecutter?",
+    ],
+  },
+
+  // ---------- SLIDE 2: ASSUMPTIONS ----------
+  assumptions: {
+    header: "Starting Assumptions Across Teams",
+    description: "Before the research began, each team had different beliefs about YouTube's relevance to their work.",
+    teams: [
+      {
+        name: "News",
+        assumption: "YouTube is not worth our time. The audience is too young and not interested in ever paying for news or the NYT. We don't have the operational capacity to break news and compete with CNN. Our current approach where we cross-post vertical videos originally made for Instagram and TikTok will do just fine.",
+      },
+      {
+        name: "Cooking",
+        assumption: "YouTube is important to us primarily as a brand builder. People go there to learn or be entertained, not to cook. Our current video series are successful and enough.",
+      },
+      {
+        name: "Wirecutter",
+        assumption: "Our big bet is a weekly talk show (modeled after our podcast \"The Wirecutter Show\") focused on product reviews and home advice. We think there is demand for our content as entertainment, not utility.",
+      },
+    ],
+  },
+
+  // ---------- SLIDE 3: RESEARCH OBJECTIVES ----------
+  objectives: {
+    header: "Research Objectives",
+    objectivesList: [
+      {
+        title: "1. Describe the Audience",
+        questions: [
+          "Who is using YouTube for our categories (News, Cooking, Wirecutter)?",
+          "What is their openness to paying for news?",
+          "Who is the NYT already reaching on YouTube, and what is the overlap between YouTube category audiences and current NYT readers?",
+        ],
+      },
+      {
+        title: "2. Understand Use Cases and Winning Formats",
+        questions: [
+          "Why are people who watch videos in our categories doing this on YouTube? What jobs to be done are they looking to solve?",
+          "What are people watching in each category, and which formats are most successful?",
+          "What impact can we detect from our current presence on YouTube?",
+        ],
+      },
+    ],
+  },
+
+  // ---------- SLIDE 4: APPROACH ----------
+  approach: {
+    header: "Research Approach",
+    title: "Mixed-Methods Across Three Business Units",
+    methods: [
+      {
+        title: "A. Survey of US General Population",
+        details: {
+          sample: "~2,000 US adults per category",
+          fielded: "December 2024 – January 2025",
+          method: "Administered via market research vendor",
+          description: "Understand US adults who use YouTube, Instagram, and TikTok at least several times per month for various types of video content — who they are from a demographic and attitudinal perspective, and how they use each platform.",
+        },
+      },
+      {
+        title: "B. Three Diary Studies via dscout",
+        details: {
+          sample: "n=20 per category (News, Cooking, Product Reviews)",
+          fielded: "January – February 2025 via dscout",
+          duration: "7 days each",
+          method: "Diary study with follow-up interviews (n=6 per group)",
+          description: "Understand why people turn to YouTube for each category; what good content looks like; and how they use the platform. Participants answered questions over the course of 7 days and submitted examples of good and bad category videos that they encountered each day.",
+        },
+      },
+    ],
+  },
+
+  // ---------- SLIDE 5: FINDINGS - AUDIENCE ----------
+  findingsAudience: {
+    header: "Key Findings: The Audience",
+    leadFinding: "YouTube presents a clear opportunity to reach new audiences for News, Cooking, and Wirecutter — but each brand needs a fundamentally new approach to succeed on the platform.",
+    findings: [
+      {
+        title: "YouTube is used by everyone, not just kids and teenagers.",
+        description: "The category audiences we hope to reach were older than we expected.",
+      },
+      {
+        title: "Large overlap with our Total Addressable Market",
+        description: "A very large share of people who we consider to be part of the NYT's Total Addressable Market (currently use our categories and are willing to pay for them) are using YouTube for these categories too.",
+      },
+      {
+        title: "YouTube lets us reach new audiences",
+        description: "YouTube lets us reach audiences who aren't already deeply engaged with The Times on-site, but they are looking for content that is different from what each brand planned to offer.",
+      },
+    ],
+  },
+
+  // ---------- SLIDE 6: FINDINGS - USE CASES ----------
+  findingsUseCases: {
+    header: "Key Findings: Use Cases and Winning Formats by Category",
+    leadFinding: "What people want from YouTube in each category is fundamentally different from what they seek on TikTok and Instagram.",
+    categories: [
+      {
+        name: "News",
+        icon: "Newspaper",
+        useCase: "People use YouTube to make sense of the news and hear perspectives from real people so that they can form their own conclusion about current events.",
+        format: "Formats featuring people talking to the camera are more common and successful on YouTube vs. Instagram/TikTok (where live shots of news events are more common).",
+      },
+      {
+        name: "Cooking",
+        icon: "ChefHat",
+        useCase: "The primary use case for food and recipe videos is to cook a recipe. Important but less common use cases are to learn new cooking techniques or to be inspired/entertained.",
+        format: "The most preferred cooking videos included chapters and clear visuals of the ingredients and how to add them.",
+      },
+      {
+        name: "Wirecutter",
+        icon: "ShoppingCart",
+        useCase: "People primarily use YouTube for the same reason why they use Wirecutter's website — to decide what to buy and learn how a product works. Other use cases like general advice or inspiration/entertainment are much less common.",
+        format: "Videos that both demonstrate how a product works, ideally in a real context, and compares it to others were most preferred.",
+      },
+    ],
+  },
+
+  // ---------- SLIDE 7: RECOMMENDATIONS ----------
+  recommendations: {
+    header: "Recommendations",
+    teamRecommendations: [
+      {
+        team: "News",
+        recommendation: "Don't worry about being first — focus on explaining the news and why it matters. Lead with personalities. Stop cross-posting Instagram/TikTok vertical videos, which are built for a different platform and use case.",
+      },
+      {
+        team: "Wirecutter",
+        recommendation: "Turn your top-performing reviews into videos and focus on the core use case: helping people decide what to buy and how to use products. De-prioritize the weekly talk show concept — people use YouTube like a search engine for reviews, not as a source for entertainment or inspiration in this category.",
+      },
+      {
+        team: "Cooking",
+        recommendation: "Current video series focused on learning and entertainment are already performing well. In addition, start creating video recipes that people can cook along with to reach an even wider audience and serve the top use cases for food videos on the platform.",
+      },
+    ],
+  },
+
+  // ---------- SLIDE 8: IMPACT ----------
+  impact: {
+    header: "Impact",
+    title: "Research shaped video strategy across three business verticals",
+    teams: [
+      {
+        team: "News",
+        outcomes: [
+          "Shifted resources from breaking news clips to podcast video production, prioritizing shows that help people make sense of the news and current events — hosted by strong personalities (Ezra Klein, Popcast, Wesley Morris)",
+          "Video team in the newsroom took a beat to rethink the long-term strategy for news videos",
+          "Stopped cross-posting vertical videos to avoid hurting engagement",
+        ],
+      },
+      {
+        team: "Wirecutter",
+        outcomes: [
+          "Enthusiastically let go of their original plan to create a weekly talk show",
+          "Pivoted to making video versions of their top-performing reviews",
+        ],
+      },
+      {
+        team: "Cooking",
+        outcomes: [
+          "Skeptical of the recommendation since their current videos (focused on education and entertainment) performed well",
+          "Key partner for driving change (lead UXR for Cooking) was on maternity leave — waiting for her return before pushing further",
+        ],
+      },
+    ],
+  },
+
+  // ---------- SLIDE 9: REFLECTION ----------
+  reflection: {
+    header: "Reflection",
+    title: "Lessons Learned",
+    lessonsList: [
+      {
+        number: "01",
+        title: "Seeing what people actually watch is more revealing than asking them directly",
+        description: "Having diary study participants submit examples of videos they watched each day — and explain what was good or bad about them — was a form of observational research that surfaced richer insights than direct questioning alone.",
+      },
+      {
+        number: "02",
+        title: "Don't finalize the survey before the research objectives are locked",
+        description: "Writing the survey in parallel with still-evolving research objectives led to an unnecessarily long and expensive survey. Next time I would push to finalize objectives first, even if it means a tighter timeline for survey fielding.",
+      },
+      {
+        number: "03",
+        title: "Cross-organizational research requires extra investment in alignment",
+        description: "Working across three business verticals with different priorities and timelines meant spending significant time on stakeholder alignment — not just sharing findings, but ensuring each team understood how the insights applied to their specific context. The payoff was worth it: teams that felt ownership over the research were far more likely to act on it.",
       },
     ],
   },
