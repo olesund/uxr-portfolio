@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Lock } from 'lucide-react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import AboutSection from '@/components/landing/AboutSection';
@@ -9,6 +10,10 @@ import WorkSection from '@/components/landing/WorkSection';
 const CORRECT_PASSWORD = 'open';
 
 const Landing: React.FC = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const redirectTo = (location.state as { from?: string })?.from;
+
   const [isAuthenticated, setIsAuthenticated] = useState(() => {
     return sessionStorage.getItem('portfolio_authenticated') === 'true';
   });
@@ -23,8 +28,12 @@ const Landing: React.FC = () => {
 
     setTimeout(() => {
       if (password === CORRECT_PASSWORD) {
-        setIsAuthenticated(true);
         sessionStorage.setItem('portfolio_authenticated', 'true');
+        if (redirectTo) {
+          navigate(redirectTo, { replace: true });
+        } else {
+          setIsAuthenticated(true);
+        }
       } else {
         setError('Incorrect password. Please try again.');
         setPassword('');

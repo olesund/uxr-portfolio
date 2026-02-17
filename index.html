@@ -23,6 +23,21 @@
 
   <body>
     <div id="root"></div>
+    <!-- GitHub Pages SPA redirect: restore path from 404.html -->
+    <script>
+      (function () {
+        var params = new URLSearchParams(window.location.search);
+        var p = params.get('p');
+        if (p) {
+          var q = params.get('q');
+          var restored =
+            window.location.pathname + p +
+            (q ? '?' + q : '') +
+            window.location.hash;
+          window.history.replaceState(null, '', restored);
+        }
+      })();
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

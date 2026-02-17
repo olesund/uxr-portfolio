@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting...</title>
+    <script>
+      // Single Page App redirect for GitHub Pages
+      // Stores the attempted path and redirects to index.html
+      // so React Router can handle the route client-side
+      var pathSegmentsToKeep = 1; // '/uxr-portfolio' base segment
+      var l = window.location;
+      var redirectPath =
+        l.pathname
+          .split('/')
+          .slice(0, 1 + pathSegmentsToKeep)
+          .join('/') +
+        '/?p=' +
+        encodeURIComponent(
+          l.pathname
+            .split('/')
+            .slice(1 + pathSegmentsToKeep)
+            .join('/')
+        ) +
+        (l.search ? '&q=' + encodeURIComponent(l.search.slice(1)) : '') +
+        l.hash;
+      l.replace(redirectPath);
+    </script>
+  </head>
+  <body></body>
+</html>

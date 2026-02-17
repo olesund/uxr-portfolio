@@ -8,6 +8,7 @@ import InstagramReels from "./pages/work/InstagramReels";
 import NYTWatchTab from "./pages/work/NYTWatchTab";
 import NYTYouTube from "./pages/work/NYTYouTube";
 import NotFound from "./pages/NotFound";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 const queryClient = new QueryClient();
 
@@ -19,9 +20,9 @@ const App = () => (
       <BrowserRouter basename="/uxr-portfolio">
         <Routes>
           <Route path="/" element={<Landing />} />
-          <Route path="/work/instagram-reels" element={<InstagramReels />} />
-          <Route path="/work/nyt-watch-tab" element={<NYTWatchTab />} />
-          <Route path="/work/nyt-youtube" element={<NYTYouTube />} />
+          <Route path="/work/instagram-reels" element={<ProtectedRoute><InstagramReels /></ProtectedRoute>} />
+          <Route path="/work/nyt-watch-tab" element={<ProtectedRoute><NYTWatchTab /></ProtectedRoute>} />
+          <Route path="/work/nyt-youtube" element={<ProtectedRoute><NYTYouTube /></ProtectedRoute>} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
