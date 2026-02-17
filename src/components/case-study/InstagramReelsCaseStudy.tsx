@@ -826,7 +826,7 @@ const InstagramReelsCaseStudy: React.FC = () => {
                   </DialogHeader>
                   <div className="w-full h-[70vh]">
                     <iframe
-                      src="/documents/Video_Coding_Sheet_Example.pdf"
+                      src={`${import.meta.env.BASE_URL}documents/Video_Coding_Sheet_Example.pdf`}
                       className="w-full h-full rounded-lg border border-border"
                       title="Video Coding Sheet Example"
                     />
