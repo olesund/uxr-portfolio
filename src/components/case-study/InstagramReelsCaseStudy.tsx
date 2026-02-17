@@ -50,8 +50,8 @@ const ReadSlide: React.FC<{
         'relative scroll-mt-0 snap-start px-6 py-12 md:px-12 lg:px-20',
         'border-b border-border min-h-[80vh] py-16 md:py-24',
         dark
-          ? '!bg-[hsl(220,10%,20%)] !border-[hsl(220,10%,30%)]'
-          : isEven ? 'bg-[hsl(210,14%,93%)]' : 'bg-background'
+          ? '!bg-[hsl(20,25%,12%)] !border-[hsl(20,20%,22%)]'
+          : isEven ? 'bg-[hsl(30,15%,91%)]' : 'bg-background'
       )}
     >
       {dark && (
@@ -249,7 +249,7 @@ const InstagramReelsCaseStudy: React.FC = () => {
     <PresentSlide header={presentContent.pivot.header} dark>
       <Carousel dark>
         {/* Page 1: Initial Rejection */}
-        <div className="rounded-2xl bg-[hsl(220,10%,28%)]/80 p-6 backdrop-blur-sm">
+        <div className="rounded-2xl bg-[hsl(20,22%,22%)]/80 p-6 backdrop-blur-sm">
           <p className="mb-3 text-sm font-semibold uppercase tracking-wider" style={{ color: 'hsl(195, 65%, 55%)' }}>
             {presentContent.pivot.pages[0].title}
           </p>
@@ -440,13 +440,13 @@ const InstagramReelsCaseStudy: React.FC = () => {
         </div>
 
         {/* Page 2: Flywheel Effect */}
-        <div>
-          <h3 className="mb-6 text-2xl font-semibold text-foreground">{presentContent.recommendation.pages[1].title}</h3>
-          <div className="flex items-center gap-8">
-            <div className="flex-1">
+        <div className="space-y-6">
+          <h3 className="text-2xl font-semibold text-foreground">{presentContent.recommendation.pages[1].title}</h3>
+          <div className="flex flex-col lg:flex-row items-start gap-8">
+            <div className="lg:flex-1">
               <p className="text-lg text-muted-foreground">{presentContent.recommendation.pages[1].flywheelExplanation}</p>
             </div>
-            <div className="flex-shrink-0" style={{ width: '640px' }}>
+            <div className="w-full lg:w-auto lg:max-w-[520px] lg:flex-shrink-0">
               <div className="rounded-2xl overflow-hidden bg-background">
                 <img src={flywheelDiagram} alt="Flywheel diagram" className="w-full h-auto" />
               </div>
@@ -542,7 +542,7 @@ const InstagramReelsCaseStudy: React.FC = () => {
         <h3 className="mb-6 text-2xl font-semibold text-[hsl(40,30%,95%)]">{presentContent.lessons.title}</h3>
         <div className="space-y-4">
           {presentContent.lessons.lessonsList.map((lesson) => (
-            <div key={lesson.number} className="rounded-2xl bg-[hsl(220,10%,28%)]/80 p-6">
+            <div key={lesson.number} className="rounded-2xl bg-[hsl(20,22%,22%)]/80 p-6">
               <p className="mb-1 text-sm font-medium" style={{ color: 'hsl(195, 65%, 55%)' }}>{lesson.number}</p>
               <p className="font-semibold text-xl text-[hsl(40,30%,95%)]">{lesson.title}</p>
               <p className="mt-2 text-lg text-[hsl(40,30%,85%)]/80">{lesson.description}</p>
@@ -684,7 +684,7 @@ const InstagramReelsCaseStudy: React.FC = () => {
           </div>
           <div className="space-y-4">
             {readContent.researchOverview.phases.map((phase) => (
-              <div key={phase.number} className="rounded-2xl bg-muted/60 p-5">
+              <div key={phase.number} className="rounded-2xl border border-border bg-card p-5">
                 <div className="mb-2 flex items-baseline gap-3">
                   <span className="text-sm font-medium text-primary">Phase {phase.number}</span>
                   <span className="text-sm text-muted-foreground">({phase.type})</span>
@@ -749,7 +749,7 @@ const InstagramReelsCaseStudy: React.FC = () => {
       {/* Slide 4: The Pivot */}
       <ReadSlide slideNumber={4} header={readContent.pivot.header} dark>
         <div className="space-y-10">
-          <div className="rounded-2xl bg-[hsl(220,10%,28%)]/80 p-6 backdrop-blur-sm">
+          <div className="rounded-2xl bg-[hsl(20,22%,22%)]/80 p-6 backdrop-blur-sm">
             <p className="mb-3 text-sm font-semibold uppercase tracking-wider" style={{ color: 'hsl(195, 65%, 55%)' }}>Outcome: Initial Rejection</p>
             <p className="mb-4 text-[hsl(40,30%,95%)]">{readContent.pivot.outcome}</p>
             <ul className="space-y-1 text-[hsl(40,30%,85%)]/80">
@@ -820,7 +820,7 @@ const InstagramReelsCaseStudy: React.FC = () => {
                     View example coding sheet
                   </Button>
                 </DialogTrigger>
-                <DialogContent className="max-w-4xl max-h-[90vh]">
+                <DialogContent className="max-w-4xl max-h-[85vh] overflow-y-auto">
                   <DialogHeader>
                     <DialogTitle>Sample Video Coding Sheet</DialogTitle>
                   </DialogHeader>
@@ -930,7 +930,7 @@ const InstagramReelsCaseStudy: React.FC = () => {
           </div>
           <div>
             <h3 className="mb-4 text-xl font-semibold text-foreground">Methodology</h3>
-            <div className="rounded-2xl bg-muted/60 p-5">
+            <div className="rounded-2xl border border-border bg-card p-5">
               <div className="grid gap-4 sm:grid-cols-2">
                 {Object.entries(readContent.phase3.methodology).map(([key, value]) => (
                   <div key={key}>
@@ -980,7 +980,7 @@ const InstagramReelsCaseStudy: React.FC = () => {
           <div>
             <h3 className="mb-4 text-xl font-semibold text-foreground">Reference videos (that users recreated)</h3>
             <div className="grid gap-4 md:grid-cols-2">
-              <div className="rounded-2xl bg-muted/60 p-4">
+              <div className="rounded-2xl border border-border bg-card p-4">
                 <p className="mb-3 text-base font-medium text-foreground">
                   <strong>Basic Video:</strong> {readContent.phase3.referenceVideos.basic}
                 </p>
@@ -988,7 +988,7 @@ const InstagramReelsCaseStudy: React.FC = () => {
                   <video src={basicVideoExample} controls className="w-full h-auto max-h-[200px] object-contain" preload="metadata" />
                 </div>
               </div>
-              <div className="rounded-2xl bg-muted/60 p-4">
+              <div className="rounded-2xl border border-border bg-card p-4">
                 <p className="mb-3 text-base font-medium text-foreground">
                   <strong>Advanced Video:</strong> {readContent.phase3.referenceVideos.advanced}
                 </p>
@@ -1168,13 +1168,13 @@ const InstagramReelsCaseStudy: React.FC = () => {
         />
       </ReadSlide>
 
-      {/* Slide 9: Lessons */}
+      {/* Slide 9: Reflections */}
       <ReadSlide slideNumber={9} header={readContent.lessons.header} dark>
         <div className="space-y-10">
           <h3 className="mb-3 text-xl font-semibold text-[hsl(40,30%,95%)]">{readContent.lessons.title}</h3>
           <div className="space-y-4">
             {readContent.lessons.lessonsList.map((lesson) => (
-              <div key={lesson.number} className="rounded-2xl bg-[hsl(220,10%,28%)]/80 p-5">
+              <div key={lesson.number} className="rounded-2xl bg-[hsl(20,22%,22%)]/80 p-5">
                 <p className="mb-1 text-sm font-medium" style={{ color: 'hsl(195, 65%, 55%)' }}>{lesson.number}</p>
                 <p className="font-semibold text-[hsl(40,30%,95%)]">{lesson.title}</p>
                 <p className="mt-1 text-[hsl(40,30%,85%)]/80">{lesson.description}</p>

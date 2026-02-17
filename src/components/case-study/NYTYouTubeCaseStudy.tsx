@@ -42,7 +42,7 @@ const ReadSlide: React.FC<{
       className={cn(
         'relative scroll-mt-0 snap-start px-6 py-12 md:px-12 lg:px-20',
         'border-b border-border min-h-[80vh] py-16 md:py-24',
-        isEven ? 'bg-[hsl(210,14%,93%)]' : 'bg-background'
+        isEven ? 'bg-[hsl(30,15%,91%)]' : 'bg-background'
       )}
     >
       <motion.div
@@ -188,12 +188,18 @@ const NYTYouTubeCaseStudy: React.FC = () => {
       <div className="space-y-8">
         <p className="text-lg text-muted-foreground">{presentContent.assumptions.description}</p>
         <Carousel>
-          {presentContent.assumptions.teams.map((team) => (
-            <div key={team.name} className="rounded-2xl bg-muted/60 p-8">
-              <h3 className="mb-4 text-2xl font-semibold text-foreground">{team.name}</h3>
-              <p className="text-lg text-muted-foreground leading-relaxed">{team.assumption}</p>
-            </div>
-          ))}
+          {presentContent.assumptions.teams.map((team) => {
+            const Icon = categoryIcons[team.name === 'News' ? 'Newspaper' : team.name === 'Cooking' ? 'ChefHat' : 'ShoppingCart'];
+            return (
+              <div key={team.name} className="rounded-2xl bg-muted/60 p-8">
+                <div className="mb-4 flex items-center gap-3">
+                  {Icon && <Icon className="h-8 w-8 text-primary" />}
+                  <h3 className="text-2xl font-semibold text-foreground">{team.name}</h3>
+                </div>
+                <p className="text-lg text-muted-foreground leading-relaxed">{team.assumption}</p>
+              </div>
+            );
+          })}
         </Carousel>
       </div>
     </PresentSlide>
@@ -248,7 +254,7 @@ const NYTYouTubeCaseStudy: React.FC = () => {
                         Survey Examples
                       </Button>
                     </DialogTrigger>
-                    <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+                    <DialogContent className="max-w-3xl max-h-[85vh] overflow-y-auto">
                       <DialogHeader>
                         <DialogTitle>Survey Question Examples</DialogTitle>
                       </DialogHeader>
@@ -274,7 +280,7 @@ const NYTYouTubeCaseStudy: React.FC = () => {
                         Analysis Approach
                       </Button>
                     </DialogTrigger>
-                    <DialogContent className="max-w-3xl">
+                    <DialogContent className="max-w-3xl max-h-[85vh] overflow-y-auto">
                       <DialogHeader>
                         <DialogTitle>Survey Analysis Approach</DialogTitle>
                       </DialogHeader>
@@ -283,6 +289,19 @@ const NYTYouTubeCaseStudy: React.FC = () => {
                           <div key={idx} className="rounded-lg border p-4">
                             <p className="mb-1 font-medium">{step.title}</p>
                             <p className="text-sm text-muted-foreground">{step.description}</p>
+                            {idx === 3 && (
+                              <>
+                                <div className="mt-3 space-y-3">
+                                  <div className="rounded-lg overflow-hidden bg-white p-2">
+                                    <img src={ytTamReachSurvey} alt="Social media platform use among target audiences" className="w-full h-auto" />
+                                  </div>
+                                  <div className="rounded-lg overflow-hidden bg-white p-2">
+                                    <img src={ytFormatDifferencesSurvey} alt="Common formats for News videos across platforms" className="w-full h-auto" />
+                                  </div>
+                                </div>
+                                <p className="mt-2 text-xs text-muted-foreground italic">Example visualizations from the research presentation (some data redacted)</p>
+                              </>
+                            )}
                           </div>
                         ))}
                       </div>
@@ -299,7 +318,7 @@ const NYTYouTubeCaseStudy: React.FC = () => {
                         Diary Examples
                       </Button>
                     </DialogTrigger>
-                    <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+                    <DialogContent className="max-w-3xl max-h-[85vh] overflow-y-auto">
                       <DialogHeader>
                         <DialogTitle>Diary Study Activity Examples</DialogTitle>
                       </DialogHeader>
@@ -320,7 +339,7 @@ const NYTYouTubeCaseStudy: React.FC = () => {
                         Analysis Approach
                       </Button>
                     </DialogTrigger>
-                    <DialogContent className="max-w-3xl">
+                    <DialogContent className="max-w-3xl max-h-[85vh] overflow-y-auto">
                       <DialogHeader>
                         <DialogTitle>Diary Study Analysis Approach</DialogTitle>
                       </DialogHeader>
@@ -329,6 +348,27 @@ const NYTYouTubeCaseStudy: React.FC = () => {
                           <div key={idx} className="rounded-lg border p-4">
                             <p className="mb-1 font-medium">{step.title}</p>
                             <p className="text-sm text-muted-foreground">{step.description}</p>
+                            {idx === 1 && (
+                              <>
+                                <div className="mt-3 space-y-3">
+                                  <div className="rounded-lg overflow-hidden bg-white p-2">
+                                    <img src={ytGoodVideosDiary} alt="Examples of good videos from survey respondents" className="w-full h-auto" />
+                                  </div>
+                                  <div className="rounded-lg overflow-hidden bg-white p-2">
+                                    <img src={ytSelfieVideoDiary} alt="Participant's selfie reflection video about their experience" className="w-full h-auto" />
+                                  </div>
+                                </div>
+                                <p className="mt-2 text-xs text-muted-foreground italic">Example participant submissions from the diary study</p>
+                              </>
+                            )}
+                            {idx === 2 && (
+                              <>
+                                <div className="mt-3 rounded-lg overflow-hidden">
+                                  <img src={ytPresentationSlideDiary} alt="Presentation slide showing illustrative video examples from creators and traditional media" className="w-full h-auto" />
+                                </div>
+                                <p className="mt-2 text-xs text-muted-foreground italic">Example slide from the research presentation</p>
+                              </>
+                            )}
                           </div>
                         ))}
                       </div>
@@ -397,12 +437,18 @@ const NYTYouTubeCaseStudy: React.FC = () => {
   const renderPresentRecommendations = () => (
     <PresentSlide header={presentContent.recommendations.header}>
         <ProgressiveReveal>
-          {presentContent.recommendations.teamRecommendations.map((rec) => (
-            <div key={rec.team} className="rounded-2xl bg-muted/60 p-6">
-              <h3 className="mb-3 text-xl font-semibold text-foreground">{rec.team}</h3>
-              <p className="text-lg text-muted-foreground leading-relaxed">{rec.recommendation}</p>
-            </div>
-          ))}
+          {presentContent.recommendations.teamRecommendations.map((rec) => {
+            const Icon = categoryIcons[rec.team === 'News' ? 'Newspaper' : rec.team === 'Cooking' ? 'ChefHat' : 'ShoppingCart'];
+            return (
+              <div key={rec.team} className="rounded-2xl bg-muted/60 p-6">
+                <div className="mb-3 flex items-center gap-3">
+                  {Icon && <Icon className="h-6 w-6 text-primary" />}
+                  <h3 className="text-xl font-semibold text-foreground">{rec.team}</h3>
+                </div>
+                <p className="text-lg text-muted-foreground leading-relaxed">{rec.recommendation}</p>
+              </div>
+            );
+          })}
         </ProgressiveReveal>
       </PresentSlide>
   );
@@ -412,9 +458,14 @@ const NYTYouTubeCaseStudy: React.FC = () => {
         <div className="space-y-8">
           <h3 className="text-2xl font-semibold text-foreground">{presentContent.impact.title}</h3>
           <ProgressiveReveal>
-            {presentContent.impact.teams.map((team) => (
+            {presentContent.impact.teams.map((team) => {
+              const Icon = categoryIcons[team.team === 'News' ? 'Newspaper' : team.team === 'Cooking' ? 'ChefHat' : 'ShoppingCart'];
+              return (
               <div key={team.team} className="rounded-2xl bg-muted/60 p-6">
-                <h4 className="mb-3 text-xl font-semibold text-foreground">{team.team}</h4>
+                <div className="mb-3 flex items-center gap-3">
+                  {Icon && <Icon className="h-6 w-6 text-primary" />}
+                  <h4 className="text-xl font-semibold text-foreground">{team.team}</h4>
+                </div>
                 <ul className="space-y-2 text-muted-foreground">
                   {team.outcomes.map((outcome, i) => (
                     <li key={i} className="flex items-start gap-2">
@@ -424,7 +475,8 @@ const NYTYouTubeCaseStudy: React.FC = () => {
                   ))}
                 </ul>
               </div>
-            ))}
+              );
+            })}
           </ProgressiveReveal>
         </div>
       </PresentSlide>
@@ -589,7 +641,7 @@ const NYTYouTubeCaseStudy: React.FC = () => {
           <h2 className="text-2xl font-bold text-foreground">{readContent.approach.title}</h2>
 
           {/* Survey */}
-          <div className="rounded-2xl bg-accent/50 p-6">
+          <div className="rounded-2xl border border-border bg-card p-6">
             <h3 className="mb-4 text-xl font-semibold text-foreground">{readContent.approach.methods[0].title}</h3>
             <div className="grid gap-4 sm:grid-cols-2">
               <div><p className="text-sm text-muted-foreground">Sample</p><p className="font-medium text-foreground">{readContent.approach.methods[0].details.sample}</p></div>
@@ -607,7 +659,7 @@ const NYTYouTubeCaseStudy: React.FC = () => {
                     See survey question examples
                   </Button>
                 </DialogTrigger>
-                <DialogContent className="max-w-2xl max-h-[85vh] overflow-y-auto">
+                <DialogContent className="max-w-3xl max-h-[85vh] overflow-y-auto">
                   <DialogHeader>
                     <DialogTitle>{readContent.approach.surveyExamples.title}</DialogTitle>
                   </DialogHeader>
@@ -638,7 +690,7 @@ const NYTYouTubeCaseStudy: React.FC = () => {
                     See analysis approach
                   </Button>
                 </DialogTrigger>
-                <DialogContent className="max-w-2xl max-h-[85vh] overflow-y-auto">
+                <DialogContent className="max-w-3xl max-h-[85vh] overflow-y-auto">
                   <DialogHeader>
                     <DialogTitle>{readContent.approach.surveyAnalysis.title}</DialogTitle>
                   </DialogHeader>
@@ -669,7 +721,7 @@ const NYTYouTubeCaseStudy: React.FC = () => {
           </div>
 
           {/* Diary Studies */}
-          <div className="rounded-2xl bg-muted/60 p-6">
+          <div className="rounded-2xl border border-border bg-card p-6">
             <h3 className="mb-4 text-xl font-semibold text-foreground">{readContent.approach.methods[1].title}</h3>
             <div className="grid gap-4 sm:grid-cols-2">
               <div><p className="text-sm text-muted-foreground">Sample</p><p className="font-medium text-foreground">{readContent.approach.methods[1].details.sample}</p></div>
@@ -688,7 +740,7 @@ const NYTYouTubeCaseStudy: React.FC = () => {
                     See diary study activity examples
                   </Button>
                 </DialogTrigger>
-                <DialogContent className="max-w-2xl max-h-[85vh] overflow-y-auto">
+                <DialogContent className="max-w-3xl max-h-[85vh] overflow-y-auto">
                   <DialogHeader>
                     <DialogTitle>{readContent.approach.diaryExamples.title}</DialogTitle>
                   </DialogHeader>
@@ -715,7 +767,7 @@ const NYTYouTubeCaseStudy: React.FC = () => {
                     See analysis approach
                   </Button>
                 </DialogTrigger>
-                <DialogContent className="max-w-2xl max-h-[85vh] overflow-y-auto">
+                <DialogContent className="max-w-3xl max-h-[85vh] overflow-y-auto">
                   <DialogHeader>
                     <DialogTitle>{readContent.approach.diaryAnalysis.title}</DialogTitle>
                   </DialogHeader>
@@ -762,7 +814,7 @@ const NYTYouTubeCaseStudy: React.FC = () => {
       {/* Slide 5: Findings - Audience */}
       <ReadSlide slideNumber={5} header={readContent.findingsAudience.header}>
         <div className="space-y-8">
-          <div className="rounded-2xl bg-primary/10 p-6">
+          <div className="rounded-2xl bg-[hsl(210,35%,93%)] p-6">
             <div className="mb-4 flex items-center gap-2">
               <Lightbulb className="h-6 w-6 text-primary" />
               <span className="text-sm font-medium uppercase tracking-wider text-primary">Key Finding</span>
@@ -786,7 +838,7 @@ const NYTYouTubeCaseStudy: React.FC = () => {
       {/* Slide 6: Findings - Use Cases */}
       <ReadSlide slideNumber={6} header={readContent.findingsUseCases.header}>
         <div className="space-y-8">
-          <div className="rounded-2xl bg-primary/10 p-6">
+          <div className="rounded-2xl bg-[hsl(210,35%,93%)] p-6">
             <div className="mb-4 flex items-center gap-2">
               <Lightbulb className="h-6 w-6 text-primary" />
               <span className="text-sm font-medium uppercase tracking-wider text-primary">Key Finding</span>
@@ -797,15 +849,15 @@ const NYTYouTubeCaseStudy: React.FC = () => {
             {readContent.findingsUseCases.categories.map((cat, i) => {
               const IconComponent = categoryIcons[cat.icon];
               return (
-                <div key={i} className="rounded-2xl bg-accent/50 p-6">
+                <div key={i} className="rounded-2xl border border-border bg-card p-6">
                   <div className="mb-3 flex items-center gap-3">
                     {IconComponent && <IconComponent className="h-6 w-6 text-primary" />}
                     <h3 className="text-xl font-semibold text-foreground">{cat.name}</h3>
                   </div>
                   <p className="text-muted-foreground">{cat.useCase}</p>
                   {cat.format && (
-                    <div className="mt-3 rounded-xl bg-background/60 p-3">
-                      <p className="text-sm text-muted-foreground"><strong className="text-foreground">Winning format:</strong> {cat.format}</p>
+                    <div className="mt-3 rounded-xl bg-[hsl(210,35%,93%)] p-3">
+                      <p className="text-sm text-[hsl(210,40%,30%)]"><strong>Winning format:</strong> {cat.format}</p>
                     </div>
                   )}
                 </div>
@@ -839,7 +891,7 @@ const NYTYouTubeCaseStudy: React.FC = () => {
       {/* Slide 8: Impact */}
       <ReadSlide slideNumber={8} header={readContent.impact.header}>
         <div className="space-y-10">
-          <div className="rounded-2xl bg-primary/10 p-6">
+          <div className="rounded-2xl bg-[hsl(210,35%,93%)] p-6">
             <div className="flex items-center gap-3">
               <TrendingUp className="h-6 w-6 text-primary" />
               <h2 className="text-2xl font-bold text-foreground">{readContent.impact.title}</h2>
@@ -871,7 +923,7 @@ const NYTYouTubeCaseStudy: React.FC = () => {
         </div>
       </ReadSlide>
 
-      {/* Slide 9: Reflection */}
+      {/* Slide 9: Reflections */}
       <ReadSlide slideNumber={9} header={readContent.reflection.header}>
         <div className="space-y-8">
           <h2 className="text-2xl font-bold text-foreground">{readContent.reflection.title}</h2>
@@ -879,7 +931,7 @@ const NYTYouTubeCaseStudy: React.FC = () => {
             {readContent.reflection.lessonsList.map((lesson) => (
               <div key={lesson.number} className="rounded-2xl bg-accent/50 p-6">
                 <div className="mb-2 flex items-center gap-3">
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-sm font-bold text-primary">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[hsl(210,35%,93%)] text-sm font-bold text-primary">
                     {lesson.number}
                   </span>
                   <h3 className="text-lg font-semibold text-foreground">{lesson.title}</h3>

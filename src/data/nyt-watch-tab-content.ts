@@ -364,38 +364,279 @@ export const readContent = {
 
   // ---------- SLIDE 9: REFLECTION ----------
   reflection: {
-    header: "Reflection",
-    title: "What Made This Work",
-    factors: [
+    header: "Reflections",
+    title: "Lessons Learned",
+    lessonsList: [
       {
-        icon: "Clock",
-        title: "Strategic Timing",
-        description: "Running research in parallel with A/B test meant insights were ready when the team needed answers most",
-      },
-      {
-        icon: "Shield",
-        title: "Proactive Risk Mitigation",
-        description: "Flagged concerns early, designed research to learn either way (not just validate)",
-      },
-      {
-        icon: "Layers",
-        title: "Method Triangulation",
-        description: "Survey tested hypotheses, diary study explained behaviors, behavioral data showed who actually used it",
-      },
-      {
-        icon: "Users",
-        title: "Stakeholder Partnership",
-        description: "Brought XFN partners into research design; they felt ownership over findings",
-      },
-      {
-        icon: "MessageCircle",
+        number: "01",
         title: "Non-Defensive Communication",
-        description: "Pre-meeting 1:1s, leading with learning, letting recommendations emerge from the group",
+        description: "Pre-meeting 1:1s, leading with learnings rather than conclusions, and letting recommendations emerge from the group — these habits helped me be seen as a trusted partner, not a lecturer with the answers.",
       },
       {
-        icon: "Zap",
-        title: "Speed with Rigor",
-        description: "Delivered actionable insights within product timeline without sacrificing quality",
+        number: "02",
+        title: "A Resource-Intensive Approach",
+        description: "Running a survey, diary study, and A/B test in parallel took significant time and resources. Next time I'd push to build an interactive prototype earlier so qualitative research could inform the design before full engineering implementation.",
+      },
+      {
+        number: "03",
+        title: "Show, Don't Tell",
+        description: "Bringing cross-functional partners in to watch diary study videos together was more powerful than presenting aggregate findings — they saw the issues firsthand. I want to find ways to get those recordings in front of senior leaders too.",
+      },
+    ],
+  },
+};
+
+// ============================================
+// PRESENT MODE CONTENT
+// ============================================
+export const presentContent = {
+  // ---------- SLIDE 0: TITLE ----------
+  title: {
+    headline: "NYT Watch Tab: Video News Consumption Research",
+    subtitle: "A research program that explained neutral A/B test results and informed a strategic pivot",
+  },
+
+  // ---------- SLIDE 1: CONTEXT ----------
+  context: {
+    header: "Context",
+    opportunityTitle: "The Opportunity",
+    opportunity: "~½ of Americans under 35 use social media or video networks as their primary news source. NYT was producing ~20 vertical videos/day — but users mostly saw them on TikTok and Instagram.",
+    proposedSolution: "Watch Tab: A dedicated vertical video feed",
+    proposedSolutionDetail: "A TikTok-style feed of 15–20 editorially curated news videos per day — championed by a senior editor.",
+    assumptionsHeader: "Assumptions Behind the Watch Tab",
+    assumptions: [
+      "Will improve engagement with users who don't have a strong habit with us",
+      "Should serve as a \"video version\" of the Home tab for video-preferring users",
+      "Users will value editorial curation over a personalized feed",
+    ],
+    stakeholderNote: "My initial suggestion to explore multiple designs was resisted. I designed research to test the assumptions that had to be true for this approach to work.",
+  },
+
+  // ---------- SLIDE 2: OBJECTIVES ----------
+  objectives: {
+    header: "Research Objectives",
+    framing: "Positioned as a \"learning agenda\" running in parallel with the A/B test",
+    objectivesList: [
+      {
+        title: "1. Test the Core Hypotheses",
+        questions: [
+          "Are younger / less engaged users more likely to prefer news videos?",
+          "Is there a sizable video-first audience within our user base?",
+          "Is the curated Watch Tab value proposition clear and attractive?",
+        ],
+      },
+      {
+        title: "2. Understand the User Experience",
+        questions: [
+          "What draws people to news videos vs. other formats?",
+          "What behaviors and expectations do users bring from social platforms?",
+        ],
+      },
+      {
+        title: "3. Be Ready When A/B Results Arrive",
+        questions: [
+          "If positive → understand what's working to scale it",
+          "If neutral/negative → immediately diagnose why and what to try next",
+        ],
+      },
+    ],
+  },
+
+  // ---------- SLIDE 3: APPROACH ----------
+  approach: {
+    header: "Research Approach",
+    title: "Two Methods, Running in Parallel with the A/B Test",
+    methods: [
+      {
+        title: "A. Quantitative Survey",
+        details: {
+          sample: "n=~3,000 app and web visitors",
+          fielded: "Sept 30 – Nov 18, 2025",
+          method: "Intercept survey on News app and web",
+          analysis: "Python in Google Colab; weighted for representativeness",
+          description: "Validate hypotheses at scale and understand audience-level patterns in video consumption.",
+        },
+      },
+      {
+        title: "B. Qualitative Diary Study",
+        details: {
+          sample: "n=21 U.S. news consumers via dscout",
+          fielded: "Sept 26 – Oct 3, 2025 (7 days)",
+          mix: "11 subscribers / 10 non-subscribers",
+          recruited: "People who engage with NYT news AND watch news videos on TikTok/Instagram/YouTube",
+          description: "Understand the \"why\" behind behaviors and surface expectations users bring from social platforms.",
+        },
+      },
+    ],
+  },
+
+  // ---------- SLIDE 4: FINDINGS ----------
+  findings: {
+    header: "Key Findings: Hypothesis Testing",
+    leadFinding: "The core audience hypothesis held — but the feature's value proposition didn't.",
+    validated: [
+      {
+        hypothesis: "Younger users prefer video",
+        finding: "Visitors under 30 who say video is their primary news format are 3× higher than any other age group.",
+      },
+      {
+        hypothesis: "Less engaged users prefer video",
+        finding: "Visitors with fewer active days/month are 2× as likely to prefer online videos.",
+      },
+    ],
+    notValidated: [
+      {
+        hypothesis: "A sizable video-first audience exists in our user base",
+        finding: "Reading-first users outnumber video-first users 4:1, across all age groups.",
+      },
+      {
+        hypothesis: "Users want NYT videos in the app",
+        finding: "Awareness was high — but interest in watching them was low.",
+      },
+      {
+        hypothesis: "The curated Watch Tab value proposition is clear and attractive",
+        finding: "It was neither clear nor attractive to users.",
+      },
+    ],
+  },
+
+  // ---------- SLIDE 5: INSIGHT ----------
+  insight: {
+    header: "Core Insight",
+    keyInsight: "When coming directly to a news source, users seek specific videos — not passive browsing.",
+    surveyFinding: "Top video job: \"Get a fuller picture of a particular event\" (vs. top article job: \"Get up to speed on the latest news\")",
+    issues: [
+      {
+        title: "No Personalization or Navigation",
+        description: "Users expected content tailored to their interests. Without it, they felt forced to scroll past irrelevant videos.",
+        quote: "Is this the same New York Times page that every user sees?... I like having an experience that's very catered to what I wanna see.",
+        participant: "JH",
+      },
+      {
+        title: "\"Scan and Sample\" from Social Platforms",
+        description: "Users gave each video 3–5 seconds before skipping. Slow-loading or slow-paced videos were immediately abandoned.",
+        quote: "I'm not interested in videos that don't grab me in the first two seconds... I've just lost patience for videos that long.",
+        participant: "JI",
+      },
+      {
+        title: "No Way to Find Specific Videos",
+        description: "Users came to NYT looking for journalism on specific stories. Without search or navigation, they gave up.",
+        quote: "You have to scroll through the whole library to find what you're looking for. How long can I scroll for?",
+        participant: "MG",
+      },
+      {
+        title: "Content Repetition",
+        description: "15–20 videos/day meant users saw the same content throughout the day — and instinctively tried to refresh.",
+        quote: "Every time I've gone in there it's, like, the same three videos to start.",
+        participant: "JD",
+      },
+    ],
+  },
+
+  // ---------- SLIDE 6: TRIANGULATION ----------
+  triangulation: {
+    header: "Triangulating with Behavioral Data",
+    abTestResult: "The A/B test came back neutral — no significant lift in engagement. Because research was running in parallel, we could immediately explain why.",
+    coreProblemTitle: "The Core Problem: Wrong Audience Reached the Feature",
+    surveyPredicted: "Less engaged users are 2× more likely to prefer video",
+    behavioralShowed: "Only 10% of weekly users visited the tab — and most were already super-engaged (7 days/week)",
+    disconnect: "The feature reached the most loyal users, not the less-engaged video audience it was designed for.",
+    diaryExplanation: [
+      "Users wanted specific videos for specific stories — not a feed to browse.",
+      "\"Scan and sample\" behavior: if the first video wasn't relevant, they bounced.",
+    ],
+  },
+
+  // ---------- SLIDE 7: RECOMMENDATIONS ----------
+  recommendations: {
+    header: "Stakeholder Communication & Recommendations",
+    challenge: "Senior editor had a strong vision. Neutral results risked defensiveness or dismissal of the research.",
+    strategies: [
+      {
+        title: "Pre-meeting 1:1s",
+        description: "Each stakeholder had time to process the data before the group meeting — no public pressure to react.",
+      },
+      {
+        title: "Led with what we learned, not what it means",
+        description: "Validated hypotheses first. Then layered in what users told us. Then showed behavioral confirmation.",
+      },
+      {
+        title: "Framed as opportunity, not failure",
+        description: "\"We confirmed the audience hypothesis. The question is how to reach them in a way that matches their mental model.\"",
+      },
+      {
+        title: "Let recommendations emerge from the group",
+        description: "The skeptical senior editor suggested reaching \"less engaged users where they are.\" The PM proposed article page integration before I did.",
+      },
+    ],
+    recommendationsList: [
+      {
+        title: "Meet users where they already are",
+        subtitle: "Integrate video into article pages",
+        points: [
+          "Article pages are the #1 visited surface in the app",
+          "Most users read/listen first, then watch to \"get a fuller picture\"",
+        ],
+      },
+      {
+        title: "Support intent-driven discovery",
+        subtitle: "Add search, categories, or navigation",
+        points: [
+          "Users don't want to scroll 15–20 videos to find what they need",
+          "Social platforms own passive discovery — NYT should own intentional discovery",
+        ],
+      },
+    ],
+  },
+
+  // ---------- SLIDE 8: IMPACT ----------
+  impact: {
+    header: "Impact",
+    title: "Research informed a strategic pivot",
+    timingNote: "Conducted in late 2025. Strategic pivot currently underway.",
+    impactPoints: [
+      {
+        number: "1",
+        title: "Strategic Pivot",
+        description: "Away from feed-centric strategy toward integrated video experiences",
+      },
+      {
+        number: "2",
+        title: "New Product Explorations",
+        description: "Article integration and search-based discovery now actively being explored",
+      },
+      {
+        number: "3",
+        title: "Stakeholder Buy-In Preserved",
+        description: "Video strategy intact — stakeholders stayed engaged despite neutral test results",
+      },
+      {
+        number: "4",
+        title: "Research as Strategic Partner",
+        description: "Established as essential to editorial and product strategy, not just a validator",
+      },
+    ],
+  },
+
+  // ---------- SLIDE 9: REFLECTIONS ----------
+  reflection: {
+    header: "Reflections",
+    title: "Lessons Learned",
+    lessonsList: [
+      {
+        number: "01",
+        title: "Non-Defensive Communication",
+        description: "Pre-meeting 1:1s, leading with learnings rather than conclusions, and letting recommendations emerge from the group — these habits helped me be seen as a trusted partner, not a lecturer with the answers.",
+      },
+      {
+        number: "02",
+        title: "A Resource-Intensive Approach",
+        description: "Running a survey, diary study, and A/B test in parallel took significant time and resources. Next time I'd push to build an interactive prototype earlier so qualitative research could inform the design before full engineering implementation.",
+      },
+      {
+        number: "03",
+        title: "Show, Don't Tell",
+        description: "Bringing cross-functional partners in to watch diary study videos together was more powerful than presenting aggregate findings — they saw the issues firsthand. I want to find ways to get those recordings in front of senior leaders too.",
       },
     ],
   },

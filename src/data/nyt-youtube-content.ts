@@ -301,7 +301,7 @@ export const readContent = {
 
   // ---------- SLIDE 9: REFLECTION ----------
   reflection: {
-    header: "Reflection",
+    header: "Reflections",
     title: "Lessons Learned",
     lessonsList: [
       {
@@ -509,7 +509,7 @@ export const presentContent = {
 
   // ---------- SLIDE 9: REFLECTION ----------
   reflection: {
-    header: "Reflection",
+    header: "Reflections",
     title: "Lessons Learned",
     lessonsList: [
       {

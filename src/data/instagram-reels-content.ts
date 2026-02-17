@@ -212,7 +212,7 @@ export const readContent = {
   // ---------- SLIDE 8: IMPACT ----------
   impact: {
     header: "Impact",
-    leadershipDecision: "Leadership approved the redesign—a decision they had initially rejected.",
+    leadershipDecision: "Leadership was ultimately convinced to approve the major redesign—unlocking a series of downstream wins across product, press, and platform strategy.",
     shippedEditor: "A/B testing confirmed our findings: significantly more video production overall, especially high-quality videos (measured by views and likes).",
     beforeAfter: {
       before: "Only video clips can be edited on this screen. Text and audio is edited elsewhere.",
@@ -229,8 +229,8 @@ export const readContent = {
 
   // ---------- SLIDE 9: LESSONS ----------
   lessons: {
-    header: "Lessons Learned",
-    title: "What This Project Taught Me",
+    header: "Reflections",
+    title: "Lessons Learned",
     lessonsList: [
       {
         number: "01",
@@ -438,7 +438,7 @@ export const presentContent = {
   // ---------- SLIDE 8: IMPACT ----------
   impact: {
     header: "Impact",
-    leadershipDecision: "Leadership approved the redesign—a decision they had initially rejected.",
+    leadershipDecision: "Leadership was ultimately convinced to approve the major redesign—unlocking a series of downstream wins across product, press, and platform strategy.",
     pages: [
       {
         title: "Product Outcome",
@@ -466,8 +466,8 @@ export const presentContent = {
 
   // ---------- SLIDE 9: LESSONS ----------
   lessons: {
-    header: "Lessons Learned",
-    title: "What This Project Taught Me",
+    header: "Reflections",
+    title: "Lessons Learned",
     lessonsList: [
       {
         number: "01",

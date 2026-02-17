@@ -27,14 +27,14 @@ export const PresentSlide: React.FC<PresentSlideProps> = ({
     <section
       className={cn(
         'snap-start flex min-h-screen items-center justify-center px-8 py-16',
-        dark ? 'bg-[hsl(220,10%,15%)]' : 'bg-[hsl(210,14%,89%)]'
+        dark ? 'bg-[hsl(25,12%,22%)]' : 'bg-[hsl(25,12%,22%)]'
       )}
     >
       <div
         className={cn(
           'w-full max-w-6xl rounded-3xl p-12 shadow-2xl',
           dark
-            ? 'bg-[hsl(220,10%,20%)] text-[hsl(40,30%,95%)]'
+            ? 'bg-[hsl(20,22%,14%)] text-[hsl(35,30%,92%)]'
             : 'bg-background text-foreground',
           className
         )}

@@ -16,135 +16,146 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Warm neutral backgrounds */
-    --background: 40 33% 97%;
-    --foreground: 220 20% 15%;
+    /* ── Terracotta & Warm Earth palette ───────────────────
+       Terracotta   #c1440e  hsl( 17  84% 40%)   ← primary
+       Sienna       #a0522d  hsl( 19  58% 40%)   ← primary-dark
+       Burnt Sand   #e8c9a0  hsl( 32  65% 77%)   ← warm beige
+       Linen        #f5efe6  hsl( 35  60% 93%)   ← background alt
+       Parchment    #faf7f2  hsl( 36  50% 97%)   ← background main
+       Warm Stone   #e6ddd2  hsl( 28  28% 86%)   ← muted bg / border
+       Slate Brown  #4a3728  hsl( 20  30% 22%)   ← dark text
+       Dusty Gold   #c8902a  hsl( 36  65% 47%)   ← accent warm
+    ──────────────────────────────────────────────────────── */
 
-    /* Cards with subtle warmth */
-    --card: 40 30% 99%;
-    --card-foreground: 220 20% 15%;
+    /* Backgrounds — parchment: warm off-white, very subtle */
+    --background: 36 50% 97%;
+    --foreground: 20 20% 18%;
 
-    /* Popovers */
-    --popover: 40 30% 99%;
-    --popover-foreground: 220 20% 15%;
+    /* Cards — pure white, lifts off the parchment */
+    --card: 0 0% 100%;
+    --card-foreground: 20 20% 18%;
 
-    /* Terracotta accent as primary */
-    --primary: 15 60% 50%;
-    --primary-foreground: 40 30% 99%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 20% 18%;
 
-    /* Warm gray secondary */
-    --secondary: 30 15% 92%;
-    --secondary-foreground: 220 20% 20%;
+    /* Primary — terracotta, rich and warm */
+    --primary: 17 84% 40%;
+    --primary-foreground: 0 0% 100%;
 
-    /* Muted warm tones */
-    --muted: 30 15% 94%;
-    --muted-foreground: 220 10% 45%;
+    /* Secondary — burnt sand chips/tags */
+    --secondary: 32 45% 88%;
+    --secondary-foreground: 17 60% 28%;
 
-    /* Accent - terracotta lighter */
-    --accent: 15 50% 95%;
-    --accent-foreground: 15 60% 40%;
+    /* Muted — warm grey, slight beige tint but not brown */
+    --muted: 30 15% 90%;
+    --muted-foreground: 20 10% 42%;
 
-    /* Destructive */
-    --destructive: 0 65% 55%;
-    --destructive-foreground: 40 30% 99%;
+    /* Accent — dusty gold for callout backgrounds (not red/pink) */
+    --accent: 36 55% 91%;
+    --accent-foreground: 25 55% 28%;
 
-    /* Border and inputs */
-    --border: 30 20% 88%;
-    --input: 30 20% 88%;
-    --ring: 15 60% 50%;
+    --destructive: 0 72% 40%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 28 20% 87%;
+    --input: 28 20% 87%;
+    --ring: 17 84% 40%;
 
     --radius: 0.75rem;
 
-    /* Sidebar */
-    --sidebar-background: 40 25% 96%;
-    --sidebar-foreground: 220 20% 25%;
-    --sidebar-primary: 15 60% 50%;
-    --sidebar-primary-foreground: 40 30% 99%;
-    --sidebar-accent: 30 20% 92%;
-    --sidebar-accent-foreground: 220 20% 20%;
-    --sidebar-border: 30 20% 88%;
-    --sidebar-ring: 15 60% 50%;
+    --sidebar-background: 35 40% 95%;
+    --sidebar-foreground: 20 20% 18%;
+    --sidebar-primary: 17 84% 40%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 32 45% 88%;
+    --sidebar-accent-foreground: 17 60% 28%;
+    --sidebar-border: 28 20% 87%;
+    --sidebar-ring: 17 84% 40%;
 
-    /* Custom tokens */
-    --surface: 40 35% 98%;
+    --surface: 36 50% 97%;
     --surface-elevated: 0 0% 100%;
-    --highlight: 15 65% 55%;
-    --highlight-muted: 15 40% 90%;
+    --highlight: 17 84% 40%;
+    --highlight-muted: 17 60% 93%;
 
-    /* Shadows */
-    --shadow-2xs: 0 1px 3px 0px hsl(30 20% 20% / 0.04);
-    --shadow-xs: 0 1px 3px 0px hsl(30 20% 20% / 0.05);
-    --shadow-sm: 0 1px 3px 0px hsl(30 20% 20% / 0.08), 0 1px 2px -1px hsl(30 20% 20% / 0.08);
-    --shadow-md: 0 4px 6px -1px hsl(30 20% 20% / 0.08), 0 2px 4px -2px hsl(30 20% 20% / 0.06);
-    --shadow-lg: 0 10px 15px -3px hsl(30 20% 20% / 0.08), 0 4px 6px -4px hsl(30 20% 20% / 0.06);
-    --shadow-xl: 0 20px 25px -5px hsl(30 20% 20% / 0.08), 0 8px 10px -6px hsl(30 20% 20% / 0.06);
-    --shadow-2xl: 0 25px 50px -12px hsl(30 20% 20% / 0.2);
+    --shadow-2xs: 0 1px 3px 0px hsl(20 30% 10% / 0.04);
+    --shadow-xs:  0 1px 3px 0px hsl(20 30% 10% / 0.06);
+    --shadow-sm:  0 1px 3px 0px hsl(20 30% 10% / 0.08), 0 1px 2px -1px hsl(20 30% 10% / 0.08);
+    --shadow-md:  0 4px 6px -1px hsl(20 30% 10% / 0.08), 0 2px 4px -2px hsl(20 30% 10% / 0.06);
+    --shadow-lg:  0 10px 15px -3px hsl(20 30% 10% / 0.08), 0 4px 6px -4px hsl(20 30% 10% / 0.06);
+    --shadow-xl:  0 20px 25px -5px hsl(20 30% 10% / 0.08), 0 8px 10px -6px hsl(20 30% 10% / 0.06);
+    --shadow-2xl: 0 25px 50px -12px hsl(20 30% 10% / 0.20);
 
-    --success: 142 71% 45%;
+    /* Status — intentional, not decorative */
+    --success: 152 50% 36%;
     --success-foreground: 0 0% 100%;
-    --warning: 38 92% 50%;
+    --warning: 36 90% 42%;
     --warning-foreground: 0 0% 100%;
-    --info: 199 89% 48%;
+    --info: 200 65% 38%;
     --info-foreground: 0 0% 100%;
   }
 
   .dark {
-    /* Elegant dark mode */
-    --background: 220 20% 8%;
-    --foreground: 40 20% 95%;
+    /* Deep warm brown-black base — like aged clay at night */
+    --background: 20 25% 8%;
+    --foreground: 35 30% 92%;
 
-    --card: 220 18% 12%;
-    --card-foreground: 40 20% 95%;
+    /* Cards — warm dark brown, clearly elevated */
+    --card: 20 22% 12%;
+    --card-foreground: 35 30% 92%;
 
-    --popover: 220 18% 12%;
-    --popover-foreground: 40 20% 95%;
+    --popover: 20 22% 12%;
+    --popover-foreground: 35 30% 92%;
 
-    --primary: 15 55% 55%;
-    --primary-foreground: 220 20% 8%;
+    /* Primary — brighter terracotta, readable on dark */
+    --primary: 17 75% 55%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 15% 18%;
-    --secondary-foreground: 40 20% 90%;
+    /* Secondary — muted warm sand chips */
+    --secondary: 25 30% 20%;
+    --secondary-foreground: 32 50% 78%;
 
-    --muted: 220 15% 20%;
-    --muted-foreground: 40 10% 60%;
+    /* Muted — dark warm grey */
+    --muted: 20 20% 16%;
+    --muted-foreground: 30 15% 58%;
 
-    --accent: 15 40% 20%;
-    --accent-foreground: 15 50% 70%;
+    /* Accent — dusty gold glow */
+    --accent: 36 60% 20%;
+    --accent-foreground: 36 80% 72%;
 
-    --destructive: 0 55% 45%;
-    --destructive-foreground: 40 20% 95%;
+    --destructive: 0 65% 48%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 20%;
-    --input: 220 15% 20%;
-    --ring: 15 55% 55%;
+    --border: 20 18% 20%;
+    --input: 20 18% 20%;
+    --ring: 17 75% 55%;
 
-    --sidebar-background: 220 18% 10%;
-    --sidebar-foreground: 40 15% 90%;
-    --sidebar-primary: 15 55% 55%;
-    --sidebar-primary-foreground: 220 20% 8%;
-    --sidebar-accent: 220 15% 15%;
-    --sidebar-accent-foreground: 40 15% 90%;
-    --sidebar-border: 220 15% 18%;
-    --sidebar-ring: 15 55% 55%;
+    --sidebar-background: 20 25% 9%;
+    --sidebar-foreground: 35 25% 88%;
+    --sidebar-primary: 17 75% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 25 30% 18%;
+    --sidebar-accent-foreground: 32 50% 78%;
+    --sidebar-border: 20 18% 18%;
+    --sidebar-ring: 17 75% 55%;
 
-    --surface: 220 18% 10%;
-    --surface-elevated: 220 18% 14%;
-    --highlight: 15 55% 55%;
-    --highlight-muted: 15 30% 25%;
+    --surface: 20 25% 9%;
+    --surface-elevated: 20 22% 13%;
+    --highlight: 17 75% 55%;
+    --highlight-muted: 17 55% 22%;
 
-    --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.1);
-    --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.12);
-    --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.15), 0 1px 2px -1px hsl(0 0% 0% / 0.12);
-    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.15), 0 2px 4px -2px hsl(0 0% 0% / 0.1);
-    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.15), 0 4px 6px -4px hsl(0 0% 0% / 0.1);
-    --shadow-xl: 0 20px 25px -5px hsl(0 0% 0% / 0.15), 0 8px 10px -6px hsl(0 0% 0% / 0.1);
-    --shadow-2xl: 0 25px 50px -12px hsl(0 0% 0% / 0.35);
+    --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
+    --shadow-xs:  0 1px 3px 0px hsl(0 0% 0% / 0.30);
+    --shadow-sm:  0 1px 3px 0px hsl(0 0% 0% / 0.35), 0 1px 2px -1px hsl(0 0% 0% / 0.28);
+    --shadow-md:  0 4px 6px -1px hsl(0 0% 0% / 0.35), 0 2px 4px -2px hsl(0 0% 0% / 0.22);
+    --shadow-lg:  0 10px 15px -3px hsl(0 0% 0% / 0.35), 0 4px 6px -4px hsl(0 0% 0% / 0.22);
+    --shadow-xl:  0 20px 25px -5px hsl(0 0% 0% / 0.35), 0 8px 10px -6px hsl(0 0% 0% / 0.22);
+    --shadow-2xl: 0 25px 50px -12px hsl(0 0% 0% / 0.55);
 
-    --success: 142 71% 45%;
+    --success: 152 50% 42%;
     --success-foreground: 0 0% 100%;
-    --warning: 38 92% 50%;
-    --warning-foreground: 0 0% 100%;
-    --info: 199 89% 48%;
+    --warning: 36 90% 50%;
+    --warning-foreground: 20 25% 10%;
+    --info: 200 65% 50%;
     --info-foreground: 0 0% 100%;
   }
 }
