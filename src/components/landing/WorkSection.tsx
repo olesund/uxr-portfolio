@@ -5,6 +5,14 @@ import ProjectCard from './ProjectCard';
 const WorkSection: React.FC = () => {
   const projects = [
     {
+      title: 'Instagram Reels (Anthropic Onsite)',
+      subtitle: 'Instagram / Meta',
+      description:
+        'An abbreviated, presentation-focused version of the Instagram Reels case study — designed for communicating research to cross-functional partners.',
+      tags: ['XFN Communication', 'Mixed Methods', 'Usability Testing', 'Present Mode'],
+      href: '/work/instagram-reels-anthropic',
+    },
+    {
       title: 'Instagram Reels Video Editor',
       subtitle: 'Instagram / Meta',
       description:

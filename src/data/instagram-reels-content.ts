@@ -240,7 +240,7 @@ export const readContent = {
       {
         number: "02",
         title: "Study what people make to understand your product",
-        description: "Analyzing user-created content showed us what makes videos successful. This was before AI made it easy—it was manual and tedious. Today I use this method at much larger scale.",
+        description: "Analyzing user-created content showed us what makes videos successful. This was before AI made it easy—it was manual and tedious. In the future I hope to use this method at much larger scale.",
       },
     ],
     whatIdDoDifferently: "Have leadership experience the problem firsthand. My team made videos every week, so we felt the limitations intuitively. Leadership wasn't using the product and assumed 'simple = easy' without testing it. Hands-on experience could have accelerated alignment.",
@@ -477,7 +477,7 @@ export const presentContent = {
       {
         number: "02",
         title: "Study what people make to understand your product",
-        description: "Analyzing user-created content showed us what makes videos successful. This was before AI made it easy—it was manual and tedious. Today I use this method at much larger scale.",
+        description: "Analyzing user-created content showed us what makes videos successful. This was before AI made it easy—it was manual and tedious. In the future I hope to use this method at much larger scale.",
       },
     ],
     whatIdDoDifferently: "Have leadership experience the problem firsthand. My team made videos every week, so we felt the limitations intuitively. Leadership wasn't using the product and assumed 'simple = easy' without testing it. Hands-on experience could have accelerated alignment.",
