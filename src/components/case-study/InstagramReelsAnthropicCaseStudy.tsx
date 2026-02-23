@@ -41,7 +41,7 @@ import advancedVideoExample from '@/assets/advanced-video-example.mov';
 // Moments photos
 import momentsPhoto1 from '@/assets/1-stanford-improvisors.jpg';
 import momentsPhoto2 from '@/assets/2-ski-touring-are.jpg';
-import momentsPhoto3 from '@/assets/3-garfield-wedding.jpg';
+import momentsPhoto3 from '@/assets/3-garfield-395.jpg';
 import momentsPhoto4 from '@/assets/4-erik-sarah-ella-alice.jpg';
 
 // Company logos
