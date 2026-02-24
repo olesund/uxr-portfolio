@@ -298,9 +298,9 @@ const InstagramReelsAnthropicCaseStudy: React.FC = () => {
               {content.problem.coreQuestion}
             </p>
           </div>
-          <div className="rounded-2xl bg-yellow-100 dark:bg-yellow-900/40 border border-yellow-300 dark:border-yellow-700 p-5">
-            <p className="mb-1 text-sm text-yellow-700 dark:text-yellow-400">Current Assumption</p>
-            <p className="text-lg font-semibold text-yellow-900 dark:text-yellow-100">
+          <div className="rounded-2xl bg-accent/50 p-5">
+            <p className="mb-1 text-sm text-muted-foreground">Current Assumption</p>
+            <p className="text-lg font-semibold text-foreground">
               {(content.problem as any).currentAssumption}
             </p>
           </div>
@@ -682,110 +682,76 @@ const InstagramReelsAnthropicCaseStudy: React.FC = () => {
   /** Slide 11: Impact — 2-page carousel */
   const renderImpact = () => (
     <PresentSlide header={content.impact.header}>
-      <Carousel>
-        {/* Page 1: Metrics + before/after */}
-        <div className="space-y-6">
-          <h3 className="text-2xl font-semibold text-foreground">
-            {content.impact.pages[0].title}
-          </h3>
-          <p className="text-lg text-muted-foreground">
-            {content.impact.pages[0].shippedNote}
-          </p>
+      <div className="space-y-6">
+        <h3 className="text-2xl font-semibold text-foreground">
+          {content.impact.pages[0].title}
+        </h3>
+        <p className="text-lg text-muted-foreground">
+          {content.impact.pages[0].shippedNote}
+        </p>
 
-          {/* Metric cards */}
-          <div className="grid gap-4 sm:grid-cols-3">
-            {content.impact.pages[0].metrics.map((metric, i) => (
-              <div
-                key={i}
-                className="rounded-2xl bg-accent/50 p-4 text-center"
-              >
-                <TrendingUp className="mx-auto mb-2 h-8 w-8 text-green-600" />
-                <p className="font-semibold text-foreground">{metric.label}</p>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  {metric.description}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          {/* Before/after screenshots */}
-          <div className="grid gap-4 md:grid-cols-2">
-            <div className="space-y-2">
-              <button
-                onClick={() =>
-                  setLightboxImage({
-                    src: reelsEditorBefore,
-                    alt: 'Instagram Reels editor before',
-                  })
-                }
-                className="rounded-2xl overflow-hidden bg-background cursor-pointer hover:opacity-90 transition-opacity w-full"
-              >
-                <img
-                  src={reelsEditorBefore}
-                  alt="Before"
-                  className="w-full h-auto max-h-[250px] object-contain"
-                />
-              </button>
-              <p className="text-sm font-medium text-foreground">Before</p>
-              <p className="text-sm text-muted-foreground">
-                {content.impact.pages[0].beforeAfter.before}
+        {/* Metric cards */}
+        <div className="grid gap-4 sm:grid-cols-3">
+          {content.impact.pages[0].metrics.map((metric, i) => (
+            <div
+              key={i}
+              className="rounded-2xl bg-accent/50 p-4 text-center"
+            >
+              <TrendingUp className="mx-auto mb-2 h-8 w-8 text-green-600" />
+              <p className="font-semibold text-foreground">{metric.label}</p>
+              <p className="mt-1 text-sm text-muted-foreground">
+                {metric.description}
               </p>
             </div>
-            <div className="space-y-2">
-              <button
-                onClick={() =>
-                  setLightboxImage({
-                    src: reelsEditorAfter,
-                    alt: 'Instagram Reels editor after',
-                  })
-                }
-                className="rounded-2xl overflow-hidden bg-background cursor-pointer hover:opacity-90 transition-opacity w-full"
-              >
-                <img
-                  src={reelsEditorAfter}
-                  alt="After"
-                  className="w-full h-auto max-h-[250px] object-contain"
-                />
-              </button>
-              <p className="text-sm font-medium text-foreground">After</p>
-              <p className="text-sm text-muted-foreground">
-                {content.impact.pages[0].beforeAfter.after}
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
 
-        {/* Page 2: Press coverage */}
-        <div className="space-y-6">
-          <h3 className="text-2xl font-semibold text-foreground">
-            {content.impact.pages[1].title}
-          </h3>
-          <div className="grid gap-6 md:grid-cols-2 items-center">
-            <blockquote className="rounded-2xl border-l-4 border-primary bg-muted/40 p-5">
-              <p className="text-muted-foreground italic">
-                {content.impact.pages[1].pressQuote}
-              </p>
-              <footer className="mt-3">
-                <a
-                  href={content.impact.pages[1].pressUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-primary hover:underline"
-                >
-                  — {content.impact.pages[1].pressSource}
-                </a>
-              </footer>
-            </blockquote>
-            <div className="rounded-2xl overflow-hidden">
+        {/* Before/after screenshots */}
+        <div className="grid gap-4 md:grid-cols-2">
+          <div className="space-y-2">
+            <button
+              onClick={() =>
+                setLightboxImage({
+                  src: reelsEditorBefore,
+                  alt: 'Instagram Reels editor before',
+                })
+              }
+              className="rounded-2xl overflow-hidden bg-background cursor-pointer hover:opacity-90 transition-opacity w-full"
+            >
               <img
-                src={reelsEditorScreenshot}
-                alt="Instagram Reels editor"
-                className="w-full h-auto"
+                src={reelsEditorBefore}
+                alt="Before"
+                className="w-full h-auto max-h-[250px] object-contain"
               />
-            </div>
+            </button>
+            <p className="text-sm font-medium text-foreground">Before</p>
+            <p className="text-sm text-muted-foreground">
+              {content.impact.pages[0].beforeAfter.before}
+            </p>
+          </div>
+          <div className="space-y-2">
+            <button
+              onClick={() =>
+                setLightboxImage({
+                  src: reelsEditorAfter,
+                  alt: 'Instagram Reels editor after',
+                })
+              }
+              className="rounded-2xl overflow-hidden bg-background cursor-pointer hover:opacity-90 transition-opacity w-full"
+            >
+              <img
+                src={reelsEditorAfter}
+                alt="After"
+                className="w-full h-auto max-h-[250px] object-contain"
+              />
+            </button>
+            <p className="text-sm font-medium text-foreground">After</p>
+            <p className="text-sm text-muted-foreground">
+              {content.impact.pages[0].beforeAfter.after}
+            </p>
           </div>
         </div>
-      </Carousel>
+      </div>
     </PresentSlide>
   );
 
