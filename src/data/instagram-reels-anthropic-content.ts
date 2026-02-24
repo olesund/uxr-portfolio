@@ -11,8 +11,7 @@ export const content = {
   title: {
     name: "Erik Olesund",
     subtitle: "Portfolio Review | Anthropic | February 2026",
-    introText:
-      "UX researcher with 10+ years driving product decisions through fast-moving research. I combine strong data analysis skills with deep expertise in understanding what users need.",
+    introText: "",
     descriptors: [
       "UX Researcher",
       "Maker",

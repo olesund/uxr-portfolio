@@ -141,9 +141,11 @@ const InstagramReelsAnthropicCaseStudy: React.FC = () => {
           <p className="mb-4 text-lg text-muted-foreground">
             {content.title.subtitle}
           </p>
-          <p className="mb-6 text-base text-muted-foreground leading-relaxed">
-            {content.title.introText}
-          </p>
+          {content.title.introText && (
+            <p className="mb-6 text-base text-muted-foreground leading-relaxed">
+              {content.title.introText}
+            </p>
+          )}
           <div className="flex flex-wrap gap-x-1.5 gap-y-0.5 justify-center md:justify-start max-w-lg">
             {content.title.descriptors.map((word, i) => (
               <motion.span
