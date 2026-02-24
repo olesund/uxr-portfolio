@@ -40,7 +40,6 @@ import advancedVideoExample from '@/assets/advanced-video-example.mov';
 
 // Moments photos
 import momentsPhoto1 from '@/assets/1-stanford-improvisors.jpg';
-import momentsPhoto2 from '@/assets/2-ski-touring-are.jpg';
 import momentsPhoto3 from '@/assets/3-garfield-395.jpg';
 import momentsPhoto4 from '@/assets/4-erik-sarah-ella-alice.jpg';
 
@@ -182,26 +181,31 @@ const InstagramReelsAnthropicCaseStudy: React.FC = () => {
     </section>
   );
 
-  /** Slide 1: Moments that shaped me */
-  const momentsPhotos = [momentsPhoto1, momentsPhoto2, momentsPhoto3, momentsPhoto4];
+  /** Slide 1: Experiences that shaped me */
   const renderMoments = () => (
     <PresentSlide header={content.moments.header}>
-      <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
-        {content.moments.photos.map((photo, i) => (
-          <div
-            key={i}
-            className="flex flex-col items-center gap-3"
-          >
-            <div className="w-full aspect-[3/4] rounded-2xl overflow-hidden bg-muted/40">
-              <img
-                src={momentsPhotos[i]}
-                alt={photo.caption}
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <p className="text-sm text-muted-foreground text-center">{photo.caption}</p>
+      <div className="grid grid-cols-4 gap-6">
+        {/* Stanford improvisors */}
+        <div className="flex flex-col items-center gap-3">
+          <div className="w-full aspect-[3/4] rounded-2xl overflow-hidden bg-muted/40">
+            <img src={momentsPhoto1} alt={content.moments.photos[0].caption} className="w-full h-full object-cover" />
           </div>
-        ))}
+          <p className="text-sm text-muted-foreground text-center">{content.moments.photos[0].caption}</p>
+        </div>
+        {/* Van — spans 2 columns */}
+        <div className="col-span-2 flex flex-col items-center gap-3">
+          <div className="w-full aspect-[3/2] rounded-2xl overflow-hidden bg-muted/40">
+            <img src={momentsPhoto3} alt={content.moments.photos[1].caption} className="w-full h-full object-cover" />
+          </div>
+          <p className="text-sm text-muted-foreground text-center">{content.moments.photos[1].caption}</p>
+        </div>
+        {/* Family */}
+        <div className="flex flex-col items-center gap-3">
+          <div className="w-full aspect-[3/4] rounded-2xl overflow-hidden bg-muted/40">
+            <img src={momentsPhoto4} alt={content.moments.photos[2].caption} className="w-full h-full object-cover" />
+          </div>
+          <p className="text-sm text-muted-foreground text-center">{content.moments.photos[2].caption}</p>
+        </div>
       </div>
     </PresentSlide>
   );

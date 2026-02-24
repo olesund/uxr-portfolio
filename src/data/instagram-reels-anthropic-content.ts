@@ -28,12 +28,11 @@ export const content = {
     ],
   },
 
-  // ---------- SLIDE 1: MOMENTS THAT SHAPED ME ----------
+  // ---------- SLIDE 1: EXPERIENCES THAT SHAPED ME ----------
   moments: {
-    header: "Moments That Shaped Me",
+    header: "Experiences That Shaped Me",
     photos: [
       { caption: "Stanford improvisors" },
-      { caption: "Skiing remote mountains" },
       { caption: "Moving SF > NY in 1985 VW" },
       { caption: "Ella, Sarah and Alice" },
     ],
