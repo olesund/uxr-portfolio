@@ -144,7 +144,7 @@ export const content = {
     approach:
       "Followed 20 Reels creators over the course of six weeks. They completed activities in a private Facebook group three times per week: testing prototypes, rating videos, sharing their creative process in interviews, and discussing tips with one another.",
     keyFinding:
-      "Creators felt pressure to create more polished content for Instagram vs. TikTok. They preferred \u201Cstacked timeline\u201D editors where video, audio, and text layers are all visible at once on a single screen, over Instagram\u2019s step-by-step flow.",
+      "Creators felt pressure to create more polished content for Instagram vs. TikTok. They preferred to use third-party apps with \u201Cstacked timeline\u201D editors where video, audio, and text layers are all visible at once on a single screen, over Instagram\u2019s step-by-step flow.",
   },
 
   // ---------- SLIDE 7: REFRAME ----------
