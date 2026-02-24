@@ -76,7 +76,35 @@ export const content = {
     ],
   },
 
-  // ---------- SLIDE 3: CASE STUDY TITLE ----------
+  // ---------- SLIDE 3: UX RESEARCH & AI ----------
+  uxResearchAI: {
+    header: "UX Research & AI",
+    sections: [
+      {
+        title: "Optimize Processes",
+        items: [
+          "Clean and structure messy data",
+          "Semantic search across past findings",
+          "Draft and refine research instruments",
+        ],
+      },
+      {
+        title: "Expand Team Capabilities",
+        items: [
+          "Join survey and behavioral data",
+          "Statistical weighting",
+          "Advanced data visualizations",
+        ],
+      },
+    ],
+    toolExample: {
+      label: "Tool I Built with Cursor",
+      description:
+        "A colleague uploads a screenshot of a data table and gets back a chart matching the NYT style guide.",
+    },
+  },
+
+  // ---------- SLIDE 4: CASE STUDY TITLE ----------
   caseStudyTitle: {
     title: "Instagram Reels\nVideo Editor Research",
     subtitle:
@@ -191,7 +219,7 @@ export const content = {
       },
       {
         // Page 2: Study design/methodology + view participant experience button
-        title: "Study Design",
+        title: "Methodology",
         methodology: {
           method: "Randomized Between-Subjects Study",
           duration: "Six weeks",
@@ -204,7 +232,7 @@ export const content = {
           stackedTimeline: ["CapCut", "InShot"],
         },
         studyDesign:
-          "200 testers tried to recreate an example video using a randomly assigned video editing app. We measured task completion success, ease of use ratings, and time on task.",
+          "200 testers tried to recreate an example video using a randomly assigned video editing app.",
         independentVariables:
           "Video complexity (basic vs. advanced), Editing apps (step-by-step flows vs. stacked timelines)",
       },
@@ -264,7 +292,7 @@ export const content = {
         // Page 1: Metrics + before/after
         title: "Product Outcome",
         shippedNote:
-          "A/B testing confirmed our findings: significantly more video production overall, especially high-quality videos.",
+          "A/B testing confirmed that the stacked timeline editor drove more video production, especially high-quality videos.",
         metrics: [
           {
             label: "Participation rate",

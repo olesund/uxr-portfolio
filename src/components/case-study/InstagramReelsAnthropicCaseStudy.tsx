@@ -38,6 +38,10 @@ import reelsEditorScreenshot from '@/assets/reels-editor-screenshot.webp';
 import basicVideoExample from '@/assets/basic-video-example.mov';
 import advancedVideoExample from '@/assets/advanced-video-example.mov';
 
+// UX Research & AI example images
+import pewRawData from '@/assets/pew-social-media-raw-data.png';
+import pewChart from '@/assets/pew-social-media-chart.png';
+
 // Moments photos
 import momentsPhoto1 from '@/assets/1-stanford-improvisors.jpg';
 import momentsPhoto3 from '@/assets/3-garfield-395.jpg';
@@ -250,10 +254,94 @@ const InstagramReelsAnthropicCaseStudy: React.FC = () => {
     </PresentSlide>
   );
 
-  /** Slide 3: Case study title */
+  /** Slide 3: UX Research & AI */
+  const renderUXResearchAI = () => (
+    <PresentSlide header={content.uxResearchAI.header}>
+      <div className="grid gap-8 lg:grid-cols-2">
+        {/* Left: Two bullet-point sections */}
+        <div className="space-y-6">
+          {content.uxResearchAI.sections.map((section, i) => (
+            <div key={i}>
+              <h3 className="mb-3 text-xl font-semibold text-foreground">
+                {section.title}
+              </h3>
+              <ul className="space-y-2">
+                {section.items.map((item, j) => (
+                  <li
+                    key={j}
+                    className="flex items-start gap-2 text-lg text-muted-foreground"
+                  >
+                    <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-primary/60" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        {/* Right: Tool example */}
+        <div className="rounded-2xl bg-muted/60 p-5 space-y-4">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-1">
+              {content.uxResearchAI.toolExample.label}
+            </p>
+            <p className="text-sm text-muted-foreground">
+              {content.uxResearchAI.toolExample.description}
+            </p>
+          </div>
+          <div className="grid grid-cols-2 gap-3 items-start">
+            <div className="space-y-2">
+              <button
+                onClick={() =>
+                  setLightboxImage({
+                    src: pewRawData,
+                    alt: 'Raw data table screenshot',
+                  })
+                }
+                className="rounded-xl overflow-hidden bg-background cursor-pointer hover:opacity-90 transition-opacity w-full"
+              >
+                <img
+                  src={pewRawData}
+                  alt="Raw data table"
+                  className="w-full h-auto object-contain"
+                />
+              </button>
+              <p className="text-xs text-muted-foreground text-center">Input: data table</p>
+            </div>
+            <div className="space-y-2">
+              <button
+                onClick={() =>
+                  setLightboxImage({
+                    src: pewChart,
+                    alt: 'Generated NYT-style chart',
+                  })
+                }
+                className="rounded-xl overflow-hidden bg-background cursor-pointer hover:opacity-90 transition-opacity w-full"
+              >
+                <img
+                  src={pewChart}
+                  alt="NYT-style chart output"
+                  className="w-full h-auto object-contain"
+                />
+              </button>
+              <p className="text-xs text-muted-foreground text-center">Output: NYT-style chart</p>
+            </div>
+          </div>
+          <div className="flex items-center gap-2 pt-1">
+            <div className="h-px flex-1 bg-muted-foreground/20" />
+            <span className="text-xs text-muted-foreground/60">→</span>
+            <div className="h-px flex-1 bg-muted-foreground/20" />
+          </div>
+        </div>
+      </div>
+    </PresentSlide>
+  );
+
+  /** Slide 4: Case study title */
   const renderCaseStudyTitle = () => (
     <section
-      id="slide-3"
+      id="slide-4"
       className="relative flex min-h-screen snap-start items-center justify-center px-6"
       style={{ background: 'hsl(25, 12%, 22%)' }}
     >
@@ -462,68 +550,88 @@ const InstagramReelsAnthropicCaseStudy: React.FC = () => {
           </div>
 
           {/* Page 2: Study design/methodology + View participant experience button */}
-          <div className="space-y-6">
-            <h3 className="text-xl font-semibold text-foreground">
-              {content.phase3.pages[1].title}
-            </h3>
-            <div className="rounded-2xl bg-muted/60 p-5">
-              <div className="grid gap-4 sm:grid-cols-2">
-                {Object.entries(content.phase3.pages[1].methodology!).map(
-                  ([key, value]) => (
-                    <div key={key}>
-                      <p className="text-sm text-muted-foreground">
-                        {key
-                          .replace(/([A-Z])/g, ' $1')
-                          .trim()
-                          .replace(/^\w/, (c) => c.toUpperCase())}
-                      </p>
-                      <p className="font-medium text-foreground">{value}</p>
-                    </div>
-                  )
-                )}
-              </div>
-              {/* Apps tested */}
-              {(content.phase3.pages[1] as any).appsTested && (
-                <div className="mt-4 pt-4 border-t border-muted-foreground/10">
-                  <p className="text-sm text-muted-foreground mb-2">Apps Tested</p>
-                  <div className="flex flex-wrap items-center gap-2 text-sm">
-                    <span className="font-medium text-foreground">Step-by-step:</span>
-                    {(content.phase3.pages[1] as any).appsTested.stepByStep.map((app: string, i: number) => (
-                      <span key={app} className="rounded-full bg-background px-2.5 py-0.5 text-foreground">
-                        {app}
-                      </span>
-                    ))}
-                    <span className="text-muted-foreground mx-1">vs.</span>
-                    <span className="font-medium text-foreground">Stacked timeline:</span>
-                    {(content.phase3.pages[1] as any).appsTested.stackedTimeline.map((app: string, i: number) => (
-                      <span key={app} className="rounded-full bg-background px-2.5 py-0.5 text-foreground">
-                        {app}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
+          <div className="space-y-5">
             <div>
-              <p className="text-muted-foreground text-lg mb-3">
+              <h3 className="text-xl font-semibold text-foreground mb-2">
+                {content.phase3.pages[1].title}
+              </h3>
+              <p className="text-lg text-muted-foreground">
                 {content.phase3.pages[1].studyDesign}
               </p>
-              <p className="text-muted-foreground">
-                <strong>Independent Variables:</strong>{' '}
-                {content.phase3.pages[1].independentVariables}
-              </p>
             </div>
-            <div>
-              <Button
-                onClick={() => setIsModalOpen(true)}
-                size="sm"
-                variant="outline"
-                className="gap-2"
-              >
-                <Play className="h-4 w-4" />
-                View participant experience
-              </Button>
+
+            <div className="grid gap-4 md:grid-cols-2">
+              {/* Left: Study parameters */}
+              <div className="rounded-2xl bg-muted/60 p-5 space-y-4">
+                <p className="text-sm font-semibold uppercase tracking-wider text-primary">
+                  Study Parameters
+                </p>
+                <div className="space-y-3">
+                  {[
+                    ['Method', content.phase3.pages[1].methodology!.method],
+                    ['Sample', content.phase3.pages[1].methodology!.sample],
+                    ['Criteria', content.phase3.pages[1].methodology!.criteria],
+                    ['Duration', content.phase3.pages[1].methodology!.duration],
+                    ['Partner', content.phase3.pages[1].methodology!.partner],
+                  ].map(([label, value]) => (
+                    <div key={label} className="flex items-baseline gap-2">
+                      <p className="text-sm text-muted-foreground shrink-0 w-16">{label}</p>
+                      <p className="text-sm font-medium text-foreground">{value}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Right: Experimental design */}
+              <div className="rounded-2xl bg-muted/60 p-5 space-y-4">
+                <p className="text-sm font-semibold uppercase tracking-wider text-primary">
+                  Experimental Design
+                </p>
+                <div className="space-y-3">
+                  <div>
+                    <p className="text-sm text-muted-foreground mb-1.5">Step-by-step editors</p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {(content.phase3.pages[1] as any).appsTested.stepByStep.map((app: string) => (
+                        <span key={app} className="rounded-full bg-background px-2.5 py-1 text-sm text-foreground">
+                          {app}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2 text-muted-foreground/40">
+                    <div className="h-px flex-1 bg-current" />
+                    <span className="text-xs">vs.</span>
+                    <div className="h-px flex-1 bg-current" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-muted-foreground mb-1.5">Stacked timeline editors</p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {(content.phase3.pages[1] as any).appsTested.stackedTimeline.map((app: string) => (
+                        <span key={app} className="rounded-full bg-background px-2.5 py-1 text-sm text-foreground">
+                          {app}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <div className="pt-2 border-t border-muted-foreground/10">
+                  <p className="text-sm text-muted-foreground">
+                    <span className="font-medium text-foreground">Measured: </span>
+                    task completion, ease of use, time on task
+                  </p>
+                </div>
+              </div>
             </div>
+
+            <Button
+              onClick={() => setIsModalOpen(true)}
+              size="sm"
+              variant="outline"
+              className="gap-2"
+            >
+              <Play className="h-4 w-4" />
+              View participant experience
+            </Button>
           </div>
 
           {/* Page 3: Reference videos side by side */}
@@ -816,14 +924,15 @@ const InstagramReelsAnthropicCaseStudy: React.FC = () => {
         {renderTitleSlide()}
         <div id="slide-1">{renderMoments()}</div>
         <div id="slide-2">{renderCareerOverview()}</div>
+        <div id="slide-3">{renderUXResearchAI()}</div>
         {renderCaseStudyTitle()}
-        <div id="slide-4">{renderProblem()}</div>
-        <div id="slide-5">{renderPhase1()}</div>
-        <div id="slide-6">{renderPhase2()}</div>
-        <div id="slide-7">{renderPhase3DeepDive()}</div>
-        <div id="slide-8">{renderRecommendation()}</div>
-        <div id="slide-9">{renderImpact()}</div>
-        <div id="slide-10">{renderReflections()}</div>
+        <div id="slide-5">{renderProblem()}</div>
+        <div id="slide-6">{renderPhase1()}</div>
+        <div id="slide-7">{renderPhase2()}</div>
+        <div id="slide-8">{renderPhase3DeepDive()}</div>
+        <div id="slide-9">{renderRecommendation()}</div>
+        <div id="slide-10">{renderImpact()}</div>
+        <div id="slide-11">{renderReflections()}</div>
       </div>
 
       <ImageLightbox

@@ -19,11 +19,11 @@ const ImageLightbox: React.FC<ImageLightboxProps> = ({
 }) => {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-lg p-2 bg-background">
+      <DialogContent className="max-w-4xl p-2 bg-background">
         <img
           src={src}
           alt={alt}
-          className="w-full h-auto max-h-[70vh] object-contain rounded-lg"
+          className="w-full h-auto max-h-[85vh] object-contain rounded-lg"
         />
       </DialogContent>
     </Dialog>

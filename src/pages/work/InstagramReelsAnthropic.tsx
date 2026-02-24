@@ -8,7 +8,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import InstagramReelsAnthropicCaseStudy from '@/components/case-study/InstagramReelsAnthropicCaseStudy';
 
-const TOTAL_SLIDES = 11;
+const TOTAL_SLIDES = 12;
 
 const InstagramReelsAnthropic: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
