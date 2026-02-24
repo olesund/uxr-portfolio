@@ -181,27 +181,27 @@ const InstagramReelsAnthropicCaseStudy: React.FC = () => {
     </section>
   );
 
-  /** Slide 1: Experiences that shaped me */
+  /** Slide 1: Experiences that shaped me — all photos same height */
   const renderMoments = () => (
     <PresentSlide header={content.moments.header}>
       <div className="grid grid-cols-4 gap-6">
         {/* Stanford improvisors */}
         <div className="flex flex-col items-center gap-3">
-          <div className="w-full aspect-[3/4] rounded-2xl overflow-hidden bg-muted/40">
+          <div className="w-full h-[360px] rounded-2xl overflow-hidden bg-muted/40">
             <img src={momentsPhoto1} alt={content.moments.photos[0].caption} className="w-full h-full object-cover" />
           </div>
           <p className="text-sm text-muted-foreground text-center">{content.moments.photos[0].caption}</p>
         </div>
-        {/* Van — spans 2 columns */}
+        {/* Van — spans 2 columns, same height */}
         <div className="col-span-2 flex flex-col items-center gap-3">
-          <div className="w-full aspect-[3/2] rounded-2xl overflow-hidden bg-muted/40">
+          <div className="w-full h-[360px] rounded-2xl overflow-hidden bg-muted/40">
             <img src={momentsPhoto3} alt={content.moments.photos[1].caption} className="w-full h-full object-cover" />
           </div>
           <p className="text-sm text-muted-foreground text-center">{content.moments.photos[1].caption}</p>
         </div>
         {/* Family */}
         <div className="flex flex-col items-center gap-3">
-          <div className="w-full aspect-[3/4] rounded-2xl overflow-hidden bg-muted/40">
+          <div className="w-full h-[360px] rounded-2xl overflow-hidden bg-muted/40">
             <img src={momentsPhoto4} alt={content.moments.photos[2].caption} className="w-full h-full object-cover" />
           </div>
           <p className="text-sm text-muted-foreground text-center">{content.moments.photos[2].caption}</p>
@@ -285,7 +285,7 @@ const InstagramReelsAnthropicCaseStudy: React.FC = () => {
             {content.problem.businessContext}
           </p>
         </div>
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-4 sm:grid-cols-3">
           <div className="rounded-2xl bg-accent/50 p-5">
             <p className="mb-1 text-sm text-muted-foreground">Business Goal</p>
             <p className="text-lg font-semibold text-foreground">
@@ -296,6 +296,12 @@ const InstagramReelsAnthropicCaseStudy: React.FC = () => {
             <p className="mb-1 text-sm text-muted-foreground">Core Question</p>
             <p className="text-lg font-semibold text-foreground">
               {content.problem.coreQuestion}
+            </p>
+          </div>
+          <div className="rounded-2xl bg-yellow-100 dark:bg-yellow-900/40 border border-yellow-300 dark:border-yellow-700 p-5">
+            <p className="mb-1 text-sm text-yellow-700 dark:text-yellow-400">Current Assumption</p>
+            <p className="text-lg font-semibold text-yellow-900 dark:text-yellow-100">
+              {(content.problem as any).currentAssumption}
             </p>
           </div>
         </div>
@@ -334,48 +340,7 @@ const InstagramReelsAnthropicCaseStudy: React.FC = () => {
     </PresentSlide>
   );
 
-  /** Slide 5: Research overview — all three phases visible */
-  const renderResearchOverview = () => (
-    <PresentSlide header={content.researchOverview.header}>
-      <div className="space-y-8">
-        <h3 className="text-2xl font-semibold text-foreground">
-          {content.researchOverview.title}
-        </h3>
-        <div className="grid gap-4 md:grid-cols-3">
-          {content.researchOverview.phases.map((phase) => (
-            <div
-              key={phase.number}
-              className={cn(
-                'rounded-2xl bg-muted/60 p-6 relative',
-                phase.highlight && 'ring-2 ring-primary/50'
-              )}
-            >
-              <div className="mb-3 flex items-baseline gap-3">
-                <span className="text-lg font-medium text-primary">
-                  Phase {phase.number}
-                </span>
-                <span className="text-sm text-muted-foreground">
-                  ({phase.type})
-                </span>
-              </div>
-              <h4 className="text-lg font-semibold text-foreground mb-2">
-                {phase.title}
-              </h4>
-              <p className="text-muted-foreground">{phase.description}</p>
-              {phase.highlight && (
-                <div className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
-                  <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
-                  We'll go deeper on this phase
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
-    </PresentSlide>
-  );
-
-  /** Slide 6: Phase 1 — single slide */
+  /** Slide 5: Phase 1 — single slide */
   const renderPhase1 = () => (
     <PresentSlide header={content.phase1.header}>
       <div className="space-y-6">
@@ -405,52 +370,7 @@ const InstagramReelsAnthropicCaseStudy: React.FC = () => {
     </PresentSlide>
   );
 
-  /** Slide 7: Reframe — dark theme, image on the right with more space */
-  const renderReframe = () => (
-    <PresentSlide header={content.reframe.header} dark>
-      <div className="flex flex-col lg:flex-row gap-8 items-start">
-        {/* Left: text (narrower) */}
-        <div className="lg:w-2/5 space-y-6 shrink-0">
-          <div className="rounded-2xl bg-[hsl(200,40%,25%)]/30 p-5 backdrop-blur-sm">
-            <p className="text-lg text-[hsl(40,30%,70%)] line-through decoration-2">
-              {content.reframe.oldQuestion}
-            </p>
-            <p className="text-xl font-medium text-[hsl(40,30%,95%)] mt-3">
-              {content.reframe.newQuestionPrefix}
-              <strong style={{ color: 'hsl(195, 65%, 55%)' }}>
-                {content.reframe.newQuestionHighlight}
-              </strong>
-              {content.reframe.newQuestionSuffix}
-            </p>
-            <div className="mt-5 pt-5 border-t border-[hsl(40,30%,95%)]/20">
-              <p className="mb-3 text-base text-[hsl(40,30%,95%)]">
-                {content.reframe.context}
-              </p>
-              <ul className="space-y-2 text-base text-[hsl(40,30%,95%)]">
-                {content.reframe.additionalQuestions.map((q, i) => (
-                  <li key={i}>
-                    <strong>{q.charAt(0)}</strong>
-                    {q.slice(1)}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        {/* Right: flywheel image (larger) */}
-        <div className="lg:w-3/5 flex-1 rounded-2xl overflow-hidden bg-background">
-          <img
-            src={flywheelDiagram}
-            alt="Flywheel effect: good videos lead to more viewers, more reach, more production"
-            className="w-full h-auto"
-          />
-        </div>
-      </div>
-    </PresentSlide>
-  );
-
-  /** Slide 8: Phase 2 — single slide with numbered key attributes */
+  /** Slide 6: Phase 2 — single slide with numbered key attributes */
   const renderPhase2 = () => (
     <PresentSlide header={content.phase2.header}>
       <div className="space-y-6">
@@ -724,24 +644,36 @@ const InstagramReelsAnthropicCaseStudy: React.FC = () => {
     );
   };
 
-  /** Slide 10: Final recommendation */
+  /** Slide 8: Final recommendation */
   const renderRecommendation = () => (
     <PresentSlide header={content.recommendation.header}>
-      <div className="space-y-8">
-        <div className="rounded-2xl bg-accent/50 p-6">
-          <blockquote className="mb-4 text-3xl font-semibold text-foreground">
-            {content.recommendation.keyMessage}
-          </blockquote>
-          <p className="text-lg text-muted-foreground">
-            {content.recommendation.keyMessageSubtitle}
-          </p>
+      <div className="flex flex-col lg:flex-row gap-8 items-start">
+        {/* Left: text */}
+        <div className="lg:w-1/2 space-y-6">
+          <div className="rounded-2xl bg-accent/50 p-6">
+            <blockquote className="mb-4 text-3xl font-semibold text-foreground">
+              {content.recommendation.keyMessage}
+            </blockquote>
+            <p className="text-lg text-muted-foreground">
+              {content.recommendation.keyMessageSubtitle}
+            </p>
+          </div>
+
+          {/* Leadership decision — green, slightly less prominent */}
+          <div className="rounded-2xl bg-green-500/10 border border-green-500/30 p-5 text-center">
+            <p className="text-xl font-semibold text-green-700 dark:text-green-400">
+              {content.recommendation.leadershipDecision}
+            </p>
+          </div>
         </div>
 
-        {/* Leadership decision — green, slightly less prominent */}
-        <div className="rounded-2xl bg-green-500/10 border border-green-500/30 p-5 text-center">
-          <p className="text-xl font-semibold text-green-700 dark:text-green-400">
-            {content.recommendation.leadershipDecision}
-          </p>
+        {/* Right: flywheel diagram */}
+        <div className="lg:w-1/2 rounded-2xl overflow-hidden bg-background">
+          <img
+            src={flywheelDiagram}
+            alt="Flywheel effect: good videos lead to more viewers, more reach, more production"
+            className="w-full h-auto"
+          />
         </div>
       </div>
     </PresentSlide>
@@ -920,14 +852,12 @@ const InstagramReelsAnthropicCaseStudy: React.FC = () => {
         <div id="slide-2">{renderCareerOverview()}</div>
         {renderCaseStudyTitle()}
         <div id="slide-4">{renderProblem()}</div>
-        <div id="slide-5">{renderResearchOverview()}</div>
-        <div id="slide-6">{renderPhase1()}</div>
-        <div id="slide-7">{renderReframe()}</div>
-        <div id="slide-8">{renderPhase2()}</div>
-        <div id="slide-9">{renderPhase3DeepDive()}</div>
-        <div id="slide-10">{renderRecommendation()}</div>
-        <div id="slide-11">{renderImpact()}</div>
-        <div id="slide-12">{renderReflections()}</div>
+        <div id="slide-5">{renderPhase1()}</div>
+        <div id="slide-6">{renderPhase2()}</div>
+        <div id="slide-7">{renderPhase3DeepDive()}</div>
+        <div id="slide-8">{renderRecommendation()}</div>
+        <div id="slide-9">{renderImpact()}</div>
+        <div id="slide-10">{renderReflections()}</div>
       </div>
 
       <ImageLightbox

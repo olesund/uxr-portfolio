@@ -92,6 +92,8 @@ export const content = {
     businessGoal: "Increase the production of short-form videos.",
     coreQuestion:
       "How do we make it easier for users to make short-form videos on Instagram?",
+    currentAssumption:
+      "More unique tools and effects are our best levers.",
     team: {
       myRole: "Lead UX Researcher",
       myRoleDescription:
